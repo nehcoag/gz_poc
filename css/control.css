@@ -1,0 +1,181 @@
+header,footer,main,blockquote,body,div,section,article,li,dd,dir,dl,fieldset,figure,form,h1,h2,h3,h4,h5,h6,hr,input,
+legend,menu,ol,optgroup,p,pre,tbody,td,textarea,tfoot,th,thead,ul{
+    margin:0;
+    padding:0
+}
+div,section,article,main,header{
+    box-sizing: border-box;
+}
+li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+html,body{
+    height:100%;
+    background-image: url('../img/controlBg.webp');
+    overflow-y: hidden;
+    background-color:#000;
+}
+@font-face {
+    font-family: 'UnidreamLED';
+    src: url('../fonts/UnidreamLED.eot');
+    src: url('../fonts/UnidreamLED.ttf') format('truetype'),
+    url('../fonts/UnidreamLED.eot');
+}
+@media only screen and (max-width: 1980px){
+    html{
+        font-size:10px;
+    }
+}
+@media only screen and (min-width: 1980px){
+    html{
+        font-size:26px;
+    }
+}
+.screen{
+    height:100%;
+    width:100%;
+    position:relative;
+}
+/*总体六个区域*/
+.chartWrapper{
+    width:32.8%;
+    height:25.3%;
+    position:absolute;
+    border:1px solid red;
+}
+.leftTop{
+    top:13.95%;
+    left:1%;
+}
+.leftMid{
+    top:40.6%;
+    left:1%;
+}
+.leftBtm{
+    top:67.3%;
+    left:1%;
+}
+.rightTop{
+    top:13.95%;
+    right:1%;
+}
+.rightMid{
+    top:40.6%;
+    right:1%;
+}
+.rightBtm{
+    top:67.3%;
+    right:1%;
+}
+.chartBox{
+    height:100%;
+    width:100%;
+}
+.chartBox>div{
+    height:95%;
+    width:100%;
+    position:absolute;
+    bottom:0;
+}
+/*头部区域*/
+header{
+    height:13.9%;
+    width:100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.titleBox{
+    width:46.1%;
+    height:100%;
+    border:1px solid red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color:white;
+    font-family: '黑体';
+    position: relative;
+}
+.thisLogo{
+    display: inline-block;
+    width:4rem;
+    height:4rem;
+    background:red;
+    position:absolute;
+    left:-5rem;
+}
+.thisTitle{
+    position:relative;
+    display: flex;
+    align-items: center;
+    font-size:3.4rem;
+}
+.thisSubTitle{
+    font-size:1.8rem;
+    position:absolute;
+    white-space: nowrap;
+    display: inline-block;
+    bottom:0;
+    margin-left:1rem;
+}
+.timeBox{
+    position:absolute;
+    width:15rem;
+    height:50%;
+    right:8%;
+}
+.hrefLogo{
+    position:absolute;
+    width:9rem;
+    height:3rem;
+    right:1.5%;
+    display: flex;
+    justify-content: space-between;
+}
+.hrefLogo>span{
+    display: inline-block;
+    flex: 1;
+    /*background-image:url("../img/rightClick.png");*/
+    background-size:100% 100%;
+    cursor: pointer;
+}
+.currentTime{
+    display: flex;
+    height:100%;
+    width:100%;
+    font-family: "UnidreamLED";
+    color:white;
+    font-size:2rem;
+    text-shadow: -1px 0px 10px #00a2ff,1px 0px 10px #00a2ff,0px -1px 10px #00a2ff,0px 1px 10px #00a2ff;
+    justify-content: center;
+    align-items: center;
+    white-space: nowrap;
+}
+.chartFour>aside{
+    width:49%;
+    height:95%;
+    position:absolute;
+    bottom:0;
+}
+.chartFour>aside:nth-of-type(1){
+    left:0;
+}
+.chartFour>aside:nth-of-type(2){
+    right:0;
+}
+.pyramidBox{
+    position:absolute;
+    width:32.6%;
+    height:86%;
+    left:33.65%;
+    top:13.9%;
+}
+.mainCvshd{
+    height:100%;
+    width:100%;
+    box-sizing: border-box;
+}

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+    <title>海关总署税收征管中心</title>
+    <link rel="stylesheet" href="../css/control.css">
+</head>
+<body>
+<!--body下包装一层同样大小的section，避免直接控制body-->
+<main class="screen">
+    <header>
+        <!--页面大标题-->
+        <article class="titleBox">
+            <span class="thisTitle"><span class="thisLogo"></span>海关总署税收征管中心<span class="thisSubTitle">产业行业分析</span></span>
+        </article>
+        <!--系统当前时间-->
+        <article class="timeBox">
+            <span id="currentTime" class="currentTime"></span>
+        </article>
+        <!--跳转按钮-->
+        <article class="hrefLogo">
+            <span></span>
+            <span></span>
+            <span></span>
+        </article>
+    </header>
+    <!--左上区域-市场行情-->
+    <article class="chartWrapper leftTop">
+        <!--增加一个背景层-->
+        <section class="chartBox ltBox">
+            <!--echarts图表层-->
+            <div class="ltChart" id="ltChart">
+
+            </div>
+        </section>
+    </article>
+    <!--左中区域-关区分析-->
+    <article class="chartWrapper leftMid">
+        <!--增加一个背景层-->
+        <section class="chartBox lmBox">
+            <!--echarts图表层-->
+            <div class="ltChart" id="lmChart">
+
+            </div>
+        </section>
+    </article>
+    <!--左下区域-关区预警-->
+    <article class="chartWrapper leftBtm">
+        <!--增加一个背景层-->
+        <section class="chartBox lbBox">
+            <!--echarts图表层-->
+            <div class="ltChart" id="lbChart">
+
+            </div>
+        </section>
+    </article>
+    <article class="pyramidBox">
+        <div class="mainCvshd" id="mainCvshd"></div>
+    </article>
+    <!--右上区域-量值税-->
+    <article class="chartWrapper rightTop">
+        <!--增加一个背景层-->
+        <section class="chartBox rtBox">
+            <!--echarts图表层-->
+            <div class="rtChart" id="rtChart">
+
+            </div>
+        </section>
+    </article>
+    <!--右中区域-原产地分析、企业分析-->
+    <article class="chartWrapper rightMid">
+        <!--增加一个背景层-->
+        <section class="chartBox rmBox chartFour">
+            <!--echarts图表层-->
+            <aside class="rmlChart" id="rmlChart">
+
+            </aside>
+            <aside class="rmrChart" id="rmrChart">
+
+            </aside>
+        </section>
+    </article>
+    <!--右下区域-原产地预警、企业预警-->
+    <article class="chartWrapper rightBtm">
+        <!--增加一个背景层-->
+        <section class="chartBox rbBox chartFour">
+            <!--echarts图表层-->
+            <aside class="rblChart" id="rblChart">
+
+            </aside>
+            <aside class="rbrChart" id="rbrChart">
+
+            </aside>
+        </section>
+    </article>
+</main>
+<script src="../js/jquery.min.js"></script>
+<script src="../js/echarts.min.js"></script>
+<script src="../js/Three.js"></script>
+<script src="../js/Tween.js"></script>
+<script src="../js/OrbitControls.js"></script>
+<script src="../js/publicController.js"></script>
+<script src="../js/chartsController.js"></script>
+<script src="../js/control.js"></script>
+</body>
+</html>

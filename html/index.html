@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>海关总署税收征管中心</title>
+    <link rel="stylesheet" href="../css/index.css">
+</head>
+<body>
+<main class="screen">
+    <header>
+        <!--页面大标题-->
+        <article class="titleBox">
+            <span class="thisTitle"><span class="thisLogo"></span>海关总署税收征管中心</span>
+        </article>
+        <!--系统当前时间-->
+        <article class="timeBox">
+            <span id="currentTime" class="currentTime"></span>
+        </article>
+        <!--配置模块按钮-->
+        <span class="settingSpan" id="settingSpan">
+            <img src="../img/leftNom.png" alt="">
+            <img src="../img/leftLit.png" alt="">
+        </span>
+        <!--右上角三个跳转按钮-->
+        <article class="hrefLogo">
+            <span>
+                <img src="../img/leftLit.png" alt="">
+                <img src="../img/leftNom.png" alt="">
+            </span>
+            <span>
+                <img src="../img/centerNom.png" alt="">
+                <img src="../img/centerLit.png" alt="">
+            </span>
+            <span>
+                <img src="../img/rightNom.png" alt="">
+                <img src="../img/rightLit.png" alt="">
+            </span>
+        </article>
+    </header>
+    <!--配置显示的模块-->
+    <section id="supplyMenu">
+        <div class="favoriteBox">
+            <article>
+                <label>业务统计：</label>
+                <input type="text" spellcheck="false">
+            </article>
+            <article>
+                <label>贸易结构：</label>
+                <input type="text" spellcheck="false">
+            </article>
+            <article>
+                <label>风险防控：</label>
+                <input type="text" spellcheck="false">
+            </article>
+            <article>
+                <label>行业分析：</label>
+                <input type="text" spellcheck="false">
+            </article>
+            <article>
+                <label>第五模块：</label>
+                <input type="text" spellcheck="false">
+            </article>
+            <article>
+                <label>第六模块：</label>
+                <input type="text" spellcheck="false">
+            </article>
+            <input type="button" id="favoriteSubmit" value="确定">
+        </div>
+    </section>
+    <!--左右两个轮播按钮-->
+    <aside class="slideAside toLeft">
+        <div id="slider-panels-previous"><span class="iconb" data-icon="&#xe24b;"></span></div>
+    </aside>
+    <aside class="slideAside toRight">
+        <div id="slider-panels-next"><span class="iconb" data-icon="&#xe24e;"></span></div>
+    </aside>
+    <section class="contentBox" id="contentBox">
+        <article class="rev rev_1 Con_0">
+            <!-- <div class="swpItem swpItem_1">
+                 &lt;!&ndash;滑动内容&ndash;&gt;
+                 <aside class="swpCon swpCon_1">
+                     &lt;!&ndash;第一模块标题&ndash;&gt;
+                     <div class="titleDiv">
+                         <span>业务统计</span>
+                     </div>
+                     &lt;!&ndash;日历翻页效果&ndash;&gt;
+                     <article class="ledDiv">
+                         <aside class="ledContain">
+                             <div>
+                                 <span>累计报关单数(票)</span>
+                                 <span class="counter">78359</span>
+                             </div>
+                             <div>
+                                 <span>累计货值(万美元)</span>
+                                 <span class="counter">223245</span>
+                             </div>
+                             <div>
+                                 <span>累计税款(万元)</span>
+                                 <span class="counter">47245</span>
+                             </div>
+                             <div>
+                                 <span>当日报关单数(票)</span>
+                                 <span class="counter">2824</span>
+                             </div>
+                             <div>
+                                 <span>当日货值(万美元)</span>
+                                 <span class="counter">47965</span>
+                             </div>
+                             <div>
+                                 <span>当日税款(万元)</span>
+                                 <span class="counter">20071</span>
+                             </div>
+                         </aside>
+                     </article>
+                     &lt;!&ndash;模块一中部柱形图&ndash;&gt;
+                     <article class="swpEBox swpCon_1EMid">
+                         <p>量值税(年月)</p>
+                         <div id="swp_1MidE">
+
+                         </div>
+                     </article>
+                     &lt;!&ndash;模块一底部柱形图&ndash;&gt;
+                     <article class="swpEBox swpCon_1EBtm">
+                         <p>量值税(章节)</p>
+                         <div id="swp_1BtmE">
+
+                         </div>
+                     </article>
+                 </aside>
+             </div>-->
+        </article>
+        <article class="rev rev_2 Con_1">
+            <!--<div class="swpItem swpItem_2">
+                <aside class="swpCon swpCon_2">
+                    &lt;!&ndash;第二模块标题&ndash;&gt;
+                    <div class="titleDiv">
+                        <span>贸易结构</span>
+                    </div>
+                    &lt;!&ndash;三个3D饼状图&ndash;&gt;
+                    <article class="pieThreeDiv">
+                        <article class="pieThreeContain">
+                            &lt;!&ndash;饼图的标题，highChart会覆盖标签，所以要写到图表的外层&ndash;&gt;
+                            <aside class="pieTitleBox">
+                                <li>报关单位</li>
+                                <li>货值</li>
+                                <li>税款</li>
+                            </aside>
+                            &lt;!&ndash;饼图图表容器&ndash;&gt;
+                            <div id="pieEct_1"></div>
+                            <div id="pieEct_2"></div>
+                            <div id="pieEct_3"></div>
+                        </article>
+                    </article>
+                    &lt;!&ndash;模块二中部环形图&ndash;&gt;
+                    <article class="swpEBox">
+                        <p>通关模式</p>
+                        &lt;!&ndash;环形图表容器&ndash;&gt;
+                        <div class="annularThreeContain">
+                            <div id="annularEct_1"></div>
+                            <div id="annularEct_2"></div>
+                            <div id="annularEct_3"></div>
+                        </div>
+                    </article>
+                    &lt;!&ndash;模块二底部柱形图&ndash;&gt;
+                    <article class="swpEBox">
+                        <p>运输方式</p>
+                        <div class="radiusThreeContain">
+                            <div id="radiusEct_1"></div>
+                            <div id="radiusEct_2"></div>
+                            <div id="radiusEct_3"></div>
+                        </div>
+                    </article>
+                </aside>
+            </div>-->
+        </article>
+        <article class="rev rev_3 Con_2">
+            <!-- <div class="swpItem swpItem_3">
+                 &lt;!&ndash;第三模块标题&ndash;&gt;
+                 <div class="titleDiv">
+                     <span>风险防控</span>
+                 </div>
+                 &lt;!&ndash;第三模块组合图&ndash;&gt;
+                 <article class="foldEBox paramContain">
+                     <p>参数</p>
+                     <div id="swp_3TopE"></div>
+                 </article>
+                 &lt;!&ndash;第三模块折线图&ndash;&gt;
+                 <article class="foldEBox directiveContain">
+                     <p>指令</p>
+                     <div id="swp_3MidE"></div>
+                 </article>
+                 &lt;!&ndash;第三模块标签页&ndash;&gt;
+                 <article class="foldEBox tabContain">
+                     <p>模型</p>
+                     <div class="tabDiv">
+                         <ul class="tabUl tabUlLeft">
+                             <li>税收风险只能子万山上看见当升科技</li>
+                             <li>税收风险只能子万山上看见当升科技</li>
+                             <li>税收风险只能子万山上看见当升科技</li>
+                             <li>税收风险只能子万山上看见当升科技</li>
+                         </ul>
+                         <ul class="tabUl tabUlRight">
+                             <li>税收风险只能子万山上看见当升科技</li>
+                             <li>税收风险只能子万山上看见当升科技</li>
+                             <li>税收风险只能子万山上看见当升科技</li>
+                             <li>税收风险只能子万山上看见当升科技</li>
+                             <li>税收风险只能子万山上看见当升科技</li>
+                         </ul>
+                     </div>
+                 </article>
+             </div>-->
+        </article>
+        <article class="rev rev_4 Con_3">
+            <!-- <div class="swpItem swpItem_4">
+                 <aside class="swpCon swpCon_4">
+                     &lt;!&ndash;第四模块标题&ndash;&gt;
+                     <div class="titleDiv">
+                         <span>风险防控</span>
+                     </div>
+                     &lt;!&ndash;第四模块六个折线图&ndash;&gt;
+                     <section class="foldSixContain">
+                         <article class="foldSix">
+                             <p>矿产品</p>
+                             <div id="swp_4E_1"></div>
+                         </article>
+                         <article class="foldSix">
+                             <p>化工品</p>
+                             <div id="swp_4E_2"></div>
+                         </article>
+                         <article class="foldSix">
+                             <p>塑料 橡胶及其制品</p>
+                             <div id="swp_4E_3"></div>
+                         </article>
+                         <article class="foldSix">
+                             <p>石料 陶瓷 玻璃及其制品</p>
+                             <div id="swp_4E_4"></div>
+                         </article>
+                         <article class="foldSix">
+                             <p>珍珠 宝石 贵金属及其制品</p>
+                             <div id="swp_4E_5"></div>
+                         </article>
+                         <article class="foldSix">
+                             <p>贱金属及其制品</p>
+                             <div id="swp_4E_6"></div>
+                         </article>
+                     </section>
+                 </aside>
+             </div>-->
+        </article>
+        <article class="rev rev_5 Con_4">
+
+        </article>
+        <article class="rev rev_6 Con_5">
+
+        </article>
+        <!--中间3D地图区域-->
+        <div class="mapBox">
+            <div class="seaMap"></div>
+            <div class="mapEcharts" id="mapEcharts"></div>
+        </div>
+    </section>
+</main>
+<!--插件js-->
+<script src="../js/jquery.min.js"></script>
+<script src="../js/jquery-ui-1.10.4.min.js"></script>
+<script src="../js/echarts.min.js"></script>
+<script src="../js/echarts-gl.min.js"></script>
+<script src="../js/highcharts.js"></script>
+<script src="../js/highcharts-3d.js"></script>
+<script src="../js/jquery.waypoints.min.js"></script>
+<script src="../js/jquery.countup.js"></script>
+<script src="../js/chinaData.js"></script>
+<!--自定义js-->
+<script src="../js/initSwiperPage.js"></script>
+<script src="../js/publicController.js"></script>
+<script src="../js/chartsController.js"></script>
+<script src="../js/index.js"></script>
+</body>
+</html>

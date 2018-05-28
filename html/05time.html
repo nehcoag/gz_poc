@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+系统当前时间 : <span id="currentTime"></span>
+<script>
+    window.onload = function (){
+        function showTime(){
+            var now = new Date();
+
+            // 获取到时间的详细数值
+            var y = now.getFullYear();
+            var m = now.getMonth() + 1;
+            var d = now.getDate();
+            var h = now.getHours();
+            var min = now.getMinutes();
+            var sec = now.getSeconds();
+
+            // 拼一个显示用的字符串
+            var str = y + "-" + adjust(m) + "-" + adjust(d);
+            str += " " + adjust(h) + ":" + adjust(min) + ":" + adjust(sec);
+
+            // 显示到页面上
+            var span = document.getElementById('currentTime');
+            span.innerHTML = str;
+        }
+        function adjust(v){
+            if(v < 10){
+                return "0" + v;
+            }
+            return "" + v;
+        }
+        // 显示系统当前时间
+        showTime();
+        setInterval(showTime, 1000);
+    };
+</script>
+</body>
+</html>
