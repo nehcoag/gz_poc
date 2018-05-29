@@ -110,6 +110,7 @@ var foldLineOption = {
     series: [{
         name: '广州',
         type: 'line',
+        smooth:true,
         lineStyle: {
             normal: {
                 width: 1
@@ -124,6 +125,7 @@ var foldLineOption = {
     }, {
         name: '海关',
         type: 'line',
+        smooth:true,
         lineStyle: {
             normal: {
                 width: setFontzie(1)
@@ -138,6 +140,7 @@ var foldLineOption = {
     }, {
         name: '大楼',
         type: 'line',
+        smooth:true,
         lineStyle: {
             normal: {
                 width: setFontzie(1)
@@ -326,6 +329,14 @@ var pieOption = {
             depth: 15,
             dataLabels: {
                 enabled: false
+            },
+            point: {
+                events: {
+                    click: function() {
+                        clickPie();
+                        this.slice();
+                    }
+                }
             }
         }
     },
@@ -375,7 +386,15 @@ var annularOption = {
             dataLabels: {
                 enabled: false
             },
-            showInLegend: true
+            showInLegend: true,
+            point: {
+                events: {
+                    click: function() {
+                        clickPie01();
+                        this.slice();
+                    }
+                }
+            }
         }
     },
     legend: {

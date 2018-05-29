@@ -10,29 +10,58 @@ var count=0;
 var chart04=Highcharts.chart('annularEct_1', annularOption);
 var chart05=Highcharts.chart('annularEct_2', annularOption);
 var chart06=Highcharts.chart('annularEct_3', annularOption);
-setInterval(function () {
-    var r = count % pieOption.series[0].data.length;//0 1 2 3 4 5
+var intval=setInterval(function () {
+    var r = count % chart01.series[0].data.length;//0 1 2 3 4 5
     chart01.series[0].data[r].slice(false);
-    chart02.series[0].data[r].slice(false);
-    chart03.series[0].data[r].slice(false);
     count++;
-    var s = count % pieOption.series[0].data.length;
+    var s = count % chart01.series[0].data.length;
     chart01.series[0].data[s].slice(true);
-    chart02.series[0].data[s].slice(true);
-    chart03.series[0].data[s].slice(true);
 },1000);
+function clickPie() {
+    clearInterval(intval);
+    $.each(chart01.series[0].data,function (index, value) {
+        value.slice(false);
+    });
+}
+
+$("#pieEct_2").click(function () {
+    $.each(chart01.series[0].data,function (index, value) {
+        value.slice(false);
+    });
+    intval=setInterval(function () {
+        var r = count % chart01.series[0].data.length;//0 1 2 3 4 5
+        chart01.series[0].data[r].slice(false);
+        count++;
+        var s = count % chart01.series[0].data.length;
+        chart01.series[0].data[s].slice(true);
+    },1000);
+});
 var count01=0;
-setInterval(function () {
-    var r = count01 % annularOption.series[0].data.length;//0 1 2 3 4 5
+var intval01=setInterval(function () {
+    var r = count01 % chart04.series[0].data.length;//0 1 2 3 4 5
     chart04.series[0].data[r].slice(false);
-    chart05.series[0].data[r].slice(false);
-    chart06.series[0].data[r].slice(false);
     count01++;
-    var s = count01 % annularOption.series[0].data.length;
+    var s = count01 % chart04.series[0].data.length;
     chart04.series[0].data[s].slice(true);
-    chart05.series[0].data[s].slice(true);
-    chart06.series[0].data[s].slice(true);
 },1000);
+function clickPie01() {
+    clearInterval(intval01);
+    $.each(chart04.series[0].data,function (index, value) {
+        value.slice(false);
+    });
+}
+$("#annularEct_2").click(function () {
+    $.each(chart04.series[0].data,function (index, value) {
+        value.slice(false);
+    });
+    intval01=setInterval(function () {
+        var r = count01 % chart04.series[0].data.length;//0 1 2 3 4 5
+        chart04.series[0].data[r].slice(false);
+        count01++;
+        var s = count01 % chart04.series[0].data.length;
+        chart04.series[0].data[s].slice(true);
+    },1000);
+});
 /*模块二底部的三个2D圆角柱形图*/
 echarts.init(document.getElementById('radiusEct_1')).setOption(radiusBarOption);
 echarts.init(document.getElementById('radiusEct_2')).setOption(radiusBarOption);
