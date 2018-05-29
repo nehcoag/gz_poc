@@ -162,6 +162,9 @@ var barOption = {
         top: '20%',
         containLabel: true
     },
+    tooltip:{
+
+    },
     legend: {
         icon: 'circle',
         itemWidth: setFontzie(14),
@@ -415,7 +418,7 @@ var radiusBarOption = {
             type: 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
         },
         confine: true,
-        formatter: '{b}'
+        formatter: '{b}:{c}'
     },
     grid: {
         left: '4%',
