@@ -44,7 +44,6 @@ html,body{
     width:32.8%;
     height:25.3%;
     position:absolute;
-    border:1px solid red;
 }
 .chartWrapper:not(.rightMid):not(.rightBtm){
     background-image: url(../img/controlLongImg.png);
@@ -104,7 +103,6 @@ header{
 .titleBox{
     width:46.1%;
     height:100%;
-    border:1px solid red;
     display: flex;
     justify-content: center;
     align-items: center;
