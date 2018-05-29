@@ -574,8 +574,8 @@ button{
 }
 
 
-.mapSelectDiv{position: absolute; top:10%;left: 20%;z-index: 10;}
-#mapSelect{width: 5rem;height: 2rem;background: url('../img/select.png') no-repeat;background-size: 100% 100%;color: #ffffff;appearance:none;
+.mapSelectDiv{position: absolute; top:10%;left: 15%;z-index: 10;}
+#mapSelect{width: 5rem;height: 2rem;font-size: 1rem; background: url('../img/select.png') no-repeat;background-size: 100% 100%;color: #ffffff;appearance:none;
     -moz-appearance:none;
-    -webkit-appearance:none;text-indent: 10px;cursor: pointer;}
-#mapSelect>option{background-color: #00a2ff;}
+    -webkit-appearance:none;text-indent: 1rem;cursor: pointer;}
+#mapSelect>option{background-color: #00a2ff;font-size: 1rem;min-height: auto;height: 1rem;line-height: 1rem;padding: 0.5rem 0;}

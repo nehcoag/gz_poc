@@ -21,8 +21,8 @@ var foldLineOption = {
         end: 80,
         handleSize: '0%',
         backgroundColor: '#1d4092',
-        height: 5,
-        width: 100,
+        height: setFontzie(5),
+        width: setFontzie(100),
         borderColor: "rgba(0,0,0,0)",
         handleStyle: {
             shadowBlur: 2,
@@ -48,14 +48,14 @@ var foldLineOption = {
     legend: {
         show: 'false',
         icon: 'circle',
-        itemWidth: 14,
-        itemHeight: 5,
-        itemGap: 13,
+        itemWidth: setFontzie(14),
+        itemHeight: setFontzie(5),
+        itemGap: setFontzie(13),
         data: ['广州', '海关', '大楼'],
         right: '2%',
         top: '-5%',
         textStyle: {
-            fontSize: 8,
+            fontSize: setFontzie(8),
             color: '#F1F1F3'
         }
     },
@@ -75,9 +75,9 @@ var foldLineOption = {
             }
         },
         axisLabel: {
-            margin: 10,
+            margin: setFontzie(10),
             textStyle: {
-                fontSize: 8,
+                fontSize: setFontzie(8),
                 color: '#fff'
             }
         },
@@ -95,9 +95,9 @@ var foldLineOption = {
             }
         },
         axisLabel: {
-            margin: 10,
+            margin: setFontzie(10),
             textStyle: {
-                fontSize: 8,
+                fontSize: setFontzie(8),
                 color: '#fff'
             }
         },
@@ -126,7 +126,7 @@ var foldLineOption = {
         type: 'line',
         lineStyle: {
             normal: {
-                width: 1
+                width: setFontzie(1)
             }
         },
         itemStyle: {
@@ -140,7 +140,7 @@ var foldLineOption = {
         type: 'line',
         lineStyle: {
             normal: {
-                width: 1
+                width: setFontzie(1)
             }
         },
         itemStyle: {
@@ -164,13 +164,13 @@ var barOption = {
     },
     legend: {
         icon: 'circle',
-        itemWidth: 14,
-        itemHeight: 5,
-        itemGap: 13,
+        itemWidth: setFontzie(14),
+        itemHeight: setFontzie(5),
+        itemGap: setFontzie(13),
         data: ['关区分析'],
         right: '2%',
         textStyle: {
-            fontSize: 10,
+            fontSize: setFontzie(10),
             color: '#F1F1F3'
         }
     },
@@ -183,9 +183,9 @@ var barOption = {
             }
         },
         axisLabel: {
-            margin: 10,
+            margin: setFontzie(10),
             textStyle: {
-                fontSize: 8,
+                fontSize: setFontzie(8),
                 color: '#fff'
             }
         }
@@ -203,9 +203,9 @@ var barOption = {
             }
         },
         axisLabel: {
-            margin: 10,
+            margin: setFontzie(10),
             textStyle: {
-                fontSize: 8,
+                fontSize: setFontzie(8),
                 color: '#fff'
             }
         },
@@ -227,9 +227,9 @@ var barOption = {
             }
         },
         axisLabel: {
-            margin: 10,
+            margin: setFontzie(10),
             textStyle: {
-                fontSize: 8,
+                fontSize: setFontzie(8),
                 color: '#fff'
             }
         },
@@ -266,7 +266,7 @@ var barOption = {
         },
         lineStyle: {
             normal: {
-                width: 2,
+                width: setFontzie(2),
                 color: '#a56ef0'
             }
         },
@@ -282,14 +282,14 @@ var barOption = {
         },
         lineStyle: {
             normal: {
-                width: 2,
+                width: setFontzie(2),
                 color: '#eeaf12'
             }
         },
         data: [1200, 700, 800, 1400, 700, 600, 1400, 900, 900]
     },
         {
-            symbolSize: 14,
+            symbolSize: setFontzie(14),
             symbol: 'image://../img/scatter.png',
             data: [1300, 800, 700, 1300, 800, 700, 1300, 800, 700],
             type: 'scatter'
@@ -318,7 +318,7 @@ var pieOption = {
     },
     plotOptions: {
         pie: {
-            allowPointSelect: true,
+            // allowPointSelect: true,
             cursor: 'pointer',
             depth: 15,
             dataLabels: {
@@ -332,7 +332,11 @@ var pieOption = {
         size: '90%',
         center: ['50%', '70%'],
         data: [
-            ['Firefox', 45.0],
+            {
+                name: 'Firefox',
+                y:45.0,
+                sliced: true, // 突出显示这个点（扇区），用于强调。
+            },
             ['IE', 26.8],
             ['Chrome', 36.8],
             ['Safari', 8.5],
@@ -392,7 +396,11 @@ var annularOption = {
         size: '90%',
         center: ['50%', '25%'],
         data: [
-            ['香蕉', 8],
+            {
+                name: '香蕉',
+                y:8,
+                sliced: true, // 突出显示这个点（扇区），用于强调。
+            },
             ['猕猴桃', 3],
             ['桃子', 1],
             ['橘子', 6],
@@ -439,7 +447,7 @@ var radiusBarOption = {
         //去掉刻度
         axisLabel: {
             interval: 0,
-            fontSize: 9,
+            fontSize: setFontzie(8),
             color: '#fff',
             //限制显示字数或者说控制换行
             formatter: function (params) {
@@ -456,7 +464,7 @@ var radiusBarOption = {
     series: [
         {
             name: '2011年',
-            barWidth: 12,
+            barWidth: setFontzie(12),
             type: 'bar',
             itemStyle: {
                 normal: {

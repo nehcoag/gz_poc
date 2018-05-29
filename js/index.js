@@ -2,13 +2,37 @@
 echarts.init(document.getElementById('swp_1MidE')).setOption(barOption);
 echarts.init(document.getElementById('swp_1BtmE')).setOption(barOption);
 /*模块二顶部的三个饼图*/
-Highcharts.chart('pieEct_1', pieOption);
-Highcharts.chart('pieEct_2', pieOption);
-Highcharts.chart('pieEct_3', pieOption);
+var chart01=Highcharts.chart('pieEct_1', pieOption);
+var chart02=Highcharts.chart('pieEct_2', pieOption);
+var chart03=Highcharts.chart('pieEct_3', pieOption);
+var count=0;
 /*模块二中部的三个环图*/
-Highcharts.chart('annularEct_1', annularOption);
-Highcharts.chart('annularEct_2', annularOption);
-Highcharts.chart('annularEct_3', annularOption);
+var chart04=Highcharts.chart('annularEct_1', annularOption);
+var chart05=Highcharts.chart('annularEct_2', annularOption);
+var chart06=Highcharts.chart('annularEct_3', annularOption);
+setInterval(function () {
+    var r = count % pieOption.series[0].data.length;//0 1 2 3 4 5
+    chart01.series[0].data[r].slice(false);
+    chart02.series[0].data[r].slice(false);
+    chart03.series[0].data[r].slice(false);
+    count++;
+    var s = count % pieOption.series[0].data.length;
+    chart01.series[0].data[s].slice(true);
+    chart02.series[0].data[s].slice(true);
+    chart03.series[0].data[s].slice(true);
+},1000);
+var count01=0;
+setInterval(function () {
+    var r = count01 % annularOption.series[0].data.length;//0 1 2 3 4 5
+    chart04.series[0].data[r].slice(false);
+    chart05.series[0].data[r].slice(false);
+    chart06.series[0].data[r].slice(false);
+    count01++;
+    var s = count01 % annularOption.series[0].data.length;
+    chart04.series[0].data[s].slice(true);
+    chart05.series[0].data[s].slice(true);
+    chart06.series[0].data[s].slice(true);
+},1000);
 /*模块二底部的三个2D圆角柱形图*/
 echarts.init(document.getElementById('radiusEct_1')).setOption(radiusBarOption);
 echarts.init(document.getElementById('radiusEct_2')).setOption(radiusBarOption);
@@ -224,8 +248,8 @@ var mapOption = {
         show: false,
         min: min,
         max: max,
-        itemWidth: '12',
-        itemHeight: '80',
+        itemWidth: setFontzie(12),
+        itemHeight: setFontzie(80),
         orient: 'vertical',
         inverse: true,
         dimension: 0,
@@ -235,7 +259,7 @@ var mapOption = {
         },
         textStyle: {
             color: '#fff',
-            fontSize: '10'
+            fontSize: setFontzie(10)
         },
         calculable: true,
         left: "4%"
@@ -243,8 +267,8 @@ var mapOption = {
         show: true,
         min: min,
         max: max,
-        itemWidth: '12',
-        itemHeight: '80',
+        itemWidth: setFontzie(12),
+        itemHeight: setFontzie(80),
         orient: 'vertical',
         inverse: true,
         dimension: 3,
@@ -254,7 +278,7 @@ var mapOption = {
         },
         textStyle: {
             color: '#fff',
-            fontSize: '10'
+            fontSize:setFontzie(10)
         },
         calculable: true,
         right: "4%"
@@ -281,7 +305,7 @@ var mapOption = {
             show: false,
             textStyle: {
                 color: '#f00', //地图初始化区域字体颜色
-                fontSize: 8,
+                fontSize: setFontzie(8),
                 opacity: 1,
                 backgroundColor: 'rgba(0,23,11,0)'
             },
@@ -291,7 +315,7 @@ var mapOption = {
                 show: false,
                 textStyle: {
                     color: '#fff',
-                    fontSize: 3,
+                    fontSize: setFontzie(3),
                     backgroundColor: 'rgba(0,23,11,0)'
                 }
             }
@@ -350,7 +374,7 @@ var mapOption = {
                     color: '#364d6c',
                     fontFamily: '黑体',
                     fontWeight: 'normal',
-                    fontSize: 14,
+                    fontSize: setFontzie(14),
                     backgroundColor: 'rgba(0,23,11,0)'
                 },
                 emphasis: {//对应的鼠标悬浮效果
@@ -395,7 +419,7 @@ var mapOption = {
                     show: true,
                     textStyle:{
                         color:"#374b6c",
-                        fontSize:12,
+                        fontSize:setFontzie(12),
                         borderWidth:0,
                         backgroundColor: 'transparent'
                     }
