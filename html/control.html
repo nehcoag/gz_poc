@@ -12,23 +12,35 @@
     <header>
         <!--页面大标题-->
         <article class="titleBox">
-            <span class="thisTitle"><span class="thisLogo"></span>海关总署税收征管中心<span class="thisSubTitle">产业行业分析</span></span>
+            <span class="thisTitle"><span class="thisLogo"></span>海关总署税收征管中心<span
+                    class="thisSubTitle">产业行业分析</span></span>
         </article>
         <!--系统当前时间-->
         <article class="timeBox">
             <span id="currentTime" class="currentTime"></span>
         </article>
         <!--跳转按钮-->
+        <!--右上角三个跳转按钮-->
         <article class="hrefLogo">
-            <span></span>
-            <span></span>
-            <span></span>
+            <span>
+                <img src="../img/leftNom.png" alt="">
+                <img src="../img/leftLit.png" alt="">
+            </span>
+            <span>
+                <img src="../img/centerNom.png" alt="">
+                <img src="../img/centerLit.png" alt="">
+            </span>
+            <span>
+                <img src="../img/rightLit.png" alt="">
+                <img src="../img/rightNom.png" alt="">
+            </span>
         </article>
     </header>
     <!--左上区域-市场行情-->
     <article class="chartWrapper leftTop">
         <!--增加一个背景层-->
         <section class="chartBox ltBox">
+            <p>市场行情</p>
             <!--echarts图表层-->
             <div class="ltChart" id="ltChart">
 
@@ -39,6 +51,7 @@
     <article class="chartWrapper leftMid">
         <!--增加一个背景层-->
         <section class="chartBox lmBox">
+            <p>关区分析</p>
             <!--echarts图表层-->
             <div class="ltChart" id="lmChart">
 
@@ -49,6 +62,7 @@
     <article class="chartWrapper leftBtm">
         <!--增加一个背景层-->
         <section class="chartBox lbBox">
+            <p>关区预警</p>
             <!--echarts图表层-->
             <div class="ltChart" id="lbChart">
 
@@ -62,6 +76,7 @@
     <article class="chartWrapper rightTop">
         <!--增加一个背景层-->
         <section class="chartBox rtBox">
+            <p>量税值</p>
             <!--echarts图表层-->
             <div class="rtChart" id="rtChart">
 
@@ -73,12 +88,18 @@
         <!--增加一个背景层-->
         <section class="chartBox rmBox chartFour">
             <!--echarts图表层-->
-            <aside class="rmlChart" id="rmlChart">
+            <div>
+                <p>原产地分析</p>
+                <aside class="rmlChart" id="rmlChart">
 
-            </aside>
-            <aside class="rmrChart" id="rmrChart">
+                </aside>
+            </div>
+            <div>
+                <p>企业分析</p>
+                <aside class="rmrChart" id="rmrChart">
 
-            </aside>
+                </aside>
+            </div>
         </section>
     </article>
     <!--右下区域-原产地预警、企业预警-->
@@ -86,12 +107,18 @@
         <!--增加一个背景层-->
         <section class="chartBox rbBox chartFour">
             <!--echarts图表层-->
-            <aside class="rblChart" id="rblChart">
+            <div>
+                <p>原产地预警</p>
+                <aside class="rblChart" id="rblChart">
 
-            </aside>
-            <aside class="rbrChart" id="rbrChart">
+                </aside>
+            </div>
+            <div>
+                <p>企业预警</p>
+                <aside class="rbrChart" id="rbrChart">
 
-            </aside>
+                </aside>
+            </div>
         </section>
     </article>
 </main>

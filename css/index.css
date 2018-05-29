@@ -90,7 +90,8 @@ header {
     position: relative;
     display: flex;
     align-items: center;
-    font-size: 3rem;
+    font-size: 2.8rem;
+    margin-top:-2rem;
 }
 
 .timeBox {

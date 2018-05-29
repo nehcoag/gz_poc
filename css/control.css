@@ -46,6 +46,10 @@ html,body{
     position:absolute;
     border:1px solid red;
 }
+.chartWrapper:not(.rightMid):not(.rightBtm){
+    background-image: url(../img/controlLongImg.png);
+    background-size:100% 100%;
+}
 .leftTop{
     top:13.95%;
     left:1%;
@@ -73,9 +77,17 @@ html,body{
 .chartBox{
     height:100%;
     width:100%;
+    display: flex;
+    justify-content: center;
+}
+.chartBox>p{
+    display: inline-block;
+    color:white;
+    font-size:1.3rem;
+    height:12%;
 }
 .chartBox>div{
-    height:95%;
+    height:88%;
     width:100%;
     position:absolute;
     bottom:0;
@@ -102,20 +114,22 @@ header{
 }
 .thisLogo{
     display: inline-block;
-    width:4rem;
-    height:4rem;
-    background:red;
-    position:absolute;
-    left:-5rem;
+    width: 3.6rem;
+    height: 3.6rem;
+    position: absolute;
+    left: -5rem;
+    background-image: url(../img/logo.png);
+    background-size: 100% 100%;
 }
 .thisTitle{
-    position:relative;
+    position: relative;
     display: flex;
     align-items: center;
-    font-size:3.4rem;
+    font-size: 2.8rem;
+    margin-top:-2rem;
 }
 .thisSubTitle{
-    font-size:1.8rem;
+    font-size:1.6rem;
     position:absolute;
     white-space: nowrap;
     display: inline-block;
@@ -129,19 +143,33 @@ header{
     right:8%;
 }
 .hrefLogo{
-    position:absolute;
-    width:9rem;
-    height:3rem;
-    right:1.5%;
+    position: absolute;
+    width: 9rem;
+    height: 3rem;
+    right: 1.5%;
     display: flex;
     justify-content: space-between;
 }
 .hrefLogo>span{
     display: inline-block;
     flex: 1;
-    /*background-image:url("../img/rightClick.png");*/
-    background-size:100% 100%;
     cursor: pointer;
+}
+.hrefLogo > span > img {
+    height: 100%;
+    width: 100%;
+}
+
+.hrefLogo > span > img:nth-of-type(2) {
+    display: none;
+}
+
+.hrefLogo > span:not(:last-child):hover img:nth-of-type(1) {
+    display: none;
+}
+
+.hrefLogo > span:not(:last-child):hover img:nth-of-type(2) {
+    display: inline-block;
 }
 .currentTime{
     display: flex;
@@ -155,16 +183,37 @@ header{
     align-items: center;
     white-space: nowrap;
 }
-.chartFour>aside{
+.chartFour{
+    display: flex;
+}
+.chartFour>div{
+    display: flex;
+    justify-content: center;
     width:49%;
-    height:95%;
+    height:100%;
+    background-image:url(../img/controlShortImg.png);
+    background-size:100% 100%;
+}
+.chartFour>div>p{
+    color:white;
+    font-size:1.3rem;
+}
+.chartFour>div:nth-of-type(1){
+    left:0;
+}
+.chartFour>div:nth-of-type(2){
+    right:0;
+}
+.chartFour>div>aside{
+    width:100%;
+    height:88%;
     position:absolute;
     bottom:0;
 }
-.chartFour>aside:nth-of-type(1){
+.chartFour>div>aside:nth-of-type(1){
     left:0;
 }
-.chartFour>aside:nth-of-type(2){
+.chartFour>div>aside:nth-of-type(2){
     right:0;
 }
 .pyramidBox{
