@@ -12,27 +12,27 @@ var module_1 = `<div class="swpItem swpItem_1">
                         <aside class="ledContain">
                             <div>
                                 <span>累计报关单数(票)</span>
-                                <span class="counter">78359</span>
+                                <span id="ledSpan_1" class="counter">0</span>
                             </div>
                             <div>
                                 <span>累计货值(万美元)</span>
-                                <span class="counter">223245</span>
+                                <span id="ledSpan_3" class="counter">223245</span>
                             </div>
                             <div>
                                 <span>累计税款(万元)</span>
-                                <span class="counter">47245</span>
+                                <span id="ledSpan_5" class="counter">47245</span>
                             </div>
                             <div>
                                 <span>当日报关单数(票)</span>
-                                <span class="counter">2824</span>
+                                <span id="ledSpan_2" class="counter">2824</span>
                             </div>
                             <div>
                                 <span>当日货值(万美元)</span>
-                                <span class="counter">47965</span>
+                                <span id="ledSpan_4" class="counter">47965</span>
                             </div>
                             <div>
                                 <span>当日税款(万元)</span>
-                                <span class="counter">20071</span>
+                                <span id="ledSpan_6" class="counter">20071</span>
                             </div>
                         </aside>
                     </article>

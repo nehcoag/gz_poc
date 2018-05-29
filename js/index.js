@@ -24,8 +24,22 @@ echarts.init(document.getElementById('swp_4E_4')).setOption(foldLineOption);
 echarts.init(document.getElementById('swp_4E_5')).setOption(foldLineOption);
 echarts.init(document.getElementById('swp_4E_6')).setOption(foldLineOption);
 /*左上角LED灯牌效果*/
-$('.counter').countUp();
-
+var ledLightOptions = {
+    useEasing: true,
+    useGrouping: true,
+    separator: '',
+    decimal: '.'
+};
+var ledSpanVal = [78359,2824,223245,57876,34345,26435];
+var ledSpanValTemp = [78259,2724,223345,57976,33245,25435];
+ledSpanVal.forEach(function(obj,inx){
+   new CountUp('ledSpan_'+(inx+1), 0, obj, 0, 2, ledLightOptions).start();
+});
+/*setTimeout(function(){
+    ledSpanVal.forEach(function(obj,inx){
+        new CountUp('ledSpan_'+(inx+1), obj, ledSpanValTemp[inx], 0, 2, ledLightOptions).start();
+    });
+},4000);*/
 /*3D地图*/
 var normalCity = [{name: '广东', value: [1, 10]}, {name: '江西', value: [3, 20]}, {
     name: '福建',
