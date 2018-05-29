@@ -1,3 +1,4 @@
+var log = console.log.bind(console);
 /*js动态生成模块，以便放到不同的位置中去*/
 var module_1 = `<div class="swpItem swpItem_1">
                 <!--滑动内容-->
@@ -177,8 +178,24 @@ var module_6 = ` <div class="swpItem ">
                     </div>
                 </aside>
             </div>`;
+/*所有模块名称,动态生成配置框*/
+var settingName = ['业务统计','贸易结构','风险防控','行业分析','第五模块','第六模块'];
+$("#favoriteBox>article").remove();
+settingName.forEach(function(obj,inx){
+    $("#favoriteBox").append(`<article data-thisindex = ${inx+1}>
+                <label>${obj}：</label>
+                <input type="number" min='1' oninput="if(value.length>1)value=value.slice(0,1)" max=${settingName.length}>
+            </article>`)
+});
+/*如果localStorage中没有配置，默认模块全部显示*/
+var moduleSetting = localStorage.getItem('moduleArr');
+if(!moduleSetting){
+    var pageArr = [1, 2, 3, 4, 5, 6];
+}else{
+    var pageArr = JSON.parse(moduleSetting);
+}
+log(pageArr)
 /*页面上rev的数量，即最多放几个，如果这里要更改的话，index.html里要对应几个类名为rev的节点*/
-var pageArr = [1, 2, 3, 4, 6];
 /*将模块放到轮播块中*/
 pageArr.forEach(function (obj, inx) {
     $(".Con_" + inx).append(eval("module_" + obj));
@@ -214,16 +231,41 @@ $("#settingSpan").unbind('click').on("click",function(e){
     document.getElementById("supplyMenu").style.display = "block";
     document.getElementById("supplyMenu").style.left = e.clientX+"px";
     document.getElementById("supplyMenu").style.top = e.clientY+"px";
-
 });
+/*点击页面其他位置，配置框消失*/
 document.onclick = function (e) {
     if ($("#supplyMenu").length > 0 && !$(e.target).isChildAndSelfOf("#supplyMenu")) {
         document.getElementById("supplyMenu").style.display = "none";
     }
 };
+/*配置框确认按钮绑定事件*/
+$("#favoriteSubmit").on("click",function(){
+    var userSetting = [];
+    $("#favoriteBox").find("input").not('[type = button]').each(function(inx,obj){
+        if($(this).val()){
+            userSetting.push({
+                'index':$(this).parents("article").data("thisindex"),
+                'value':$(this).val()
+            })
+        };
+        userSetting.sort(sortObj)
+    });
+    var saveModule = [];
+    userSetting.forEach(function(obj,inx){
+        saveModule.push(obj.index)
+    });
+    localStorage.setItem('moduleArr', JSON.stringify(saveModule));
+    location.reload();
+});
 /**
  * jq追加判断点击是不是本身或者子元素的方法;
  */
 jQuery.fn.isChildAndSelfOf = function (b) {
     return (this.closest(b).length > 0);
 };
+/**
+ * 数组对象排序;
+ */
+function sortObj(a,b){
+    return a.value-b.value
+}
