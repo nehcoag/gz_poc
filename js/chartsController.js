@@ -1,10 +1,10 @@
 /*折线图可配置参数*/
-var colorList=[['#a769ee','#e65e20','#eab217'],['#778899','#4682B4','#00FA9A']];
-var colorSelect  = 0;
+var colorList = [['#a769ee', '#e65e20', '#eab217'], ['#778899', '#4682B4', '#00FA9A']];
+var colorSelect = 0;
 /*折线图配置项*/
 var foldLineOption = {
     title: {
-        show:false
+        show: false
     },
     tooltip: {
         trigger: 'axis',
@@ -19,11 +19,11 @@ var foldLineOption = {
         realtime: true,
         start: 20,
         end: 80,
-        handleSize:'0%',
-        backgroundColor:'#1d4092',
-        height:5,
-        width:100,
-        borderColor:"rgba(0,0,0,0)",
+        handleSize: '0%',
+        backgroundColor: '#1d4092',
+        height: 5,
+        width: 100,
+        borderColor: "rgba(0,0,0,0)",
         handleStyle: {
             shadowBlur: 2,
             background: "#ddd",
@@ -37,8 +37,8 @@ var foldLineOption = {
             offset: 1,
             color: '#34b4ff'
         }]),
-        showDetail:false,
-        bottom:0
+        showDetail: false,
+        bottom: 0
     }, {
         type: 'inside',
         realtime: true,
@@ -46,14 +46,14 @@ var foldLineOption = {
         end: 60,
     }],
     legend: {
-        show:'false',
+        show: 'false',
         icon: 'circle',
         itemWidth: 14,
         itemHeight: 5,
         itemGap: 13,
         data: ['广州', '海关', '大楼'],
         right: '2%',
-        top:'-5%',
+        top: '-5%',
         textStyle: {
             fontSize: 8,
             color: '#F1F1F3'
@@ -63,7 +63,7 @@ var foldLineOption = {
         left: '1%',
         right: '2%',
         bottom: '15%',
-        top:'20%',
+        top: '20%',
         containLabel: true
     },
     xAxis: [{
@@ -78,7 +78,7 @@ var foldLineOption = {
             margin: 10,
             textStyle: {
                 fontSize: 8,
-                color:'#fff'
+                color: '#fff'
             }
         },
         data: ['1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月', '9月', '10月', '11月', '12月']
@@ -88,7 +88,7 @@ var foldLineOption = {
         axisTick: {
             show: false
         },
-        splitNumber:2,
+        splitNumber: 2,
         axisLine: {
             lineStyle: {
                 color: 'rgba(193,193,191,0.5)'
@@ -98,7 +98,7 @@ var foldLineOption = {
             margin: 10,
             textStyle: {
                 fontSize: 8,
-                color:'#fff'
+                color: '#fff'
             }
         },
         splitLine: {
@@ -120,7 +120,7 @@ var foldLineOption = {
                 color: colorList[colorSelect][0]
             }
         },
-        data: [96.3,46.4,87.5,95.6,68.1,94.8,59.6,94.1,80.1,52.4,75.8,94.7]
+        data: [96.3, 46.4, 87.5, 95.6, 68.1, 94.8, 59.6, 94.1, 80.1, 52.4, 75.8, 94.7]
     }, {
         name: '海关',
         type: 'line',
@@ -134,7 +134,7 @@ var foldLineOption = {
                 color: colorList[colorSelect][1]
             }
         },
-        data: [77.3,69.2,99.3,30.0,99.6,90.6,50.0,91.5,69.8,67.5,70.4,84.9]
+        data: [77.3, 69.2, 99.3, 30.0, 99.6, 90.6, 50.0, 91.5, 69.8, 67.5, 70.4, 84.9]
     }, {
         name: '大楼',
         type: 'line',
@@ -148,7 +148,7 @@ var foldLineOption = {
                 color: colorList[colorSelect][2]
             }
         },
-        data: [84.2,81.0,67.5,72.1,43.7,88.5,91.9,41.8,79.7,87.6,92.9,0]
+        data: [84.2, 81.0, 67.5, 72.1, 43.7, 88.5, 91.9, 41.8, 79.7, 87.6, 92.9, 0]
     }]
 };
 /*组合图（饼图、折线图、散点图）配置项*/
@@ -159,7 +159,7 @@ var barOption = {
         left: '1%',
         right: '1%',
         bottom: '10%',
-        top:'20%',
+        top: '20%',
         containLabel: true
     },
     legend: {
@@ -175,7 +175,7 @@ var barOption = {
         }
     },
     xAxis: [{
-        data: ['广州', '海关','大楼','广州', '海关','大楼','广州', '海关','大楼'],
+        data: ['广州', '海关', '大楼', '广州', '海关', '大楼', '广州', '海关', '大楼'],
         axisTick: {show: false},
         axisLine: {
             lineStyle: {
@@ -186,7 +186,7 @@ var barOption = {
             margin: 10,
             textStyle: {
                 fontSize: 8,
-                color:'#fff'
+                color: '#fff'
             }
         }
     }],
@@ -196,7 +196,7 @@ var barOption = {
         axisTick: {
             show: false
         },
-        splitNumber:2,
+        splitNumber: 2,
         axisLine: {
             lineStyle: {
                 color: 'rgba(193,193,191,0.5)'
@@ -206,7 +206,7 @@ var barOption = {
             margin: 10,
             textStyle: {
                 fontSize: 8,
-                color:'#fff'
+                color: '#fff'
             }
         },
         splitLine: {
@@ -214,13 +214,13 @@ var barOption = {
                 color: 'rgba(193,193,191,0.5)'
             }
         }
-    },{
+    }, {
         type: 'value',
         position: 'right',
         axisTick: {
             show: false
         },
-        splitNumber:2,
+        splitNumber: 2,
         axisLine: {
             lineStyle: {
                 color: 'rgba(193,193,191,0.5)'
@@ -230,7 +230,7 @@ var barOption = {
             margin: 10,
             textStyle: {
                 fontSize: 8,
-                color:'#fff'
+                color: '#fff'
             }
         },
         splitLine: {
@@ -254,8 +254,8 @@ var barOption = {
             return params.index * 5;
         },
         symbolRepeatDirection: 'end',
-        data: [1300,800,700,1300,800,700,1300,800,700]
-    },{
+        data: [1300, 800, 700, 1300, 800, 700, 1300, 800, 700]
+    }, {
         name: '时间',
         type: 'line',
         yAxisIndex: 1,
@@ -270,8 +270,8 @@ var barOption = {
                 color: '#a56ef0'
             }
         },
-        data: [1300,800,700,1300,800,700,1300,800,700]
-    },{
+        data: [1300, 800, 700, 1300, 800, 700, 1300, 800, 700]
+    }, {
         name: '姓名',
         type: 'line',
         yAxisIndex: 1,
@@ -286,18 +286,18 @@ var barOption = {
                 color: '#eeaf12'
             }
         },
-        data: [1200,700,800,1400,700,600,1400,900,900]
+        data: [1200, 700, 800, 1400, 700, 600, 1400, 900, 900]
     },
         {
             symbolSize: 14,
-            symbol:'image://../img/scatter.png',
-            data: [1300,800,700,1300,800,700,1300,800,700],
+            symbol: 'image://../img/scatter.png',
+            data: [1300, 800, 700, 1300, 800, 700, 1300, 800, 700],
             type: 'scatter'
         }]
 };
 /*饼图配置项*/
 var pieOption = {
-    credits:{
+    credits: {
         enabled: false
     },
     chart: {
@@ -309,7 +309,7 @@ var pieOption = {
         },
         backgroundColor: 'rgba(0,0,0,0)'
     },
-    colors:['#68daff','#01a3eb','#ecf37f','#fa8550','#474eff'],
+    colors: ['#68daff', '#01a3eb', '#ecf37f', '#fa8550', '#474eff'],
     title: {
         text: ''
     },
@@ -329,21 +329,21 @@ var pieOption = {
     series: [{
         type: 'pie',
         name: '占比',
-        size:'90%',
-        center:['50%','80%'],
+        size: '90%',
+        center: ['50%', '70%'],
         data: [
-            ['Firefox',   45.0],
-            ['IE',       26.8],
-            ['Chrome',   36.8],
-            ['Safari',    8.5],
-            ['Opera',     6.2],
-            ['Others',   0.7]
+            ['Firefox', 45.0],
+            ['IE', 26.8],
+            ['Chrome', 36.8],
+            ['Safari', 8.5],
+            ['Opera', 6.2],
+            ['Others', 0.7]
         ]
     }]
 };
 /*环图配置项*/
 var annularOption = {
-    credits:{
+    credits: {
         enabled: false
     },
     chart: {
@@ -354,7 +354,7 @@ var annularOption = {
         },
         backgroundColor: 'rgba(0,0,0,0)'
     },
-    colors:['#54c7ff','#f29144','#e5526c','#3de8be','#474eff'],
+    colors: ['#54c7ff', '#f29144', '#e5526c', '#3de8be', '#474eff'],
     title: {
         text: ''
     },
@@ -368,32 +368,32 @@ var annularOption = {
             dataLabels: {
                 enabled: false
             },
-            showInLegend:true
+            showInLegend: true
         }
     },
-    legend:{
-        enabled:true,
+    legend: {
+        enabled: true,
         layout: 'vertical',
         align: 'center',
-        floating:true,
-        itemDistance:5,
-        itemStyle:{
-            color:'#fff',
-            fontSize:6
+        floating: true,
+        itemDistance: 5,
+        itemStyle: {
+            color: '#fff',
+            fontSize: setFontzie(6)+"px"
         },
-        symbolRadius:0,
-        symbolHeight:5,
-        itemHoverStyle:{
-            color:"#fff"
+        symbolRadius: 0,
+        symbolHeight: 5,
+        itemHoverStyle: {
+            color: "#fff"
         }
     },
     series: [{
         name: '金额',
-        size:'90%',
-        center:['50%','25%'],
+        size: '90%',
+        center: ['50%', '25%'],
         data: [
             ['香蕉', 8],
-            ['猕猴桃',3],
+            ['猕猴桃', 3],
             ['桃子', 1],
             ['橘子', 6],
         ]
@@ -419,17 +419,17 @@ var radiusBarOption = {
     xAxis: {
         type: 'value',
         boundaryGap: [0, 0.01],
-        show:false
+        show: false
     },
     yAxis: {
         inverse: true,
         type: 'category',
-        data:["陆运运输","航空运输","水路运输","其他方式"],
+        data: ["陆运运输", "航空运输", "水路运输", "其他方式"],
         //隐藏标尺线
         axisLine: {
             show: true,
-            lineStyle:{
-                color:"rgba(193,193,191,0.5)"
+            lineStyle: {
+                color: "rgba(193,193,191,0.5)"
             }
         },
         //去掉刻度线

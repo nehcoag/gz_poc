@@ -571,3 +571,10 @@ button{
 #favoriteSubmit:hover{
     background:#32c4d1;
 }
+
+
+.mapSelectDiv{position: absolute; top:10%;left: 20%;z-index: 10;}
+#mapSelect{width: 5rem;height: 2rem;background: url('../img/select.png') no-repeat;background-size: 100% 100%;color: #ffffff;appearance:none;
+    -moz-appearance:none;
+    -webkit-appearance:none;text-indent: 10px;cursor: pointer;}
+#mapSelect>option{background-color: #00a2ff;}

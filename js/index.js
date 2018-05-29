@@ -367,6 +367,7 @@ var mapOption = {
             type: "scatter3D",
             coordinateSystem: 'geo3D',
             zlevel: 1,
+            hoverAnimation:true,
             symbol: 'pin',
             data: convertData(cityS),
             // symbolSize:20,
