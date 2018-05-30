@@ -25,8 +25,8 @@ var foldLineOption = {
             end: 80,
             handleSize: '0%',
             backgroundColor: '#1d4092',
-            height: setFontzie(5),
-            width: setFontzie(100),
+            height: setFontsize(5),
+            width: setFontsize(100),
             borderColor: "rgba(0,0,0,0)",
             handleStyle: {
                 shadowBlur: 2,
@@ -52,14 +52,14 @@ var foldLineOption = {
     legend: {
         show: 'false',
         icon: 'circle',
-        itemWidth: setFontzie(14),
-        itemHeight: setFontzie(5),
-        itemGap: setFontzie(13),
+        itemWidth: setFontsize(14),
+        itemHeight: setFontsize(5),
+        itemGap: setFontsize(13),
         data: ['广州', '海关', '大楼'],
         right: '2%',
         top: '-5%',
         textStyle: {
-            fontSize: setFontzie(8),
+            fontSize: setFontsize(8),
             color: '#F1F1F3'
         }
     },
@@ -79,9 +79,9 @@ var foldLineOption = {
             }
         },
         axisLabel: {
-            margin: setFontzie(10),
+            margin: setFontsize(10),
             textStyle: {
-                fontSize: setFontzie(8),
+                fontSize: setFontsize(8),
                 color: '#fff'
             }
         },
@@ -99,9 +99,9 @@ var foldLineOption = {
             }
         },
         axisLabel: {
-            margin: setFontzie(10),
+            margin: setFontsize(10),
             textStyle: {
-                fontSize: setFontzie(8),
+                fontSize: setFontsize(8),
                 color: '#fff'
             }
         },
@@ -132,7 +132,7 @@ var foldLineOption = {
         smooth:true,
         lineStyle: {
             normal: {
-                width: setFontzie(1)
+                width: setFontsize(1)
             }
         },
         itemStyle: {
@@ -147,7 +147,7 @@ var foldLineOption = {
         smooth:true,
         lineStyle: {
             normal: {
-                width: setFontzie(1)
+                width: setFontsize(1)
             }
         },
         itemStyle: {
@@ -174,13 +174,13 @@ var barOption = {
     },
     legend: {
         icon: 'circle',
-        itemWidth: setFontzie(14),
-        itemHeight: setFontzie(5),
-        itemGap: setFontzie(13),
+        itemWidth: setFontsize(14),
+        itemHeight: setFontsize(5),
+        itemGap: setFontsize(13),
         data: ['关区分析'],
         right: '2%',
         textStyle: {
-            fontSize: setFontzie(10),
+            fontSize: setFontsize(10),
             color: '#F1F1F3'
         }
     },
@@ -193,9 +193,9 @@ var barOption = {
             }
         },
         axisLabel: {
-            margin: setFontzie(10),
+            margin: setFontsize(10),
             textStyle: {
-                fontSize: setFontzie(8),
+                fontSize: setFontsize(8),
                 color: '#fff'
             }
         }
@@ -213,9 +213,9 @@ var barOption = {
             }
         },
         axisLabel: {
-            margin: setFontzie(10),
+            margin: setFontsize(10),
             textStyle: {
-                fontSize: setFontzie(8),
+                fontSize: setFontsize(8),
                 color: '#fff'
             }
         },
@@ -237,9 +237,9 @@ var barOption = {
             }
         },
         axisLabel: {
-            margin: setFontzie(10),
+            margin: setFontsize(10),
             textStyle: {
-                fontSize: setFontzie(8),
+                fontSize: setFontsize(8),
                 color: '#fff'
             }
         },
@@ -276,7 +276,7 @@ var barOption = {
         },
         lineStyle: {
             normal: {
-                width: setFontzie(2),
+                width: setFontsize(2),
                 color: '#a56ef0'
             }
         },
@@ -292,14 +292,14 @@ var barOption = {
         },
         lineStyle: {
             normal: {
-                width: setFontzie(2),
+                width: setFontsize(2),
                 color: '#eeaf12'
             }
         },
         data: [1200, 700, 800, 1400, 700, 600, 1400, 900, 900]
     },
         {
-            symbolSize: setFontzie(14),
+            symbolSize: setFontsize(14),
             symbol: 'image://../img/scatter.png',
             data: [1300, 800, 700, 1300, 800, 700, 1300, 800, 700],
             type: 'scatter'
@@ -409,7 +409,7 @@ var annularOption = {
         itemDistance: 5,
         itemStyle: {
             color: '#fff',
-            fontSize: setFontzie(6)+"px"
+            fontSize: setFontsize(6)+"px"
         },
         symbolRadius: 0,
         symbolHeight: 5,
@@ -473,7 +473,7 @@ var radiusBarOption = {
         //去掉刻度
         axisLabel: {
             interval: 0,
-            fontSize: setFontzie(8),
+            fontSize: setFontsize(8),
             color: '#fff',
             //限制显示字数或者说控制换行
             formatter: function (params) {
@@ -490,7 +490,7 @@ var radiusBarOption = {
     series: [
         {
             name: '2011年',
-            barWidth: setFontzie(12),
+            barWidth: setFontsize(12),
             type: 'bar',
             itemStyle: {
                 normal: {

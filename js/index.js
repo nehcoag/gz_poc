@@ -361,8 +361,8 @@ var mapOption = {
         show: false,
         min: min,
         max: max,
-        itemWidth: setFontzie(12),
-        itemHeight: setFontzie(80),
+        itemWidth: setFontsize(12),
+        itemHeight: setFontsize(80),
         orient: 'vertical',
         inverse: true,
         dimension: 0,
@@ -372,7 +372,7 @@ var mapOption = {
         },
         textStyle: {
             color: '#fff',
-            fontSize: setFontzie(10)
+            fontSize: setFontsize(10)
         },
         calculable: true,
         left: "4%"
@@ -380,8 +380,8 @@ var mapOption = {
         show: true,
         min: min,
         max: max,
-        itemWidth: setFontzie(12),
-        itemHeight: setFontzie(80),
+        itemWidth: setFontsize(12),
+        itemHeight: setFontsize(80),
         orient: 'vertical',
         inverse: true,
         dimension: 3,
@@ -391,7 +391,7 @@ var mapOption = {
         },
         textStyle: {
             color: '#fff',
-            fontSize:setFontzie(10)
+            fontSize:setFontsize(10)
         },
         calculable: true,
         right: "4%"
@@ -418,7 +418,7 @@ var mapOption = {
             show: false,
             textStyle: {
                 color: '#f00', //地图初始化区域字体颜色
-                fontSize: setFontzie(8),
+                fontSize: setFontsize(8),
                 opacity: 1,
                 backgroundColor: 'rgba(0,23,11,0)'
             },
@@ -428,7 +428,7 @@ var mapOption = {
                 show: false,
                 textStyle: {
                     color: '#fff',
-                    fontSize: setFontzie(3),
+                    fontSize: setFontsize(3),
                     backgroundColor: 'rgba(0,23,11,0)'
                 }
             }
@@ -487,7 +487,7 @@ var mapOption = {
                     color: '#364d6c',
                     fontFamily: '黑体',
                     fontWeight: 'normal',
-                    fontSize: setFontzie(14),
+                    fontSize: setFontsize(14),
                     backgroundColor: 'rgba(0,23,11,0)'
                 },
                 emphasis: {//对应的鼠标悬浮效果
@@ -533,7 +533,7 @@ var mapOption = {
                     show: true,
                     textStyle:{
                         color:"#374b6c",
-                        fontSize:setFontzie(12),
+                        fontSize:setFontsize(12),
                         borderWidth:0,
                         backgroundColor: 'transparent'
                     }

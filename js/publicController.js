@@ -57,6 +57,6 @@ function adjustTime(v) {
  * @param v:需要格式化的数值;
  * @returns 'v';
  */
-function setFontzie(size){
+function setFontsize(size){
     return parseInt(document.documentElement.clientWidth/1366*size);
 }
