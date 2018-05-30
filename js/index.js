@@ -73,12 +73,113 @@ echarts.init(document.getElementById('radiusEct_3')).setOption(radiusBarOption);
 echarts.init(document.getElementById('swp_3TopE')).setOption(barOption);
 echarts.init(document.getElementById('swp_3MidE')).setOption(foldLineOption);
 /*模块四组六个折线图*/
-echarts.init(document.getElementById('swp_4E_1')).setOption(foldLineOption);
+var lineCharts01=echarts.init(document.getElementById('swp_4E_1'));
+lineCharts01.setOption(foldLineOption);
 echarts.init(document.getElementById('swp_4E_2')).setOption(foldLineOption);
 echarts.init(document.getElementById('swp_4E_3')).setOption(foldLineOption);
 echarts.init(document.getElementById('swp_4E_4')).setOption(foldLineOption);
 echarts.init(document.getElementById('swp_4E_5')).setOption(foldLineOption);
 echarts.init(document.getElementById('swp_4E_6')).setOption(foldLineOption);
+//折线图动起来
+var i=0;
+var firstTime=true;
+var lineInt=setInterval(function () {
+    var data01=foldLineOption.xAxis[0].data;
+    var data=foldLineOption.series[0].data;
+    var data01Length=data01.length;
+    if(firstTime){
+        data01.shift();
+        data01.push(baseXdata[i+data01Length]);
+        data.shift();
+        data.push(basedata[i+data01Length])
+        if(i==baseXdata.length-(data01Length+1)){
+            firstTime=false;
+            i=0;
+            data01.shift();
+            data01.push(baseXdata[i]);
+            data.shift();
+            data.push(basedata[i])
+        }
+    }else{
+        data01.shift();
+        data01.push(baseXdata[i]);
+        data.shift();
+        data.push(basedata[i])
+        if(i==baseXdata.length-1){
+            i=0;
+            data01.shift();
+            data01.push(baseXdata[i]);
+            data.shift();
+            data.push(basedata[i])
+        }
+    }
+    i++;
+    lineCharts01.setOption({
+        xAxis: [{
+            data: data01
+        }],
+        series:[{
+                data:data
+            }]
+    });
+}, 1000);
+$("#lineStop").click(function () {
+    $(this).hide();
+    $("#lineStart").show();
+    clearInterval(lineInt);
+    lineCharts01.setOption({
+        xAxis: [{
+            data: baseXdata
+        }],
+        series:[{
+            data:basedata
+        }]
+    });
+});
+$("#lineStart").click(function () {
+    $(this).hide();
+    $("#lineStop").show();
+    lineInt=setInterval(function () {
+        var data01=foldLineOption.xAxis[0].data;
+        var data=foldLineOption.series[0].data;
+        console.log(data01);
+        if(firstTime){
+            data01.shift();
+            data01.push(baseXdata[i+5]);
+            data.shift();
+            data.push(basedata[i+5])
+            if(i==baseXdata.length-6){
+                firstTime=false;
+                i=0;
+                data01.shift();
+                data01.push(baseXdata[i]);
+                data.shift();
+                data.push(basedata[i])
+            }
+        }else{
+            data01.shift();
+            data01.push(baseXdata[i]);
+            data.shift();
+            data.push(basedata[i])
+            if(i==baseXdata.length-1){
+                i=0;
+                data01.shift();
+                data01.push(baseXdata[i]);
+                data.shift();
+                data.push(basedata[i])
+            }
+        }
+        i++;
+        lineCharts01.setOption({
+            xAxis: [{
+                data: data01
+            }],
+            series:[{
+                data:data
+            }]
+        });
+    }, 1000);
+});
 /*左上角LED灯牌效果*/
 var ledLightOptions = {
     useEasing: true,
@@ -136,29 +237,6 @@ var city = [
         name: '西藏',
         value: [43, 180]
     }];
-var mapName = '全国';
-var geoCoordMap01 = {};
-var mapFeatures = echarts.getMap(mapName).geoJson.features;
-mapFeatures.forEach(function(v) {
-    // 地区名称
-    var name = v.properties.name;
-    // 地区经纬度
-    geoCoordMap01[name] = v.properties.cp;
-
-});
-var convertData01 = function (data) {
-    var res = [];
-    for (var i = 0; i < data.length; i++) {
-        var geoCoord = geoCoordMap01[data[i].name];
-        if (geoCoord) {
-            res.push({
-                name: data[i].name,
-                value: geoCoord.concat(data[i].value),
-            });
-        }
-    }
-    return res;
-};
 var cityS = [
     {name: '北京关区', value: [200,1]},
     {name: '成都关区', value: [190,2]},
@@ -261,6 +339,9 @@ var convertData = function (data) {
     }
     return res;
 };
+console.log(convertData(cityS));
+//气泡图数据
+var scatterData=convertData(cityS);
 var mapChart = echarts.init(document.getElementById('mapEcharts'));
 var min = 1, max = 42;
 var mapOption = {
@@ -439,9 +520,10 @@ var mapOption = {
             zlevel: 1,
             hoverAnimation:true,
             symbol: 'pin',
-            data: convertData(cityS),
+            data: scatterData,
             // symbolSize:20,
             symbolSize: function (val) {
+                // console.log(val);
                 return val[2] / 5;
             },
             label: {
@@ -463,11 +545,36 @@ var mapOption = {
             itemStyle: {
                 normal: {
                     color: '#05C3F9'
+                },
+                emphasis:{
+                    color:"#f00"
                 }
             }
         }]
 };
 mapChart.setOption(mapOption);
+//循环高亮每个气泡
+var sdIndex=0;
+setInterval(function () {
+    var rsdIndex = sdIndex % scatterData.length;
+    mapChart.dispatchAction({
+        type: 'downplay',
+        // 可选，系列 index，可以是一个数组指定多个系列
+        seriesIndex:1,
+        // 可选，数据的 index
+        dataIndex: rsdIndex,
+    });
+    sdIndex++;
+    var ssdIndex=sdIndex % scatterData.length;
+    mapChart.dispatchAction({
+        type: 'highlight',
+        // 可选，系列 index，可以是一个数组指定多个系列
+        seriesIndex:1,
+        // 可选，数据的 index
+        dataIndex: ssdIndex,
+    });
+
+},1000);
 /*3D地图点击事件，点击后升高*/
 mapChart.on('click', function (params) {
     log(params)

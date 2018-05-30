@@ -139,6 +139,8 @@ var module_4 = `<div class="swpItem swpItem_4">
                     <section class="foldSixContain">
                         <article class="foldSix">
                             <p>矿产品</p>
+                            <div class="lineStop" id="lineStop"><img src="../img/leftLit.png" alt=""></div>
+                            <div class="lineStart" id="lineStart"><img src="../img/rightLit.png" alt=""></div>
                             <div id="swp_4E_1"></div>
                         </article>
                         <article class="foldSix">
