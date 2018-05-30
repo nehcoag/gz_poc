@@ -10,6 +10,7 @@ var count=0;
 var chart04=Highcharts.chart('annularEct_1', annularOption);
 var chart05=Highcharts.chart('annularEct_2', annularOption);
 var chart06=Highcharts.chart('annularEct_3', annularOption);
+
 var intval=setInterval(function () {
     var r = count % chart01.series[0].data.length;//0 1 2 3 4 5
     chart01.series[0].data[r].slice(false);
@@ -17,7 +18,8 @@ var intval=setInterval(function () {
     var s = count % chart01.series[0].data.length;
     chart01.series[0].data[s].slice(true);
 },1000);
-function clickPie() {
+
+function clickPie(e) {
     clearInterval(intval);
     $.each(chart01.series[0].data,function (index, value) {
         value.slice(false);
@@ -36,6 +38,7 @@ $("#pieEct_2").click(function () {
         chart01.series[0].data[s].slice(true);
     },1000);
 });
+
 var count01=0;
 var intval01=setInterval(function () {
     var r = count01 % chart04.series[0].data.length;//0 1 2 3 4 5
@@ -44,7 +47,7 @@ var intval01=setInterval(function () {
     var s = count01 % chart04.series[0].data.length;
     chart04.series[0].data[s].slice(true);
 },1000);
-function clickPie01() {
+function clickPie01(e) {
     clearInterval(intval01);
     $.each(chart04.series[0].data,function (index, value) {
         value.slice(false);

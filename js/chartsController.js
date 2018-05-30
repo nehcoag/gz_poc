@@ -349,7 +349,7 @@ var pieOption = {
             {
                 name: 'Firefox',
                 y:45.0,
-                sliced: true, // 突出显示这个点（扇区），用于强调。
+               // sliced: true, // 突出显示这个点（扇区），用于强调。
             },
             ['IE', 26.8],
             ['Chrome', 36.8],
@@ -421,7 +421,7 @@ var annularOption = {
             {
                 name: '香蕉',
                 y:8,
-                sliced: true, // 突出显示这个点（扇区），用于强调。
+                //sliced: true, // 突出显示这个点（扇区），用于强调。
             },
             ['猕猴桃', 3],
             ['桃子', 1],
