@@ -1,6 +1,167 @@
 /*模块一的两个组合图*/
-echarts.init(document.getElementById('swp_1MidE')).setOption(barOption);
+var barCharts01=echarts.init(document.getElementById('swp_1MidE'));
+barCharts01.setOption(barOption);
 echarts.init(document.getElementById('swp_1BtmE')).setOption(barOption);
+//组合图动起来
+var barIndex=0;
+var firstTimeBar=true;
+var barInt=setInterval(function () {
+    var data01=barOption.xAxis[0].data;
+    var data=barOption.series[0].data;
+    var dataline=barOption.series[1].data;
+    var datascatter=barOption.series[2].data;
+    var data01Length=data01.length;
+    if(firstTimeBar){
+        if(barIndex==baseXdataBar.length-(data01Length)){
+            firstTimeBar=false;
+            barIndex=0;
+            data01.shift();
+            data01.push(baseXdataBar[barIndex]);
+            data.shift();
+            data.push(basedataBar[barIndex]);
+            dataline.shift();
+            dataline.push(basedataBar[barIndex]);
+            datascatter.shift();
+            datascatter.push(basedataBar[barIndex])
+        }else{
+            data01.shift();
+            data01.push(baseXdataBar[barIndex+data01Length]);
+            data.shift();
+            data.push(basedataBar[barIndex+data01Length]);
+            dataline.shift();
+            dataline.push(basedataBar[barIndex+data01Length]);
+            datascatter.shift();
+            datascatter.push(basedataBar[barIndex+data01Length]);
+        }
+    }else{
+        if(barIndex==baseXdataBar.length){
+            barIndex=0;
+            data01.shift();
+            data01.push(baseXdataBar[barIndex]);
+            data.shift();
+            data.push(basedataBar[barIndex]);
+            dataline.shift();
+            dataline.push(basedataBar[barIndex]);
+            datascatter.shift();
+            datascatter.push(basedataBar[barIndex]);
+        }else{
+            data01.shift();
+            data01.push(baseXdataBar[barIndex]);
+            data.shift();
+            data.push(basedataBar[barIndex]);
+            dataline.shift();
+            dataline.push(basedataBar[barIndex]);
+            datascatter.shift();
+            datascatter.push(basedataBar[barIndex]);
+        }
+    }
+    console.log(data);
+    barIndex++;
+    barCharts01.setOption({
+        xAxis: [{
+            data: data01
+        }],
+        series:[{
+            data:data
+        },{
+            data:dataline
+        },
+            {
+                data:datascatter
+            },
+        ]
+    });
+}, 2000);
+$("#barStop").click(function () {
+    $(this).hide();
+    $("#barStart").show();
+    clearInterval(barInt);
+    barCharts01.setOption({
+        xAxis: [{
+            data: baseXdataBar
+        }],
+        series:[{
+            data:basedataBar
+        },
+            {
+                data:basedataBar
+            },{
+                data:basedataBar
+            },
+        ]
+    });
+});
+$("#barStart").click(function () {
+    $(this).hide();
+    $("#barStop").show();
+    barInt=setInterval(function () {
+        var data01=barOption.xAxis[0].data;
+        var data=barOption.series[0].data;
+        var dataline=barOption.series[1].data;
+        var datascatter=barOption.series[2].data;
+        var data01Length=data01.length;
+        if(firstTimeBar){
+            if(barIndex==baseXdataBar.length-(data01Length)){
+                firstTimeBar=false;
+                barIndex=0;
+                data01.shift();
+                data01.push(baseXdataBar[barIndex]);
+                data.shift();
+                data.push(basedataBar[barIndex]);
+                dataline.shift();
+                dataline.push(basedataBar[barIndex]);
+                datascatter.shift();
+                datascatter.push(basedataBar[barIndex])
+            }else{
+                data01.shift();
+                data01.push(baseXdataBar[barIndex+data01Length]);
+                data.shift();
+                data.push(basedataBar[barIndex+data01Length]);
+                dataline.shift();
+                dataline.push(basedataBar[barIndex+data01Length]);
+                datascatter.shift();
+                datascatter.push(basedataBar[barIndex+data01Length]);
+            }
+        }else{
+            if(barIndex==baseXdataBar.length){
+                barIndex=0;
+                data01.shift();
+                data01.push(baseXdataBar[barIndex]);
+                data.shift();
+                data.push(basedataBar[barIndex]);
+                dataline.shift();
+                dataline.push(basedataBar[barIndex]);
+                datascatter.shift();
+                datascatter.push(basedataBar[barIndex]);
+            }else{
+                data01.shift();
+                data01.push(baseXdataBar[barIndex]);
+                data.shift();
+                data.push(basedataBar[barIndex]);
+                dataline.shift();
+                dataline.push(basedataBar[barIndex]);
+                datascatter.shift();
+                datascatter.push(basedataBar[barIndex]);
+            }
+        }
+        console.log(data);
+        barIndex++;
+        barCharts01.setOption({
+            xAxis: [{
+                data: data01
+            }],
+            series:[{
+                data:data
+            },{
+                data:dataline
+            },
+                {
+                    data:datascatter
+                },
+            ]
+        });
+    }, 2000);
+});
 /*模块二顶部的三个饼图*/
 var chart01=Highcharts.chart('pieEct_1', pieOption);
 var chart02=Highcharts.chart('pieEct_2', pieOption);
@@ -82,41 +243,49 @@ echarts.init(document.getElementById('swp_4E_5')).setOption(foldLineOption);
 echarts.init(document.getElementById('swp_4E_6')).setOption(foldLineOption);
 //折线图动起来
 var i=0;
+//判断是不是第一次循环
 var firstTime=true;
 var lineInt=setInterval(function () {
-    var lineDataX=foldLineOption.xAxis[0].data;
+    var data01=foldLineOption.xAxis[0].data;
     var data=foldLineOption.series[0].data;
-    var lineDataXLength=lineDataX.length;
+    var data01Length=data01.length;
+    //如果是第一次循环
     if(firstTime){
-        lineDataX.shift();
-        lineDataX.push(baseXdata[i+lineDataXLength]);
-        data.shift();
-        data.push(basedata[i+lineDataXLength])
-        if(i==baseXdata.length-(lineDataXLength+1)){
+        //第一批的前五个循环完了之后
+        if(i==baseXdata.length-(data01Length)){
             firstTime=false;
             i=0;
-            lineDataX.shift();
-            lineDataX.push(baseXdata[i]);
+            data01.shift();
+            data01.push(baseXdata[i]);
             data.shift();
             data.push(basedata[i])
+        }else{
+            //第一批的前五个循环完了之前
+            data01.shift();
+            data01.push(baseXdata[i+data01Length]);
+            data.shift();
+            data.push(basedata[i+data01Length]);
         }
     }else{
-        lineDataX.shift();
-        lineDataX.push(baseXdata[i]);
-        data.shift();
-        data.push(basedata[i])
-        if(i==baseXdata.length-1){
+        //如果第一次的所有都循环完了
+        if(i==baseXdata.length){
             i=0;
-            lineDataX.shift();
-            lineDataX.push(baseXdata[i]);
+            data01.shift();
+            data01.push(baseXdata[i]);
             data.shift();
             data.push(basedata[i])
+        }else {
+            //第一次的还没循环完
+            data01.shift();
+            data01.push(baseXdata[i]);
+            data.shift();
+            data.push(basedata[i]);
         }
     }
     i++;
     lineCharts01.setOption({
         xAxis: [{
-            data: lineDataX
+            data: data01
         }],
         series:[{
                 data:data
@@ -140,39 +309,46 @@ $("#lineStart").click(function () {
     $(this).hide();
     $("#lineStop").show();
     lineInt=setInterval(function () {
-        var lineDataX=foldLineOption.xAxis[0].data;
+        var data01=foldLineOption.xAxis[0].data;
         var data=foldLineOption.series[0].data;
-        console.log(lineDataX);
+        var data01Length=data01.length;
+        //如果是第一次循环
         if(firstTime){
-            lineDataX.shift();
-            lineDataX.push(baseXdata[i+5]);
-            data.shift();
-            data.push(basedata[i+5])
-            if(i==baseXdata.length-6){
+            //第一批的前五个循环完了之后
+            if(i==baseXdata.length-(data01Length)){
                 firstTime=false;
                 i=0;
-                lineDataX.shift();
-                lineDataX.push(baseXdata[i]);
+                data01.shift();
+                data01.push(baseXdata[i]);
                 data.shift();
                 data.push(basedata[i])
+            }else{
+                //第一批的前五个循环完了之前
+                data01.shift();
+                data01.push(baseXdata[i+data01Length]);
+                data.shift();
+                data.push(basedata[i+data01Length]);
             }
         }else{
-            lineDataX.shift();
-            lineDataX.push(baseXdata[i]);
-            data.shift();
-            data.push(basedata[i])
-            if(i==baseXdata.length-1){
+            //如果第一次的所有都循环完了
+            if(i==baseXdata.length){
                 i=0;
-                lineDataX.shift();
-                lineDataX.push(baseXdata[i]);
+                data01.shift();
+                data01.push(baseXdata[i]);
                 data.shift();
                 data.push(basedata[i])
+            }else {
+                //第一次的还没循环完
+                data01.shift();
+                data01.push(baseXdata[i]);
+                data.shift();
+                data.push(basedata[i]);
             }
         }
         i++;
         lineCharts01.setOption({
             xAxis: [{
-                data: lineDataX
+                data: data01
             }],
             series:[{
                 data:data

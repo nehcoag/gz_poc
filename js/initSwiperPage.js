@@ -39,6 +39,8 @@ var module_1 = `<div class="swpItem swpItem_1">
                     <!--模块一中部柱形图-->
                     <article class="swpEBox swpCon_1EMid">
                         <p>量值税(年月)</p>
+                        <div class="lineStop" id="barStop"><img src="../img/leftLit.png" alt=""></div>
+                            <div class="lineStart" id="barStart"><img src="../img/rightLit.png" alt=""></div>
                         <div id="swp_1MidE">
 
                         </div>
