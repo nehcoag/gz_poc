@@ -30,6 +30,7 @@ html, body {
     src: url('../fonts/UnidreamLED.ttf') format('truetype'),
     url('../fonts/UnidreamLED.eot');
 }
+
 @font-face {
     font-family: 'IcoMoon';
     src: url('../fonts/IcoMoon.eot');
@@ -91,7 +92,7 @@ header {
     display: flex;
     align-items: center;
     font-size: 2.8rem;
-    margin-top:-2rem;
+    margin-top: -2rem;
 }
 
 .timeBox {
@@ -181,7 +182,8 @@ header {
 .rev_5 {
     left: 101.6%;
 }
-.rev_6{
+
+.rev_6 {
     left: 118.6%;
 }
 
@@ -343,12 +345,14 @@ header {
     position: absolute;
     width: 38%;
 }
-.tabUl>li{
+
+.tabUl > li {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     font-family: '黑体';
 }
+
 .tabUlLeft {
     height: 80%;
     left: 3%;
@@ -358,24 +362,29 @@ header {
 .tabUlLeft > li {
     height: 25%;
 }
+
 .tabUlRight {
-    height:100%;
-    right:3%;
+    height: 100%;
+    right: 3%;
     text-align: left;
 }
-.tabUlRight>li{
-    height:20%;
+
+.tabUlRight > li {
+    height: 20%;
 }
-.foldSixContain{
-    height:96.5%;
-    width:100%;
+
+.foldSixContain {
+    height: 96.5%;
+    width: 100%;
     display: flex;
-    flex-direction:column;
+    flex-direction: column;
 }
-.foldSixContain>article{
-    flex:1;
+
+.foldSixContain > article {
+    flex: 1;
 }
-.foldSix>p{
+
+.foldSix > p {
     height: 20%;
     width: 40%;
     color: #7ad2ff;
@@ -388,69 +397,80 @@ header {
     padding-left: 7%;
     white-space: nowrap;
 }
-.foldSix>div{
-    height:80%;
-    width:96%;
-    margin-left:2%;
+
+.foldSix > div {
+    height: 80%;
+    width: 96%;
+    margin-left: 2%;
 }
-.ledContain{
-    height:100%;
-    width:96%;
-    margin-left:2%;
+
+.ledContain {
+    height: 100%;
+    width: 96%;
+    margin-left: 2%;
     display: flex;
     flex-wrap: wrap;
 }
-.ledContain>div{
-    width:calc(100% / 3);
-    background-image:url(../img/indexLoopNum.png);
-    background-size:80% 80%;
+
+.ledContain > div {
+    width: calc(100% / 3);
+    background-image: url(../img/indexLoopNum.png);
+    background-size: 80% 80%;
     background-repeat: no-repeat;
     background-position: center center;
     position: relative;
     display: flex;
     justify-content: center;
-    color:#fff;
+    color: #fff;
 }
-.ledContain>div>span:nth-of-type(1){
-    position:absolute;
-    top:15%;
+
+.ledContain > div > span:nth-of-type(1) {
+    position: absolute;
+    top: 15%;
     display: inline-block;
-    font-size:0.8rem;
+    font-size: 0.8rem;
 }
-.ledContain>div>span:nth-of-type(2){
-    position:absolute;
-    font-size:2.5rem;
+
+.ledContain > div > span:nth-of-type(2) {
+    position: absolute;
+    font-size: 2.5rem;
     font-family: 'UnidreamLED';
-    top:40%;
+    top: 40%;
 }
-button{
-    position:absolute;
+
+button {
+    position: absolute;
     z-index: 10;
 }
-#right{
-    margin-left:50px;
+
+#right {
+    margin-left: 50px;
 }
-.slideAside{
-    height:78.6%;
-    width:1%;
-    top:14%;
-    position:absolute;
+
+.slideAside {
+    height: 78.6%;
+    width: 1%;
+    top: 14%;
+    position: absolute;
 }
-.toLeft{
-    left:0;
+
+.toLeft {
+    left: 0;
 }
-.toRight{
-    right:0;
+
+.toRight {
+    right: 0;
 }
-#slider-panels-next{
-    background-color: rgba(72,175,250,0.5);
+
+#slider-panels-next {
+    background-color: rgba(72, 175, 250, 0.5);
     height: 6rem;
     width: 100%;
     margin-top: -2rem;
     position: absolute;
     top: 50%;
     font-size: 24px;
-    color: rgba(255,255,255,1);
+    color: rgba(255, 255, 255, 1);
     line-height: 6rem;
     text-align: center;
     right: 0px;
@@ -463,19 +483,21 @@ button{
     justify-content: center;
     border-radius: 0 0.5rem 0.5rem 0;
 }
+
 #slider-panels-next:hover {
-    background-color: rgba(72,175,250,1);
+    background-color: rgba(72, 175, 250, 1);
 }
-#slider-panels-previous{
-    background-color: rgba(72,175,250,0.5);
-    height:6rem;
+
+#slider-panels-previous {
+    background-color: rgba(72, 175, 250, 0.5);
+    height: 6rem;
     width: 100%;
     margin-top: -2rem;
     position: absolute;
     top: 50%;
     font-size: 24px;
     line-height: 6rem;
-    color: rgba(255,255,255,1);
+    color: rgba(255, 255, 255, 1);
     text-align: center;
     left: 0px;
     transition: background 0.5s;
@@ -487,24 +509,29 @@ button{
     justify-content: center;
     border-radius: 0.5rem 0 0 0.5rem;
 }
+
 #slider-panels-previous:hover {
-    background-color: rgba(72,175,250,1);
+    background-color: rgba(72, 175, 250, 1);
 }
+
 .iconb:before, .icona:after {
     font-family: 'IcoMoon';
     content: attr(data-icon);
 }
-.settingSpan{
-    height:3rem;
-    width:3rem;
+
+.settingSpan {
+    height: 3rem;
+    width: 3rem;
     cursor: pointer;
-    position:absolute;
-    left:5%;
+    position: absolute;
+    left: 5%;
 }
-.settingSpan>img{
-    height:100%;
-    width:100%;
+
+.settingSpan > img {
+    height: 100%;
+    width: 100%;
 }
+
 .settingSpan > img:nth-of-type(2) {
     display: none;
 }
@@ -516,71 +543,115 @@ button{
 .settingSpan:hover img:nth-of-type(2) {
     display: inline-block;
 }
-#supplyMenu{
-    display:none;
-    position : fixed;
-    z-index:9999;
-    width:16rem;
-    height:auto;
-    min-height:15.5rem;
-    background:#033491;
+
+#supplyMenu {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    width: 16rem;
+    height: auto;
+    min-height: 15.5rem;
+    background: #033491;
     border-radius: 0.5rem;
-    right:11rem;
-    top:4rem;
-    padding-bottom:5rem;
+    right: 11rem;
+    top: 4rem;
+    padding-bottom: 5rem;
 }
-.favoriteBox{
+
+.favoriteBox {
     display: flex;
     justify-content: center;
-    margin-top:2rem;
+    margin-top: 2rem;
     flex-wrap: wrap;
 }
-.favoriteBox>article{
-    width:100%;
+
+.favoriteBox > article {
+    width: 100%;
 }
-.favoriteBox>article{
-    margin-top:10px;
+
+.favoriteBox > article {
+    margin-top: 10px;
 }
-.favoriteBox>article>label{
+
+.favoriteBox > article > label {
     display: inline-block;
-    width:50%;
-    color:white;
-    padding-left:1.5rem;
+    width: 50%;
+    color: white;
+    padding-left: 1.5rem;
     box-sizing: border-box;
-    font-size:1.2rem;
+    font-size: 1.2rem;
     white-space: nowrap;
     text-align: right;
 }
-.favoriteBox>article>input{
+
+.favoriteBox > article > input {
     display: inline-block;
-    width:20%;
+    width: 20%;
 }
-#favoriteSubmit{
-    height:3rem;
-    width:10rem;
-    background:#01a3eb;
+
+#favoriteSubmit {
+    height: 3rem;
+    width: 10rem;
+    background: #01a3eb;
     border-radius: 0.5rem !important;
-    border:none;
-    color:white;
+    border: none;
+    color: white;
     font-weight: 900;
-    margin-top:1rem;
+    margin-top: 1rem;
     outline: none;
     cursor: pointer;
-    position:absolute;
-    bottom:1rem;
-}
-#favoriteSubmit:hover{
-    background:#32c4d1;
+    position: absolute;
+    bottom: 1rem;
 }
 
+#favoriteSubmit:hover {
+    background: #32c4d1;
+}
 
-.mapSelectDiv{position: absolute; top:10%;left: 15%;z-index: 10;}
-#mapSelect{width: 5rem;height: 2rem;font-size: 1rem; background: url('../img/select.png') no-repeat;background-size: 100% 100%;color: #ffffff;appearance:none;
-    -moz-appearance:none;
-    -webkit-appearance:none;text-indent: 1rem;cursor: pointer;}
-#mapSelect>option{background-color: #00a2ff;font-size: 1rem;min-height: auto;height: 1rem;line-height: 1rem;padding: 0.5rem 0;}
+.mapSelectDiv {
+    position: absolute;
+    top: 10%;
+    left: 15%;
+    z-index: 10;
+}
 
-.lineStop,.lineStart{width: 1.5rem!important; height: 1.5rem!important;position: absolute;top:1rem;right: 5rem;}
-.lineStart{display: none;}
-/*.lineStart{width: 1.5rem!important; height: 1.5rem!important;position: absolute;top:1rem;right: 3rem;}*/
-.lineStop>img,.lineStart>img{width: 100%;height: 100%;}
+#mapSelect {
+    width: 5rem;
+    height: 2rem;
+    font-size: 1rem;
+    background: url('../img/select.png') no-repeat;
+    background-size: 100% 100%;
+    color: #ffffff;
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    text-indent: 1rem;
+    cursor: pointer;
+}
+
+#mapSelect > option {
+    background-color: #00a2ff;
+    font-size: 1rem;
+    min-height: auto;
+    height: 1rem;
+    line-height: 1rem;
+    padding: 0.5rem 0;
+}
+
+.lineStop, .lineStart {
+    width: 1.5rem !important;
+    height: 1.5rem !important;
+    position: absolute;
+    top: 1rem;
+    right: 5rem;
+}
+
+.lineStart {
+    display: none;
+}
+
+
+.lineStop > img, .lineStart > img {
+    width: 100%;
+    height: 100%;
+}

@@ -84,31 +84,31 @@ echarts.init(document.getElementById('swp_4E_6')).setOption(foldLineOption);
 var i=0;
 var firstTime=true;
 var lineInt=setInterval(function () {
-    var data01=foldLineOption.xAxis[0].data;
+    var lineDataX=foldLineOption.xAxis[0].data;
     var data=foldLineOption.series[0].data;
-    var data01Length=data01.length;
+    var lineDataXLength=lineDataX.length;
     if(firstTime){
-        data01.shift();
-        data01.push(baseXdata[i+data01Length]);
+        lineDataX.shift();
+        lineDataX.push(baseXdata[i+lineDataXLength]);
         data.shift();
-        data.push(basedata[i+data01Length])
-        if(i==baseXdata.length-(data01Length+1)){
+        data.push(basedata[i+lineDataXLength])
+        if(i==baseXdata.length-(lineDataXLength+1)){
             firstTime=false;
             i=0;
-            data01.shift();
-            data01.push(baseXdata[i]);
+            lineDataX.shift();
+            lineDataX.push(baseXdata[i]);
             data.shift();
             data.push(basedata[i])
         }
     }else{
-        data01.shift();
-        data01.push(baseXdata[i]);
+        lineDataX.shift();
+        lineDataX.push(baseXdata[i]);
         data.shift();
         data.push(basedata[i])
         if(i==baseXdata.length-1){
             i=0;
-            data01.shift();
-            data01.push(baseXdata[i]);
+            lineDataX.shift();
+            lineDataX.push(baseXdata[i]);
             data.shift();
             data.push(basedata[i])
         }
@@ -116,7 +116,7 @@ var lineInt=setInterval(function () {
     i++;
     lineCharts01.setOption({
         xAxis: [{
-            data: data01
+            data: lineDataX
         }],
         series:[{
                 data:data
@@ -140,31 +140,31 @@ $("#lineStart").click(function () {
     $(this).hide();
     $("#lineStop").show();
     lineInt=setInterval(function () {
-        var data01=foldLineOption.xAxis[0].data;
+        var lineDataX=foldLineOption.xAxis[0].data;
         var data=foldLineOption.series[0].data;
-        console.log(data01);
+        console.log(lineDataX);
         if(firstTime){
-            data01.shift();
-            data01.push(baseXdata[i+5]);
+            lineDataX.shift();
+            lineDataX.push(baseXdata[i+5]);
             data.shift();
             data.push(basedata[i+5])
             if(i==baseXdata.length-6){
                 firstTime=false;
                 i=0;
-                data01.shift();
-                data01.push(baseXdata[i]);
+                lineDataX.shift();
+                lineDataX.push(baseXdata[i]);
                 data.shift();
                 data.push(basedata[i])
             }
         }else{
-            data01.shift();
-            data01.push(baseXdata[i]);
+            lineDataX.shift();
+            lineDataX.push(baseXdata[i]);
             data.shift();
             data.push(basedata[i])
             if(i==baseXdata.length-1){
                 i=0;
-                data01.shift();
-                data01.push(baseXdata[i]);
+                lineDataX.shift();
+                lineDataX.push(baseXdata[i]);
                 data.shift();
                 data.push(basedata[i])
             }
@@ -172,7 +172,7 @@ $("#lineStart").click(function () {
         i++;
         lineCharts01.setOption({
             xAxis: [{
-                data: data01
+                data: lineDataX
             }],
             series:[{
                 data:data

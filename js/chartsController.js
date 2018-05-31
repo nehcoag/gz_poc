@@ -2,9 +2,9 @@
 var colorList = [['#a769ee', '#e65e20', '#eab217'], ['#778899', '#4682B4', '#00FA9A']];
 var colorSelect = 0;
 var basedata = [96.3, 46.4, 87.5, 95.6, 68.1, 94.8, 59.6, 94.1, 80.1, 52.4, 75.8, 94.7];
-var baseXdata=['1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月', '9月', '10月', '11月', '12月'];
-var curdata=basedata.slice(0,5);
-var curXdata=baseXdata.slice(0,5);
+var baseXdata = ['1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月', '9月', '10月', '11月', '12月'];
+var curdata = basedata.slice(0, 5);
+var curXdata = baseXdata.slice(0, 5);
 /*折线图配置项*/
 var foldLineOption = {
     title: {
@@ -18,37 +18,37 @@ var foldLineOption = {
             }
         }
     },
-        dataZoom: [{
-            show: true,
-            realtime: true,
-            start: 0,
-            end: 80,
-            handleSize: '0%',
-            backgroundColor: '#1d4092',
-            height: setFontsize(5),
-            width: setFontsize(100),
-            borderColor: "rgba(0,0,0,0)",
-            handleStyle: {
-                shadowBlur: 2,
-                background: "#ddd",
-                shadowColor: "#ddd",
-            },
-            showDataShadow: false,
-            fillerColor: new echarts.graphic.LinearGradient(1, 0, 0, 0, [{
-                offset: 0,
-                color: '#1a43dd'
-            }, {
-                offset: 1,
-                color: '#34b4ff'
-            }]),
-            showDetail: false,
-            bottom: 0
+    dataZoom: [{
+        show: true,
+        realtime: true,
+        start: 0,
+        end: 80,
+        handleSize: '0%',
+        backgroundColor: '#1d4092',
+        height: setFontsize(5),
+        width: setFontsize(100),
+        borderColor: "rgba(0,0,0,0)",
+        handleStyle: {
+            shadowBlur: 2,
+            background: "#ddd",
+            shadowColor: "#ddd",
+        },
+        showDataShadow: false,
+        fillerColor: new echarts.graphic.LinearGradient(1, 0, 0, 0, [{
+            offset: 0,
+            color: '#1a43dd'
         }, {
-            type: 'inside',
-            realtime: true,
-            start: 0,
-            end: 60,
-        }],
+            offset: 1,
+            color: '#34b4ff'
+        }]),
+        showDetail: false,
+        bottom: 0
+    }, {
+        type: 'inside',
+        realtime: true,
+        start: 0,
+        end: 60,
+    }],
     legend: {
         show: 'false',
         icon: 'circle',
@@ -114,7 +114,7 @@ var foldLineOption = {
     series: [{
         name: '广州',
         type: 'line',
-        smooth:true,
+        smooth: true,
         lineStyle: {
             normal: {
                 width: 1
@@ -169,9 +169,7 @@ var barOption = {
         top: '20%',
         containLabel: true
     },
-    tooltip:{
-
-    },
+    tooltip: {},
     legend: {
         icon: 'circle',
         itemWidth: setFontsize(14),
@@ -336,7 +334,7 @@ var pieOption = {
             },
             point: {
                 events: {
-                    click: function() {
+                    click: function () {
                         clickPie();
                         this.slice();
                     }
@@ -352,8 +350,8 @@ var pieOption = {
         data: [
             {
                 name: 'Firefox',
-                y:45.0,
-               // sliced: true, // 突出显示这个点（扇区），用于强调。
+                y: 45.0,
+                // sliced: true, // 突出显示这个点（扇区），用于强调。
             },
             ['IE', 26.8],
             ['Chrome', 36.8],
@@ -394,7 +392,7 @@ var annularOption = {
             showInLegend: true,
             point: {
                 events: {
-                    click: function() {
+                    click: function () {
                         clickPie01();
                         this.slice();
                     }
@@ -410,7 +408,7 @@ var annularOption = {
         itemDistance: 5,
         itemStyle: {
             color: '#fff',
-            fontSize: setFontsize(6)+"px"
+            fontSize: setFontsize(6) + "px"
         },
         symbolRadius: 0,
         symbolHeight: 5,
@@ -425,7 +423,7 @@ var annularOption = {
         data: [
             {
                 name: '香蕉',
-                y:8,
+                y: 8,
                 //sliced: true, // 突出显示这个点（扇区），用于强调。
             },
             ['猕猴桃', 3],
