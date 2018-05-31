@@ -204,7 +204,11 @@ pageArr.forEach(function (obj, inx) {
 });
 /*页面可滑动*/
 var all = pageArr.length;
-$("#slider-panels-previous").on("click", function () {
+$("#slider-panels-next").on("click", function () {
+    //向右滑动时，如果已经是最后一个，禁止再次向右滑动（客户要求轮播是线形而非环形）
+    if($(".Con_"+(all-4)).css("left")=="0px"){
+        return
+    }
     var last;
     for (var i = (all - 1); i > 0; i--) {
         if (i == (all - 1)) {
@@ -215,7 +219,11 @@ $("#slider-panels-previous").on("click", function () {
     }
     $(".Con_" + 0).css("left", last);
 });
-$("#slider-panels-next").on("click", function () {
+$("#slider-panels-previous").on("click", function () {
+    //向左滑动时，如果已经是第一个，禁止再次向左滑动（客户要求轮播是线形而非环形）
+    if($(".Con_0").css("left")=="0px"){
+        return;
+    }
     var first;
     $(".Con").hide();
     for (var i = 0; i < all; i++) {

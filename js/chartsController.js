@@ -385,6 +385,7 @@ var annularOption = {
     },
     plotOptions: {
         pie: {
+            cursor: 'pointer',
             innerSize: '90%',
             depth: 12,
             dataLabels: {
