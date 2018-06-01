@@ -99,10 +99,20 @@
                     </article>
                     <!--模块一底部柱形图-->
                     <article class="swpEBox swpCon_1EBtm">
-                        <p>量值税(章节)</p>
-                        <div id="swp_1BtmE">
+                        <p>量值税</p>
+                        <ul class="tabWrap" id="liangzhishuiUl">
+                            <li class="lefttab" data-tab="shuie">税额</li>
+                            <li class="righttab" data-tab="zhangjie">章节</li>
+                        </ul>
+                        <div class="lzsCon" id="lzsCon">
+                            <div id="swp_1BtmE" data-tab="shuie">
 
+                            </div>
+                            <div data-tab="zhangjie">
+                                章节
+                            </div>
                         </div>
+
                     </article>
                 </aside>
             </div>
@@ -195,35 +205,45 @@
                     <div class="titleDiv">
                         <span>行业分析</span>
                     </div>
+                    <ul class="tabWrap" id="sixLineTab">
+                        <li class="lefttab" data-tab="baoguandan">报关单</li>
+                        <li class="righttab" data-tab="huozhi">货值</li>
+                    </ul>
                     <!--第四模块六个折线图-->
-                    <section class="foldSixContain">
-                        <article class="foldSix">
-                            <p>矿产品</p>
-                            <div class="lineStop" id="lineStop"><img src="../img/leftLit.png" alt=""></div>
-                            <div class="lineStart" id="lineStart"><img src="../img/rightLit.png" alt=""></div>
-                            <div id="swp_4E_1"></div>
-                        </article>
-                        <article class="foldSix">
-                            <p>化工品</p>
-                            <div id="swp_4E_2"></div>
-                        </article>
-                        <article class="foldSix">
-                            <p>塑料 橡胶及其制品</p>
-                            <div id="swp_4E_3"></div>
-                        </article>
-                        <article class="foldSix">
-                            <p>石料 陶瓷 玻璃及其制品</p>
-                            <div id="swp_4E_4"></div>
-                        </article>
-                        <article class="foldSix">
-                            <p>珍珠 宝石 贵金属及其制品</p>
-                            <div id="swp_4E_5"></div>
-                        </article>
-                        <article class="foldSix">
-                            <p>贱金属及其制品</p>
-                            <div id="swp_4E_6"></div>
-                        </article>
-                    </section>
+                    <div class="stWrap" id="sixLine">
+                        <section data-tab="baoguandan"  class="foldSixContain">
+                            <article class="foldSix">
+                                <p>矿产品</p>
+                                <div class="lineStop" id="lineStop"><img src="../img/leftLit.png" alt=""></div>
+                                <div class="lineStart" id="lineStart"><img src="../img/rightLit.png" alt=""></div>
+                                <div id="swp_4E_1"></div>
+                            </article>
+                            <article class="foldSix">
+                                <p>化工品</p>
+                                <div id="swp_4E_2"></div>
+                            </article>
+                            <article class="foldSix">
+                                <p>塑料 橡胶及其制品</p>
+                                <div id="swp_4E_3"></div>
+                            </article>
+                            <article class="foldSix">
+                                <p>石料 陶瓷 玻璃及其制品</p>
+                                <div id="swp_4E_4"></div>
+                            </article>
+                            <article class="foldSix">
+                                <p>珍珠 宝石 贵金属及其制品</p>
+                                <div id="swp_4E_5"></div>
+                            </article>
+                            <article class="foldSix">
+                                <p>贱金属及其制品</p>
+                                <div id="swp_4E_6"></div>
+                            </article>
+                        </section>
+                        <section data-tab="huozhi"  class="foldSixContain">
+                            货值
+                        </section>
+                    </div>
+
                 </aside>
             </div>
         </article>
@@ -274,6 +294,7 @@
 <script src="../js/highcharts-3d.js"></script>
 <script src="../js/countUp.min.js"></script>
 <script src="../js/chinaData.js"></script>
+<script src="../js/jqueryTab.js"></script>
 <!--自定义js-->
 <script src="../js/initSwiperPage.js"></script>
 <script src="../js/publicController.js"></script>

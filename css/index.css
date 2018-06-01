@@ -347,11 +347,14 @@ header {
 }
 
 .foldSixContain {
-    height: 96.5%;
+    height: 100%;
     width: 100%;
-    display: flex;
     flex-direction: column;
+    position: absolute;top:0;
+    left:0;
+    display: none;
 }
+.foldSixContain.active{display: flex; }
 
 .foldSixContain > article {
     flex: 1;
@@ -628,3 +631,18 @@ button {
     width: 100%;
     height: 100%;
 }
+
+/*tab*/
+.tabWrap{width: 40%;height: 1.2rem;line-height: 1.2rem;font-size: 1rem;position: absolute;top:1.5rem;right: 0;color: #ffffff;z-index: 3;cursor: pointer;}
+.lefttab{width: 50%;height: 100%;background: url("../img/lefttab.png") no-repeat;background-size: 100% 100%;position: absolute;left:0;top:0;text-align: left;padding-left: 1rem;}
+.lefttab.active{background:url("../img/lefttabActive.png") no-repeat; background-size: 100% auto;z-index: 3;}
+.righttab{width: 50%;height: 100%;background: url("../img/righttab.png") no-repeat;background-size: 100% 100%;position: absolute;left:30%;top:0;text-align: right;padding-right: 1rem;}
+.righttab.active{background: url("../img/righttabActive.png") no-repeat;background-size: 100% auto;z-index: 3}
+.stWrap{width: 100%;height: 95%;position: relative;}
+
+
+.lzsCon{width: 96%;
+    height: 80%;
+    margin-left: 2%;}
+.lzsCon>div{width: 100%;height: 100%;display: none;}
+.lzsCon>div.active{display: block;}

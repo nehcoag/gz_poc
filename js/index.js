@@ -1,5 +1,12 @@
+//计算六个折线图的容器的宽度
+var sixLineWidth = $("body").width() * 0.98 * 0.1635;
+$("#sixLine>.foldSixContain").width(sixLineWidth);
+$("#lzsCon>div").width(sixLineWidth);
+$("#sixLineTab").tabs("#sixLine");
+$("#liangzhishuiUl").tabs("#lzsCon");
+
 /*模块一的两个组合图*/
-var barCharts01=echarts.init(document.getElementById('swp_1MidE'));
+var barCharts01 = echarts.init(document.getElementById('swp_1MidE'));
 barCharts01.setOption(barOption);
 echarts.init(document.getElementById('swp_1BtmE')).setOption(barOption);
 //组合图动起来
@@ -71,10 +78,9 @@ echarts.init(document.getElementById('swp_1BtmE')).setOption(barOption);
 //         ]
 //     });
 // }, 2000);
-var barIndex01=0;
-var firstTimeBar01=true;
-console.log();
-echartsRun(barCharts01,barOption,baseXdataBar,basedataArr,barIndex01,firstTimeBar01,"intval0");
+var barIndex01 = 0;
+var firstTimeBar01 = true;
+echartsRun(barCharts01, barOption, baseXdataBar, basedataArr, barIndex01, firstTimeBar01, "intval0");
 // var barInt=setInterval(function () {
 //     echartsRun(barCharts01,barOption,baseXdataBar,basedataArr)
 // }, 2000);
@@ -86,13 +92,13 @@ $("#barStop").click(function () {
         xAxis: [{
             data: baseXdataBar
         }],
-        series:[{
-            data:basedataBar
+        series: [{
+            data: basedataBar
         },
             {
-                data:basedataBar01
-            },{
-                data:basedataBar02
+                data: basedataBar01
+            }, {
+                data: basedataBar02
             },
         ]
     });
@@ -100,74 +106,76 @@ $("#barStop").click(function () {
 $("#barStart").click(function () {
     $(this).hide();
     $("#barStop").show();
-    echartsRun(barCharts01,barOption,baseXdataBar,basedataArr,barIndex01,firstTimeBar01,"intval0")
+    echartsRun(barCharts01, barOption, baseXdataBar, basedataArr, barIndex01, firstTimeBar01, "intval0")
     // barInt=setInterval(function () {
     //     echartsRun(barCharts01,barOption,baseXdataBar,basedataArr)
     // }, 2000);
 });
 /*模块二顶部的三个饼图*/
-var chart01=Highcharts.chart('pieEct_1', pieOption);
-var chart02=Highcharts.chart('pieEct_2', pieOption);
-var chart03=Highcharts.chart('pieEct_3', pieOption);
-var count=0;
+var chart01 = Highcharts.chart('pieEct_1', pieOption);
+var chart02 = Highcharts.chart('pieEct_2', pieOption);
+var chart03 = Highcharts.chart('pieEct_3', pieOption);
+var count = 0;
 /*模块二中部的三个环图*/
-var chart04=Highcharts.chart('annularEct_1', annularOption);
-var chart05=Highcharts.chart('annularEct_2', annularOption);
-var chart06=Highcharts.chart('annularEct_3', annularOption);
+var chart04 = Highcharts.chart('annularEct_1', annularOption);
+var chart05 = Highcharts.chart('annularEct_2', annularOption);
+var chart06 = Highcharts.chart('annularEct_3', annularOption);
 
-var intval=setInterval(function () {
+var intval = setInterval(function () {
     var r = count % chart01.series[0].data.length;//0 1 2 3 4 5
     chart01.series[0].data[r].slice(false);
     count++;
     var s = count % chart01.series[0].data.length;
     chart01.series[0].data[s].slice(true);
-},1000);
+}, 1000);
 
 function clickPie(e) {
     clearInterval(intval);
-    $.each(chart01.series[0].data,function (index, value) {
+    $.each(chart01.series[0].data, function (index, value) {
         value.slice(false);
     });
 }
 
 $("#pieEct_2").click(function () {
-    $.each(chart01.series[0].data,function (index, value) {
+    $.each(chart01.series[0].data, function (index, value) {
         value.slice(false);
     });
-    intval=setInterval(function () {
+    intval = setInterval(function () {
         var r = count % chart01.series[0].data.length;//0 1 2 3 4 5
         chart01.series[0].data[r].slice(false);
         count++;
         var s = count % chart01.series[0].data.length;
         chart01.series[0].data[s].slice(true);
-    },1000);
+    }, 1000);
 });
 
-var count01=0;
-var intval01=setInterval(function () {
+var count01 = 0;
+var intval01 = setInterval(function () {
     var r = count01 % chart04.series[0].data.length;//0 1 2 3 4 5
     chart04.series[0].data[r].slice(false);
     count01++;
     var s = count01 % chart04.series[0].data.length;
     chart04.series[0].data[s].slice(true);
-},1000);
+}, 1000);
+
 function clickPie01(e) {
     clearInterval(intval01);
-    $.each(chart04.series[0].data,function (index, value) {
+    $.each(chart04.series[0].data, function (index, value) {
         value.slice(false);
     });
 }
+
 $("#annularEct_2").click(function () {
-    $.each(chart04.series[0].data,function (index, value) {
+    $.each(chart04.series[0].data, function (index, value) {
         value.slice(false);
     });
-    intval01=setInterval(function () {
+    intval01 = setInterval(function () {
         var r = count01 % chart04.series[0].data.length;//0 1 2 3 4 5
         chart04.series[0].data[r].slice(false);
         count01++;
         var s = count01 % chart04.series[0].data.length;
         chart04.series[0].data[s].slice(true);
-    },1000);
+    }, 1000);
 });
 /*模块二底部的三个2D圆角柱形图*/
 echarts.init(document.getElementById('radiusEct_1')).setOption(radiusBarOption);
@@ -177,7 +185,7 @@ echarts.init(document.getElementById('radiusEct_3')).setOption(radiusBarOption);
 echarts.init(document.getElementById('swp_3TopE')).setOption(barOption);
 echarts.init(document.getElementById('swp_3MidE')).setOption(foldLineOption);
 /*模块四组六个折线图*/
-var lineCharts01=echarts.init(document.getElementById('swp_4E_1'));
+var lineCharts01 = echarts.init(document.getElementById('swp_4E_1'));
 lineCharts01.setOption(foldLineOption);
 echarts.init(document.getElementById('swp_4E_2')).setOption(foldLineOption);
 echarts.init(document.getElementById('swp_4E_3')).setOption(foldLineOption);
@@ -185,9 +193,9 @@ echarts.init(document.getElementById('swp_4E_4')).setOption(foldLineOption);
 echarts.init(document.getElementById('swp_4E_5')).setOption(foldLineOption);
 echarts.init(document.getElementById('swp_4E_6')).setOption(foldLineOption);
 //折线图动起来
-var indexLine=0;
+var indexLine = 0;
 //判断是不是第一次循环
-var firstTimeLine=true;
+var firstTimeLine = true;
 /*var lineInt=setInterval(function () {
     var data01=foldLineOption.xAxis[0].data;
     var data=foldLineOption.series[0].data;
@@ -235,7 +243,7 @@ var firstTimeLine=true;
             }]
     });
 }, 1000);*/
-echartsRun(lineCharts01,foldLineOption,baseXdata,basedataLineArr,indexLine,firstTimeLine,"intval1");
+echartsRun(lineCharts01, foldLineOption, baseXdata, basedataLineArr, indexLine, firstTimeLine, "intval1");
 // var lineInt=setInterval(function () {
 //     echartsRun(lineCharts01,foldLineOption,baseXdata,basedataLineArr)
 // }, 1000);
@@ -247,12 +255,12 @@ $("#lineStop").click(function () {
         xAxis: [{
             data: baseXdata
         }],
-        series:[{
-            data:basedata
-        },{
-            data:basedata01
-        },{
-            data:basedata02
+        series: [{
+            data: basedata
+        }, {
+            data: basedata01
+        }, {
+            data: basedata02
         },
         ]
     });
@@ -260,7 +268,7 @@ $("#lineStop").click(function () {
 $("#lineStart").click(function () {
     $(this).hide();
     $("#lineStop").show();
-    echartsRun(lineCharts01,foldLineOption,baseXdata,basedataLineArr,indexLine,firstTimeLine,"intval1");
+    echartsRun(lineCharts01, foldLineOption, baseXdata, basedataLineArr, indexLine, firstTimeLine, "intval1");
     // lineInt=setInterval(function () {
     //     echartsRun(lineCharts01,foldLineOption,baseXdata,basedataLineArr)
     // }, 1000);
@@ -272,10 +280,10 @@ var ledLightOptions = {
     separator: '',
     decimal: '.'
 };
-var ledSpanVal = [78359,2824,223245,57876,34345,26435];
-var ledSpanValTemp = [78259,2724,223345,57976,33245,25435];
-ledSpanVal.forEach(function(obj,inx){
-   new CountUp('ledSpan_'+(inx+1), 0, obj, 0, 2, ledLightOptions).start();
+var ledSpanVal = [78359, 2824, 223245, 57876, 34345, 26435];
+var ledSpanValTemp = [78259, 2724, 223345, 57976, 33245, 25435];
+ledSpanVal.forEach(function (obj, inx) {
+    new CountUp('ledSpan_' + (inx + 1), 0, obj, 0, 2, ledLightOptions).start();
 });
 /*setTimeout(function(){
     ledSpanVal.forEach(function(obj,inx){
@@ -323,48 +331,48 @@ var city = [
         value: [43, 180]
     }];
 var cityS = [
-    {name: '北京关区', value: [200,1]},
-    {name: '成都关区', value: [190,2]},
-    {name: '大连海关', value: [180,3]},
-    {name: '福州关区', value: [170,4]},
-    {name: '拱北关区', value: [160,5]},
-    {name: '广州海关', value: [150,6]},
-    {name: '贵阳海关', value: [140,7]},
-    {name: '哈尔滨区', value: [130,8]},
-    {name: '海口关区', value: [120,9]},
-    {name: '杭州关区', value: [110,10]},
-    {name: '合肥海关', value: [195,11]},
-    {name: '呼特关区', value: [95,12]},
-    {name: '黄埔关区', value: [85,13]},
-    {name: '济南海关', value: [75,14]},
-    {name: '江门关区', value: [65,15]},
-    {name: '昆明关区', value: [55,16]},
-    {name: '拉萨海关', value: [45,17]},
-    {name: '兰州关区', value: [35,18]},
-    {name: '满洲里关', value: [25,19]},
-    {name: '南昌关区', value: [15,20]},
-    {name: '南京海关', value: [195,21]},
-    {name: '南宁关区', value: [185,22]},
-    {name: '宁波关区', value: [175,23]},
-    {name: '青岛海关', value: [165,24]},
-    {name: '厦门关区', value: [155,25]},
-    {name: '汕头海关', value: [145,26]},
-    {name: '上海海关', value: [135,27]},
-    {name: '深圳海关', value: [125,28]},
-    {name: '沈阳关区', value: [115,29]},
-    {name: '石家庄区', value: [105,30]},
-    {name: '太原海关', value: [95,31]},
-    {name: '天津关区', value: [195,32]},
-    {name: '乌关区', value: [75,33]},
-    {name: '武汉海关', value: [95,34]},
-    {name: '西安关区', value: [85,35]},
-    {name: '西宁关区', value: [195,36]},
-    {name: '银川海关', value: [65,37]},
-    {name: '湛江关区', value: [195,38]},
-    {name: '长春关区', value: [95,39]},
-    {name: '长沙关区', value: [45,40]},
-    {name: '郑州关区', value: [35,41]},
-    {name: '重庆关区', value: [5,42]}
+    {name: '北京关区', value: [200, 1]},
+    {name: '成都关区', value: [190, 2]},
+    {name: '大连海关', value: [180, 3]},
+    {name: '福州关区', value: [170, 4]},
+    {name: '拱北关区', value: [160, 5]},
+    {name: '广州海关', value: [150, 6]},
+    {name: '贵阳海关', value: [140, 7]},
+    {name: '哈尔滨区', value: [130, 8]},
+    {name: '海口关区', value: [120, 9]},
+    {name: '杭州关区', value: [110, 10]},
+    {name: '合肥海关', value: [195, 11]},
+    {name: '呼特关区', value: [95, 12]},
+    {name: '黄埔关区', value: [85, 13]},
+    {name: '济南海关', value: [75, 14]},
+    {name: '江门关区', value: [65, 15]},
+    {name: '昆明关区', value: [55, 16]},
+    {name: '拉萨海关', value: [45, 17]},
+    {name: '兰州关区', value: [35, 18]},
+    {name: '满洲里关', value: [25, 19]},
+    {name: '南昌关区', value: [15, 20]},
+    {name: '南京海关', value: [195, 21]},
+    {name: '南宁关区', value: [185, 22]},
+    {name: '宁波关区', value: [175, 23]},
+    {name: '青岛海关', value: [165, 24]},
+    {name: '厦门关区', value: [155, 25]},
+    {name: '汕头海关', value: [145, 26]},
+    {name: '上海海关', value: [135, 27]},
+    {name: '深圳海关', value: [125, 28]},
+    {name: '沈阳关区', value: [115, 29]},
+    {name: '石家庄区', value: [105, 30]},
+    {name: '太原海关', value: [95, 31]},
+    {name: '天津关区', value: [195, 32]},
+    {name: '乌关区', value: [75, 33]},
+    {name: '武汉海关', value: [95, 34]},
+    {name: '西安关区', value: [85, 35]},
+    {name: '西宁关区', value: [195, 36]},
+    {name: '银川海关', value: [65, 37]},
+    {name: '湛江关区', value: [195, 38]},
+    {name: '长春关区', value: [95, 39]},
+    {name: '长沙关区', value: [45, 40]},
+    {name: '郑州关区', value: [35, 41]},
+    {name: '重庆关区', value: [5, 42]}
 ];
 var geoCoordMap = {
     '北京关区': [116.46, 39.91],
@@ -425,15 +433,15 @@ var convertData = function (data) {
     return res;
 };
 //气泡图数据
-var scatterData=convertData(cityS);
+var scatterData = convertData(cityS);
 var mapChart = echarts.init(document.getElementById('mapEcharts'));
 var min = 1, max = 42;
 var mapOption = {
     tooltip: {
         formatter: function (params) {
-            if(params.seriesType=="map3D"){
+            if (params.seriesType == "map3D") {
                 return;
-            }else if(params.seriesType=="scatter3D"){
+            } else if (params.seriesType == "scatter3D") {
                 var content = '',
                     content = params.name + params.value[2];
                 return content;
@@ -475,7 +483,7 @@ var mapOption = {
         },
         textStyle: {
             color: '#fff',
-            fontSize:setFontsize(10)
+            fontSize: setFontsize(10)
         },
         calculable: true,
         right: "4%"
@@ -602,7 +610,7 @@ var mapOption = {
             type: "scatter3D",
             coordinateSystem: 'geo3D',
             zlevel: 1,
-            hoverAnimation:true,
+            hoverAnimation: true,
             symbol: 'pin',
             data: scatterData,
             // symbolSize:20,
@@ -615,10 +623,10 @@ var mapOption = {
                     formatter: '{b}',
                     position: 'bottom',
                     show: true,
-                    textStyle:{
-                        color:"#374b6c",
-                        fontSize:setFontsize(12),
-                        borderWidth:0,
+                    textStyle: {
+                        color: "#374b6c",
+                        fontSize: setFontsize(12),
+                        borderWidth: 0,
                         backgroundColor: 'transparent'
                     }
                 },
@@ -630,35 +638,35 @@ var mapOption = {
                 normal: {
                     color: '#05C3F9'
                 },
-                emphasis:{
-                    color:"#f00"
+                emphasis: {
+                    color: "#f00"
                 }
             }
         }]
 };
 mapChart.setOption(mapOption);
 //循环高亮每个气泡
-var sdIndex=0;
+var sdIndex = 0;
 setInterval(function () {
     var rsdIndex = sdIndex % scatterData.length;
     mapChart.dispatchAction({
         type: 'downplay',
         // 可选，系列 index，可以是一个数组指定多个系列
-        seriesIndex:1,
+        seriesIndex: 1,
         // 可选，数据的 index
         dataIndex: rsdIndex,
     });
     sdIndex++;
-    var ssdIndex=sdIndex % scatterData.length;
+    var ssdIndex = sdIndex % scatterData.length;
     mapChart.dispatchAction({
         type: 'highlight',
         // 可选，系列 index，可以是一个数组指定多个系列
-        seriesIndex:1,
+        seriesIndex: 1,
         // 可选，数据的 index
         dataIndex: ssdIndex,
     });
 
-},1000);
+}, 1000);
 /*3D地图点击事件，点击后升高*/
 mapChart.on('click', function (params) {
     log(params)
@@ -673,60 +681,59 @@ mapChart.on('click', function (params) {
 });
 
 //echarts折线图和组合图动起来的公共方法
-function echartsRun(echartsobj,echartsoption,baseXdata,basedata,barIndex,firstTimeBar,num) {
+function echartsRun(echartsobj, echartsoption, baseXdata, basedata, barIndex, firstTimeBar, num) {
     console.log();
-    var data01=baseXdata.slice(0,5);
-    var data01Length=data01.length;
-    var seriesCount=echartsoption.series.length;
-    for(var p=0;p<seriesCount;p++){
-        echartsoption.series[p].data=basedata[p].slice(0,5);
+    var data01 = baseXdata.slice(0, 5);
+    var data01Length = data01.length;
+    var seriesCount = echartsoption.series.length;
+    for (var p = 0; p < seriesCount; p++) {
+        echartsoption.series[p].data = basedata[p].slice(0, 5);
         console.log(echartsoption.series[p].data);
     }
-    eval(num+"="+setInterval(function () {
+    eval(num + "=" + setInterval(function () {
         // console.log(firstTimeBar);
-        if(firstTimeBar){
-            if(barIndex==baseXdata.length-(data01Length)){
-                firstTimeBar=false;
-                barIndex=0;
+        if (firstTimeBar) {
+            if (barIndex == baseXdata.length - (data01Length)) {
+                firstTimeBar = false;
+                barIndex = 0;
                 data01.shift();
                 data01.push(baseXdata[barIndex]);
-                for(var r=0;r<seriesCount;r++){
+                for (var r = 0; r < seriesCount; r++) {
                     echartsoption.series[r].data.shift();
                     echartsoption.series[r].data.push(basedata[r][barIndex]);
                 }
-                console.log("222++++++"+echartsoption.series[0].data);
-            }else{
+                console.log("222++++++" + echartsoption.series[0].data);
+            } else {
                 //第一次五个以内的循环
                 data01.shift();
-                data01.push(baseXdata[barIndex+data01Length]);
-                for(var h=0;h<seriesCount;h++){
+                data01.push(baseXdata[barIndex + data01Length]);
+                for (var h = 0; h < seriesCount; h++) {
                     echartsoption.series[h].data.shift();
-                    echartsoption.series[h].data.push(basedata[h][barIndex+data01Length]);
+                    echartsoption.series[h].data.push(basedata[h][barIndex + data01Length]);
                 }
-                console.log("111++++++"+echartsoption.series[0].data);
+                console.log("111++++++" + echartsoption.series[0].data);
             }
         }
-        else{
-            if(barIndex==baseXdata.length){
-                barIndex=0;
+        else {
+            if (barIndex == baseXdata.length) {
+                barIndex = 0;
                 data01.shift();
                 data01.push(baseXdata[barIndex]);
-                for(var x=0;x<seriesCount;x++){
+                for (var x = 0; x < seriesCount; x++) {
                     echartsoption.series[x].data.shift();
                     echartsoption.series[x].data.push(basedata[x][barIndex]);
                 }
-                console.log("444++++++"+echartsoption.series[0].data);
-            }else{
+                console.log("444++++++" + echartsoption.series[0].data);
+            } else {
                 data01.shift();
                 data01.push(baseXdata[barIndex]);
-                for(var y=0;y<seriesCount;y++){
+                for (var y = 0; y < seriesCount; y++) {
                     echartsoption.series[y].data.shift();
                     echartsoption.series[y].data.push(basedata[y][barIndex]);
                 }
-                console.log("333++++++"+echartsoption.series[0].data);
+                console.log("333++++++" + echartsoption.series[0].data);
             }
         }
-
 
 
         barIndex++;
@@ -736,9 +743,10 @@ function echartsRun(echartsobj,echartsoption,baseXdata,basedata,barIndex,firstTi
             xAxis: [{
                 data: data01
             }],
-            series:echartsoption.series
+            series: echartsoption.series
         });
     }, 2000));
 }
+
 
 
