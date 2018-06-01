@@ -3,79 +3,85 @@ var barCharts01=echarts.init(document.getElementById('swp_1MidE'));
 barCharts01.setOption(barOption);
 echarts.init(document.getElementById('swp_1BtmE')).setOption(barOption);
 //组合图动起来
-var barIndex=0;
-var firstTimeBar=true;
-var barInt=setInterval(function () {
-    var data01=barOption.xAxis[0].data;
-    var data=barOption.series[0].data;
-    var dataline=barOption.series[1].data;
-    var datascatter=barOption.series[2].data;
-    var data01Length=data01.length;
-    if(firstTimeBar){
-        if(barIndex==baseXdataBar.length-(data01Length)){
-            firstTimeBar=false;
-            barIndex=0;
-            data01.shift();
-            data01.push(baseXdataBar[barIndex]);
-            data.shift();
-            data.push(basedataBar[barIndex]);
-            dataline.shift();
-            dataline.push(basedataBar[barIndex]);
-            datascatter.shift();
-            datascatter.push(basedataBar[barIndex])
-        }else{
-            data01.shift();
-            data01.push(baseXdataBar[barIndex+data01Length]);
-            data.shift();
-            data.push(basedataBar[barIndex+data01Length]);
-            dataline.shift();
-            dataline.push(basedataBar[barIndex+data01Length]);
-            datascatter.shift();
-            datascatter.push(basedataBar[barIndex+data01Length]);
-        }
-    }else{
-        if(barIndex==baseXdataBar.length){
-            barIndex=0;
-            data01.shift();
-            data01.push(baseXdataBar[barIndex]);
-            data.shift();
-            data.push(basedataBar[barIndex]);
-            dataline.shift();
-            dataline.push(basedataBar[barIndex]);
-            datascatter.shift();
-            datascatter.push(basedataBar[barIndex]);
-        }else{
-            data01.shift();
-            data01.push(baseXdataBar[barIndex]);
-            data.shift();
-            data.push(basedataBar[barIndex]);
-            dataline.shift();
-            dataline.push(basedataBar[barIndex]);
-            datascatter.shift();
-            datascatter.push(basedataBar[barIndex]);
-        }
-    }
-
-    barIndex++;
-    barCharts01.setOption({
-        xAxis: [{
-            data: data01
-        }],
-        series:[{
-            data:data
-        },{
-            data:dataline
-        },
-            {
-                data:datascatter
-            },
-        ]
-    });
-}, 2000);
+// var barInt=setInterval(
+//     function () {
+//     var data01=barOption.xAxis[0].data;
+//     var data=barOption.series[0].data;
+//     var dataline=barOption.series[1].data;
+//     var datascatter=barOption.series[2].data;
+//     var data01Length=data01.length;
+//     if(firstTimeBar){
+//         if(barIndex==baseXdataBar.length-(data01Length)){
+//             firstTimeBar=false;
+//             barIndex=0;
+//             data01.shift();
+//             data01.push(baseXdataBar[barIndex]);
+//             data.shift();
+//             data.push(basedataBar[barIndex]);
+//             dataline.shift();
+//             dataline.push(basedataBar[barIndex]);
+//             datascatter.shift();
+//             datascatter.push(basedataBar[barIndex])
+//         }else{
+//             data01.shift();
+//             data01.push(baseXdataBar[barIndex+data01Length]);
+//             data.shift();
+//             data.push(basedataBar[barIndex+data01Length]);
+//             dataline.shift();
+//             dataline.push(basedataBar[barIndex+data01Length]);
+//             datascatter.shift();
+//             datascatter.push(basedataBar[barIndex+data01Length]);
+//         }
+//     }else{
+//         if(barIndex==baseXdataBar.length){
+//             barIndex=0;
+//             data01.shift();
+//             data01.push(baseXdataBar[barIndex]);
+//             data.shift();
+//             data.push(basedataBar[barIndex]);
+//             dataline.shift();
+//             dataline.push(basedataBar[barIndex]);
+//             datascatter.shift();
+//             datascatter.push(basedataBar[barIndex]);
+//         }else{
+//             data01.shift();
+//             data01.push(baseXdataBar[barIndex]);
+//             data.shift();
+//             data.push(basedataBar[barIndex]);
+//             dataline.shift();
+//             dataline.push(basedataBar[barIndex]);
+//             datascatter.shift();
+//             datascatter.push(basedataBar[barIndex]);
+//         }
+//     }
+//     console.log(data);
+//     barIndex++;
+//     barCharts01.setOption({
+//         xAxis: [{
+//             data: data01
+//         }],
+//         series:[{
+//             data:data
+//         },{
+//             data:dataline
+//         },
+//             {
+//                 data:datascatter
+//             },
+//         ]
+//     });
+// }, 2000);
+var barIndex01=0;
+var firstTimeBar01=true;
+console.log();
+echartsRun(barCharts01,barOption,baseXdataBar,basedataArr,barIndex01,firstTimeBar01,"intval0");
+// var barInt=setInterval(function () {
+//     echartsRun(barCharts01,barOption,baseXdataBar,basedataArr)
+// }, 2000);
 $("#barStop").click(function () {
     $(this).hide();
     $("#barStart").show();
-    clearInterval(barInt);
+    clearInterval(intval0);
     barCharts01.setOption({
         xAxis: [{
             data: baseXdataBar
@@ -84,9 +90,9 @@ $("#barStop").click(function () {
             data:basedataBar
         },
             {
-                data:basedataBar
+                data:basedataBar01
             },{
-                data:basedataBar
+                data:basedataBar02
             },
         ]
     });
@@ -94,73 +100,10 @@ $("#barStop").click(function () {
 $("#barStart").click(function () {
     $(this).hide();
     $("#barStop").show();
-    barInt=setInterval(function () {
-        var data01=barOption.xAxis[0].data;
-        var data=barOption.series[0].data;
-        var dataline=barOption.series[1].data;
-        var datascatter=barOption.series[2].data;
-        var data01Length=data01.length;
-        if(firstTimeBar){
-            if(barIndex==baseXdataBar.length-(data01Length)){
-                firstTimeBar=false;
-                barIndex=0;
-                data01.shift();
-                data01.push(baseXdataBar[barIndex]);
-                data.shift();
-                data.push(basedataBar[barIndex]);
-                dataline.shift();
-                dataline.push(basedataBar[barIndex]);
-                datascatter.shift();
-                datascatter.push(basedataBar[barIndex])
-            }else{
-                data01.shift();
-                data01.push(baseXdataBar[barIndex+data01Length]);
-                data.shift();
-                data.push(basedataBar[barIndex+data01Length]);
-                dataline.shift();
-                dataline.push(basedataBar[barIndex+data01Length]);
-                datascatter.shift();
-                datascatter.push(basedataBar[barIndex+data01Length]);
-            }
-        }else{
-            if(barIndex==baseXdataBar.length){
-                barIndex=0;
-                data01.shift();
-                data01.push(baseXdataBar[barIndex]);
-                data.shift();
-                data.push(basedataBar[barIndex]);
-                dataline.shift();
-                dataline.push(basedataBar[barIndex]);
-                datascatter.shift();
-                datascatter.push(basedataBar[barIndex]);
-            }else{
-                data01.shift();
-                data01.push(baseXdataBar[barIndex]);
-                data.shift();
-                data.push(basedataBar[barIndex]);
-                dataline.shift();
-                dataline.push(basedataBar[barIndex]);
-                datascatter.shift();
-                datascatter.push(basedataBar[barIndex]);
-            }
-        }
-        console.log(data);
-        barIndex++;
-        barCharts01.setOption({
-            xAxis: [{
-                data: data01
-            }],
-            series:[{
-                data:data
-            },{
-                data:dataline
-            },
-                {
-                    data:datascatter
-                },
-            ]
-        });
-    }, 2000);
+    echartsRun(barCharts01,barOption,baseXdataBar,basedataArr,barIndex01,firstTimeBar01,"intval0")
+    // barInt=setInterval(function () {
+    //     echartsRun(barCharts01,barOption,baseXdataBar,basedataArr)
+    // }, 2000);
 });
 /*模块二顶部的三个饼图*/
 var chart01=Highcharts.chart('pieEct_1', pieOption);
@@ -242,10 +185,10 @@ echarts.init(document.getElementById('swp_4E_4')).setOption(foldLineOption);
 echarts.init(document.getElementById('swp_4E_5')).setOption(foldLineOption);
 echarts.init(document.getElementById('swp_4E_6')).setOption(foldLineOption);
 //折线图动起来
-var i=0;
+var indexLine=0;
 //判断是不是第一次循环
-var firstTime=true;
-var lineInt=setInterval(function () {
+var firstTimeLine=true;
+/*var lineInt=setInterval(function () {
     var data01=foldLineOption.xAxis[0].data;
     var data=foldLineOption.series[0].data;
     var data01Length=data01.length;
@@ -291,70 +234,36 @@ var lineInt=setInterval(function () {
                 data:data
             }]
     });
-}, 1000);
+}, 1000);*/
+echartsRun(lineCharts01,foldLineOption,baseXdata,basedataLineArr,indexLine,firstTimeLine,"intval1");
+// var lineInt=setInterval(function () {
+//     echartsRun(lineCharts01,foldLineOption,baseXdata,basedataLineArr)
+// }, 1000);
 $("#lineStop").click(function () {
     $(this).hide();
     $("#lineStart").show();
-    clearInterval(lineInt);
+    clearInterval(intval1);
     lineCharts01.setOption({
         xAxis: [{
             data: baseXdata
         }],
         series:[{
             data:basedata
-        }]
+        },{
+            data:basedata01
+        },{
+            data:basedata02
+        },
+        ]
     });
 });
 $("#lineStart").click(function () {
     $(this).hide();
     $("#lineStop").show();
-    lineInt=setInterval(function () {
-        var data01=foldLineOption.xAxis[0].data;
-        var data=foldLineOption.series[0].data;
-        var data01Length=data01.length;
-        //如果是第一次循环
-        if(firstTime){
-            //第一批的前五个循环完了之后
-            if(i==baseXdata.length-(data01Length)){
-                firstTime=false;
-                i=0;
-                data01.shift();
-                data01.push(baseXdata[i]);
-                data.shift();
-                data.push(basedata[i])
-            }else{
-                //第一批的前五个循环完了之前
-                data01.shift();
-                data01.push(baseXdata[i+data01Length]);
-                data.shift();
-                data.push(basedata[i+data01Length]);
-            }
-        }else{
-            //如果第一次的所有都循环完了
-            if(i==baseXdata.length){
-                i=0;
-                data01.shift();
-                data01.push(baseXdata[i]);
-                data.shift();
-                data.push(basedata[i])
-            }else {
-                //第一次的还没循环完
-                data01.shift();
-                data01.push(baseXdata[i]);
-                data.shift();
-                data.push(basedata[i]);
-            }
-        }
-        i++;
-        lineCharts01.setOption({
-            xAxis: [{
-                data: data01
-            }],
-            series:[{
-                data:data
-            }]
-        });
-    }, 1000);
+    echartsRun(lineCharts01,foldLineOption,baseXdata,basedataLineArr,indexLine,firstTimeLine,"intval1");
+    // lineInt=setInterval(function () {
+    //     echartsRun(lineCharts01,foldLineOption,baseXdata,basedataLineArr)
+    // }, 1000);
 });
 /*左上角LED灯牌效果*/
 var ledLightOptions = {
@@ -515,7 +424,6 @@ var convertData = function (data) {
     }
     return res;
 };
-// console.log(convertData(cityS));
 //气泡图数据
 var scatterData=convertData(cityS);
 var mapChart = echarts.init(document.getElementById('mapEcharts'));
@@ -763,3 +671,74 @@ mapChart.on('click', function (params) {
     mapOption.series.data = city;
     mapChart.setOption(mapOption);
 });
+
+//echarts折线图和组合图动起来的公共方法
+function echartsRun(echartsobj,echartsoption,baseXdata,basedata,barIndex,firstTimeBar,num) {
+    console.log();
+    var data01=baseXdata.slice(0,5);
+    var data01Length=data01.length;
+    var seriesCount=echartsoption.series.length;
+    for(var p=0;p<seriesCount;p++){
+        echartsoption.series[p].data=basedata[p].slice(0,5);
+        console.log(echartsoption.series[p].data);
+    }
+    eval(num+"="+setInterval(function () {
+        // console.log(firstTimeBar);
+        if(firstTimeBar){
+            if(barIndex==baseXdata.length-(data01Length)){
+                firstTimeBar=false;
+                barIndex=0;
+                data01.shift();
+                data01.push(baseXdata[barIndex]);
+                for(var r=0;r<seriesCount;r++){
+                    echartsoption.series[r].data.shift();
+                    echartsoption.series[r].data.push(basedata[r][barIndex]);
+                }
+                console.log("222++++++"+echartsoption.series[0].data);
+            }else{
+                //第一次五个以内的循环
+                data01.shift();
+                data01.push(baseXdata[barIndex+data01Length]);
+                for(var h=0;h<seriesCount;h++){
+                    echartsoption.series[h].data.shift();
+                    echartsoption.series[h].data.push(basedata[h][barIndex+data01Length]);
+                }
+                console.log("111++++++"+echartsoption.series[0].data);
+            }
+        }
+        else{
+            if(barIndex==baseXdata.length){
+                barIndex=0;
+                data01.shift();
+                data01.push(baseXdata[barIndex]);
+                for(var x=0;x<seriesCount;x++){
+                    echartsoption.series[x].data.shift();
+                    echartsoption.series[x].data.push(basedata[x][barIndex]);
+                }
+                console.log("444++++++"+echartsoption.series[0].data);
+            }else{
+                data01.shift();
+                data01.push(baseXdata[barIndex]);
+                for(var y=0;y<seriesCount;y++){
+                    echartsoption.series[y].data.shift();
+                    echartsoption.series[y].data.push(basedata[y][barIndex]);
+                }
+                console.log("333++++++"+echartsoption.series[0].data);
+            }
+        }
+
+
+
+        barIndex++;
+        // console.log(echartsoption.series[0].data);
+        // echartsobj.setOption(echartsoption);
+        echartsobj.setOption({
+            xAxis: [{
+                data: data01
+            }],
+            series:echartsoption.series
+        });
+    }, 2000));
+}
+
+

@@ -234,7 +234,7 @@ header {
 
 .swpEBox > div, .foldEBox > div {
     width: 96%;
-    height: 85%;
+    height: 80%;
     margin-left: 2%;
 }
 
@@ -616,7 +616,7 @@ button {
     height: 1.5rem !important;
     position: absolute;
     top: 1rem;
-    right: 5rem;
+    left: 5rem;
 }
 
 .lineStart {
