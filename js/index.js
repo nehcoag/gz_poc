@@ -432,8 +432,23 @@ var convertData = function (data) {
     }
     return res;
 };
+var convertDataMark = function (data) {
+    var res = [];
+    for (var i = 0; i < data.length; i++) {
+        var geoCoord = geoCoordMap[data[i].name];
+        if (geoCoord) {
+            res.push({
+                name: data[i].name,
+                coord: geoCoord,
+            });
+        }
+    }
+    return res;
+};
+console.log(convertDataMark(cityS));
 //气泡图数据
 var scatterData = convertData(cityS);
+console.log(scatterData);
 var mapChart = echarts.init(document.getElementById('mapEcharts'));
 var min = 1, max = 42;
 var mapOption = {
@@ -449,7 +464,8 @@ var mapOption = {
 
         }
     },
-    visualMap: [{
+    visualMap: [
+        {
         show: false,
         min: min,
         max: max,
@@ -641,7 +657,37 @@ var mapOption = {
                 emphasis: {
                     color: "#f00"
                 }
-            }
+            },
+            /*markPoint: {
+                symbol: 'emptyCircle',
+                //symbolSize : function (v){
+                //	return 10 + v/10
+                //},
+                symbolSize: 8,
+                effect: {
+                    show: true,
+                    shadowBlur: 0
+                },
+                itemStyle: {
+                    normal: {
+                        label: {
+                            show: true
+                        },
+                    },
+                    emphasis: {
+                        label: {position: 'top'}
+                    }
+                },
+                tooltip: {
+                    padding: 10,
+                    backgroundColor: 'rgba(125,184,218)',
+                    textStyle: {
+                        fontSize: 22,
+                        color: '#000'
+                    }
+                },
+                data: convertDataMark(cityS)
+            }*/
         }]
 };
 mapChart.setOption(mapOption);
@@ -665,7 +711,6 @@ setInterval(function () {
         // 可选，数据的 index
         dataIndex: ssdIndex,
     });
-
 }, 1000);
 /*3D地图点击事件，点击后升高*/
 mapChart.on('click', function (params) {
