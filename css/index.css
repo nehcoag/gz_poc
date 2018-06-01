@@ -163,33 +163,6 @@ header {
     position: absolute;
 }
 
-.rev_1 {
-    left: 0;
-}
-
-.rev_2 {
-    left: 16.95%;
-}
-
-.rev_3 {
-    left: 66.6%;
-}
-
-.rev_4 {
-    left: 83.6%;
-}
-
-.rev_5 {
-    left: 101.6%;
-}
-
-.rev_6 {
-    left: 118.6%;
-}
-
-.rev_6 {
-    left: 118.6%;
-}
 
 .rev > .swpItem {
     height: 100%;

@@ -55,7 +55,7 @@ var barInt=setInterval(function () {
             datascatter.push(basedataBar[barIndex]);
         }
     }
-    console.log(data);
+
     barIndex++;
     barCharts01.setOption({
         xAxis: [{
@@ -515,7 +515,7 @@ var convertData = function (data) {
     }
     return res;
 };
-console.log(convertData(cityS));
+// console.log(convertData(cityS));
 //气泡图数据
 var scatterData=convertData(cityS);
 var mapChart = echarts.init(document.getElementById('mapEcharts'));
