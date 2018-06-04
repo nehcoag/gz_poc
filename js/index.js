@@ -750,6 +750,9 @@ var mapOption = {
         }]
 };
 mapChart.setOption(mapOption);
+mapChart.on("click",function () {
+  console.log(111111);
+});
 //循环高亮每个气泡
 var sdIndex = 0;
 setInterval(function () {
@@ -824,7 +827,7 @@ function echartsRun(echartsobj, echartsoption, baseXdata, basedata, barIndex, fi
                     echartsoption.series[r].data.shift();
                     echartsoption.series[r].data.push(basedata[r][barIndex]);
                 }
-                console.log("222++++++" + echartsoption.series[0].data);
+                // console.log("222++++++" + echartsoption.series[0].data);
             } else {
                 //第一次五个以内的循环
                 data01.shift();
@@ -833,7 +836,7 @@ function echartsRun(echartsobj, echartsoption, baseXdata, basedata, barIndex, fi
                     echartsoption.series[h].data.shift();
                     echartsoption.series[h].data.push(basedata[h][barIndex + data01Length]);
                 }
-                console.log("111++++++" + echartsoption.series[0].data);
+                // console.log("111++++++" + echartsoption.series[0].data);
             }
         }
         else {
@@ -845,7 +848,7 @@ function echartsRun(echartsobj, echartsoption, baseXdata, basedata, barIndex, fi
                     echartsoption.series[x].data.shift();
                     echartsoption.series[x].data.push(basedata[x][barIndex]);
                 }
-                console.log("444++++++" + echartsoption.series[0].data);
+                // console.log("444++++++" + echartsoption.series[0].data);
             } else {
                 data01.shift();
                 data01.push(baseXdata[barIndex]);
@@ -853,7 +856,7 @@ function echartsRun(echartsobj, echartsoption, baseXdata, basedata, barIndex, fi
                     echartsoption.series[y].data.shift();
                     echartsoption.series[y].data.push(basedata[y][barIndex]);
                 }
-                console.log("333++++++" + echartsoption.series[0].data);
+                // console.log("333++++++" + echartsoption.series[0].data);
             }
         }
 
