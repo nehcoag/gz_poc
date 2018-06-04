@@ -311,24 +311,60 @@ var normalCity = [{name: '广东', value: [1, 10]}, {name: '江西', value: [3, 
     value: [43, 180]
 }];
 var city = [
-    {name: '广东', value: [1, 10]}, {name: '江西', value: [3, 20]}, {
+    {name: '广东', value: [1, 10]}, {name: '江西', value: [2, 20]}, {
         name: '福建',
-        value: [5, 30]
-    }, {name: '浙江', value: [7, 40]}, {name: '湖南', value: [9, 50]}, {
+        value: [3, 30]
+    },{
+        name: '河北',
+        value: [4, 180]
+    },{
+        name: '北京',
+        value: [5, 180]
+    },{
+        name: '天津',
+        value: [6, 180]
+    },{
+        name: '山西',
+        value: [7, 180]
+    }, {name: '浙江', value: [8, 40]}, {name: '湖南', value: [9, 50]}, {
         name: '上海',
-        value: [11, 120]
-    }, {name: '广西', value: [13, 60]}, {name: '云南', value: [15, 70]}, {
+        value: [10, 120]
+    }, {name: '广西', value: [11, 60]}, {name: '云南', value: [12, 70]}, {
         name: '贵州',
-        value: [17, 80]
-    }, {name: '重庆', value: [19, 90]}, {name: '四川', value: [21, 100]}, {
+        value: [13, 80]
+    }, {name: '重庆', value: [14, 90]}, {name: '四川', value: [15, 100]}, {
         name: '安徽',
-        value: [23, 110]
-    }, {name: '江苏', value: [25, 130]}, {name: '河南', value: [27, 140]}, {
+        value: [16, 110]
+    }, {name: '江苏', value: [17, 130]}, {name: '河南', value: [18, 140]}, {
         name: '山东',
-        value: [29, 150]
-    }, {name: '陕西', value: [31, 160]}, {name: '青海', value: [33, 170]}, {
+        value: [19, 150]
+    }, {name: '陕西', value: [20, 160]},{
+        name: '甘肃',
+        value: [21, 180]
+    },{
+        name: '辽宁',
+        value: [22, 180]
+    },{
+        name: '吉林',
+        value: [23, 180]
+    },{
+        name: '黑龙江',
+        value: [24, 180]
+    }, {name: '青海', value: [25, 170]},{
+        name: '内蒙古',
+        value: [26, 180]
+    },{
+        name: '宁夏',
+        value: [27, 180]
+    },{
+        name: '新疆',
+        value: [28, 180]
+    }, {
         name: '西藏',
-        value: [43, 180]
+        value: [29, 180]
+    },{
+        name: '湖北',
+        value: [30, 180]
     }];
 var cityS = [
     {name: '北京关区', value: [200, 1]},
@@ -427,6 +463,26 @@ var convertData = function (data) {
             res.push({
                 name: data[i].name,
                 value: geoCoord.concat(data[i].value),
+                label: {
+                    normal: {
+                        formatter: function (params) {
+                                var content = '',
+                                    content = params.name;
+                                return content;
+                        },
+                        position: 'bottom',
+                        show: true,
+                        textStyle: {
+                            color: "#374b6c",
+                            fontSize: setFontsize(12),
+                            borderWidth: 0,
+                            backgroundColor: 'transparent'
+                        }
+                    },
+                    emphasis: {
+                        show: true
+                    }
+                },
             });
         }
     }
@@ -476,7 +532,7 @@ var mapOption = {
         dimension: 0,
         seriesIndex: [0],
         inRange: {
-            color: ['#257cff', '#baeaff']
+            color: ['#247bff', '#baeaff']
         },
         textStyle: {
             color: '#fff',
@@ -495,7 +551,7 @@ var mapOption = {
         dimension: 3,
         seriesIndex: [1],
         inRange: {
-            color: ['#00467F', '#A5CC82']
+            color: ['#ffffff', '#ffd259']
         },
         textStyle: {
             color: '#fff',
@@ -585,7 +641,7 @@ var mapOption = {
                 }
             },
             label: {
-                show: false,
+                show: true,
                 // formatter: function (params) {
                 //     var content = '',
                 //         content = params.name;
@@ -607,8 +663,10 @@ var mapOption = {
             itemStyle: {
                 normal: {
                     borderWidth: 0.8,
-                    borderColor: 'rgba(255,255,255,0,3)',
+                    // borderColor: 'rgba(255,255,255,0,3)',
+                    borderColor:"#ffffff",
                     color: '#b9e9ff'
+                    // color:"#ffffff"
                 }, //阴影效果
                 emphasis: {
                     areaColor: '#1773c3'
@@ -634,7 +692,7 @@ var mapOption = {
                 // console.log(val);
                 return val[2] / 5;
             },
-            label: {
+            /*label: {
                 normal: {
                     formatter: '{b}',
                     position: 'bottom',
@@ -649,13 +707,14 @@ var mapOption = {
                 emphasis: {
                     show: true
                 }
-            },
+            },*/
             itemStyle: {
                 normal: {
-                    color: '#05C3F9'
+                    color: '#05C3F9',
+                    opacity:1
                 },
                 emphasis: {
-                    color: "#f00"
+                    color: "#CD661D"
                 }
             },
             /*markPoint: {
@@ -702,8 +761,26 @@ setInterval(function () {
         // 可选，数据的 index
         dataIndex: rsdIndex,
     });
+    mapOption.series[1].data[rsdIndex].label.normal.textStyle.color="#374b6c";
+    mapOption.series[1].data[rsdIndex].label.normal.textStyle.fontWeight="normal";
+    mapOption.series[1].data[rsdIndex].label.normal.textStyle.fontSize=setFontsize(12);
+    mapOption.series[1].data[rsdIndex].label.normal.formatter=function (params) {
+        var content = '',
+            content = params.name;
+        return content;
+    };
+    // mapChart.setOption(mapOption);
     sdIndex++;
     var ssdIndex = sdIndex % scatterData.length;
+    mapOption.series[1].data[ssdIndex].label.normal.textStyle.color="#CD661D";
+    mapOption.series[1].data[ssdIndex].label.normal.textStyle.fontWeight="bolder";
+    mapOption.series[1].data[ssdIndex].label.normal.textStyle.fontSize=setFontsize(16);
+    mapOption.series[1].data[ssdIndex].label.normal.formatter=function (params) {
+        var content = '',
+            content = params.name + params.value[2];
+        return content;
+    };
+    mapChart.setOption(mapOption);
     mapChart.dispatchAction({
         type: 'highlight',
         // 可选，系列 index，可以是一个数组指定多个系列
