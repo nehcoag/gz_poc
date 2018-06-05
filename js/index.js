@@ -480,7 +480,15 @@ var convertData = function (data) {
                         }
                     },
                     emphasis: {
-                        show: true
+                        show: true,
+                        position: 'bottom',
+                        textStyle: {
+                            color: "#CD661D",
+                            fontSize: setFontsize(16),
+                            fontWeight:"bolder",
+                            borderWidth: 0,
+                            backgroundColor: 'transparent'
+                        }
                     }
                 },
             });
@@ -641,7 +649,7 @@ var mapOption = {
                 }
             },
             label: {
-                show: true,
+                show: false,
                 // formatter: function (params) {
                 //     var content = '',
                 //         content = params.name;
@@ -750,12 +758,9 @@ var mapOption = {
         }]
 };
 mapChart.setOption(mapOption);
-mapChart.on("click",function () {
-  console.log(111111);
-});
 //循环高亮每个气泡
 var sdIndex = 0;
-setInterval(function () {
+var mapInt=setInterval(function () {
     var rsdIndex = sdIndex % scatterData.length;
     mapChart.dispatchAction({
         type: 'downplay',
@@ -792,8 +797,52 @@ setInterval(function () {
         dataIndex: ssdIndex,
     });
 }, 1000);
+$("#mapEcharts").on("mouseover",function () {
+    // console.log(1111);
+        clearInterval(mapInt);
+});
+$("#mapEcharts").on("mouseout",function () {
+    // console.log(2222);
+        mapInt=setInterval(function () {
+            var rsdIndex = sdIndex % scatterData.length;
+            mapChart.dispatchAction({
+                type: 'downplay',
+                // 可选，系列 index，可以是一个数组指定多个系列
+                seriesIndex: 1,
+                // 可选，数据的 index
+                dataIndex: rsdIndex,
+            });
+            mapOption.series[1].data[rsdIndex].label.normal.textStyle.color="#374b6c";
+            mapOption.series[1].data[rsdIndex].label.normal.textStyle.fontWeight="normal";
+            mapOption.series[1].data[rsdIndex].label.normal.textStyle.fontSize=setFontsize(12);
+            mapOption.series[1].data[rsdIndex].label.normal.formatter=function (params) {
+                var content = '',
+                    content = params.name;
+                return content;
+            };
+            // mapChart.setOption(mapOption);
+            sdIndex++;
+            var ssdIndex = sdIndex % scatterData.length;
+            mapOption.series[1].data[ssdIndex].label.normal.textStyle.color="#CD661D";
+            mapOption.series[1].data[ssdIndex].label.normal.textStyle.fontWeight="bolder";
+            mapOption.series[1].data[ssdIndex].label.normal.textStyle.fontSize=setFontsize(16);
+            mapOption.series[1].data[ssdIndex].label.normal.formatter=function (params) {
+                var content = '',
+                    content = params.name + params.value[2];
+                return content;
+            };
+            mapChart.setOption(mapOption);
+            mapChart.dispatchAction({
+                type: 'highlight',
+                // 可选，系列 index，可以是一个数组指定多个系列
+                seriesIndex: 1,
+                // 可选，数据的 index
+                dataIndex: ssdIndex,
+            });
+        }, 1000);
+});
 /*3D地图点击事件，点击后升高*/
-mapChart.on('click', function (params) {
+/*mapChart.on('click', function (params) {
     log(params)
     city = JSON.parse(JSON.stringify(normalCity));
     city.forEach(function (obj, inx) {
@@ -803,7 +852,7 @@ mapChart.on('click', function (params) {
     });
     mapOption.series.data = city;
     mapChart.setOption(mapOption);
-});
+});*/
 
 //echarts折线图和组合图动起来的公共方法
 function echartsRun(echartsobj, echartsoption, baseXdata, basedata, barIndex, firstTimeBar, num) {
