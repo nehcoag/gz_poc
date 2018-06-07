@@ -493,7 +493,7 @@ var convertData = function (data) {
                         show: true,
                         position: 'left',
                         textStyle: {
-                            color: "#850002",
+                            color: "#2300d4",
                             fontSize: setFontsize(16),
                             fontWeight:"bolder",
                             borderWidth: 0,
@@ -734,7 +734,7 @@ var mapOption = {
                     opacity:1
                 },
                 emphasis: {
-                    color: "#850002"
+                    color: "#2300d4"
                 }
             },
             /*markPoint: {
@@ -793,7 +793,7 @@ var mapInt=setInterval(function () {
     // mapChart.setOption(mapOption);
     sdIndex++;
     var ssdIndex = sdIndex % scatterData.length;
-    mapOption.series[1].data[ssdIndex].label.normal.textStyle.color="#850002";
+    mapOption.series[1].data[ssdIndex].label.normal.textStyle.color="#2300d4";
     mapOption.series[1].data[ssdIndex].label.normal.textStyle.fontWeight="bolder";
     mapOption.series[1].data[ssdIndex].label.normal.textStyle.fontSize=setFontsize(16);
     mapOption.series[1].data[ssdIndex].label.normal.formatter=function (params) {
@@ -838,7 +838,7 @@ $("#mapEcharts").on("mouseout",function () {
         // mapChart.setOption(mapOption);
         sdIndex++;
         var ssdIndex = sdIndex % scatterData.length;
-        mapOption.series[1].data[ssdIndex].label.normal.textStyle.color="#850002";
+        mapOption.series[1].data[ssdIndex].label.normal.textStyle.color="#2300d4";
         mapOption.series[1].data[ssdIndex].label.normal.textStyle.fontWeight="bolder";
         mapOption.series[1].data[ssdIndex].label.normal.textStyle.fontSize=setFontsize(16);
         mapOption.series[1].data[ssdIndex].label.normal.formatter=function (params) {
