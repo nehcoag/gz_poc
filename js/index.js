@@ -159,6 +159,7 @@ var intval01 = setInterval(function () {
     count01++;
     var s = count01 % chart04.series[0].data.length;
     chart04.series[0].data[s].slice(true);
+    chart04.tooltip.refresh(chart04.series[0].data[s]);
 }, 1000);
 
 function clickPie01(e) {
@@ -178,6 +179,7 @@ $("#annularEct_2").click(function () {
         count01++;
         var s = count01 % chart04.series[0].data.length;
         chart04.series[0].data[s].slice(true);
+        chart04.tooltip.refresh(chart04.series[0].data[s]);
     }, 1000);
 });
 /*模块二底部的三个2D圆角柱形图*/
@@ -370,48 +372,48 @@ var city = [
         value: [31, 180]
     }];
 var cityS = [
-    {name: '北京关区', value: [200, 1]},
-    {name: '成都关区', value: [190, 2]},
-    {name: '大连海关', value: [180, 3]},
-    {name: '福州关区', value: [170, 4]},
-    {name: '拱北关区', value: [160, 5]},
-    {name: '广州海关', value: [150, 6]},
-    {name: '贵阳海关', value: [140, 7]},
-    {name: '哈尔滨区', value: [130, 8]},
-    {name: '海口关区', value: [120, 9]},
-    {name: '杭州关区', value: [110, 10]},
-    {name: '合肥海关', value: [195, 11]},
-    {name: '呼特关区', value: [95, 12]},
-    {name: '黄埔关区', value: [85, 13]},
-    {name: '济南海关', value: [75, 14]},
-    {name: '江门关区', value: [65, 15]},
-    {name: '昆明关区', value: [55, 16]},
-    {name: '拉萨海关', value: [45, 17]},
-    {name: '兰州关区', value: [35, 18]},
-    {name: '满洲里关', value: [25, 19]},
-    {name: '南昌关区', value: [15, 20]},
-    {name: '南京海关', value: [195, 21]},
-    {name: '南宁关区', value: [185, 22]},
-    {name: '宁波关区', value: [175, 23]},
-    {name: '青岛海关', value: [165, 24]},
-    {name: '厦门关区', value: [155, 25]},
-    {name: '汕头海关', value: [145, 26]},
-    {name: '上海海关', value: [135, 27]},
-    {name: '深圳海关', value: [125, 28]},
-    {name: '沈阳关区', value: [115, 29]},
-    {name: '石家庄区', value: [105, 30]},
-    {name: '太原海关', value: [95, 31]},
-    {name: '天津关区', value: [195, 32]},
-    {name: '乌关区', value: [75, 33]},
-    {name: '武汉海关', value: [95, 34]},
-    {name: '西安关区', value: [85, 35]},
-    {name: '西宁关区', value: [195, 36]},
-    {name: '银川海关', value: [65, 37]},
-    {name: '湛江关区', value: [195, 38]},
-    {name: '长春关区', value: [95, 39]},
-    {name: '长沙关区', value: [45, 40]},
-    {name: '郑州关区', value: [35, 41]},
-    {name: '重庆关区', value: [5, 42]}
+    {name: '北京关区', value: [2000, 42]},
+    {name: '成都关区', value: [1900, 41]},
+    {name: '大连海关', value: [1800, 40]},
+    {name: '福州关区', value: [1700, 39]},
+    {name: '拱北关区', value: [1600, 38]},
+    {name: '广州海关', value: [1500, 37]},
+    {name: '贵阳海关', value: [1400, 36]},
+    {name: '哈尔滨区', value: [1300, 35]},
+    {name: '海口关区', value: [1200, 34]},
+    {name: '杭州关区', value: [1100, 33]},
+    {name: '合肥海关', value: [950, 32]},
+    {name: '呼特关区', value: [900, 31]},
+    {name: '黄埔关区', value: [850, 30]},
+    {name: '济南海关', value: [720, 29]},
+    {name: '江门关区', value: [650, 28]},
+    {name: '昆明关区', value: [550, 27]},
+    {name: '拉萨海关', value: [540, 26]},
+    {name: '兰州关区', value: [510, 25]},
+    {name: '满洲里关', value: [480, 24]},
+    {name: '南昌关区', value: [430, 23]},
+    {name: '南京海关', value: [400, 22]},
+    {name: '南宁关区', value: [300, 21]},
+    {name: '宁波关区', value: [270, 20]},
+    {name: '青岛海关', value: [250, 19]},
+    {name: '厦门关区', value: [220, 18]},
+    {name: '汕头海关', value: [190, 17]},
+    {name: '上海海关', value: [175, 16]},
+    {name: '深圳海关', value: [175, 15]},
+    {name: '沈阳关区', value: [172, 14]},
+    {name: '石家庄区', value: [160, 13]},
+    {name: '太原海关', value: [140, 12]},
+    {name: '天津关区', value: [110, 11]},
+    {name: '乌关区', value: [95, 10]},
+    {name: '武汉海关', value: [80, 9]},
+    {name: '西安关区', value: [70, 8]},
+    {name: '西宁关区', value: [65, 7]},
+    {name: '银川海关', value: [60, 6]},
+    {name: '湛江关区', value: [30, 5]},
+    {name: '长春关区', value: [20, 4]},
+    {name: '长沙关区', value: [10, 3]},
+    {name: '郑州关区', value: [8, 2]},
+    {name: '重庆关区', value: [5, 1]}
 ];
 var geoCoordMap = {
     '北京关区': [116.46, 39.91],
@@ -461,6 +463,11 @@ var geoCoordMap = {
 var convertData = function (data) {
     var res = [];
     for (var i = 0; i < data.length; i++) {
+        var bianData=((data[i].value[0]-data[data.length-1].value[0])/((data[0].value[0])-data[data.length-1].value[0]))*(data.length-1)+1;
+        var ssData=((data[i].value[1]-data[data.length-1].value[1])/((data[0].value[1])-data[data.length-1].value[1]))*(40-20)+20;
+        // console.log(ssData);
+        data[i].value.push((42-bianData)+1);
+        data[i].value.push(ssData);
         var geoCoord = geoCoordMap[data[i].name];
         if (geoCoord) {
             res.push({
@@ -473,7 +480,7 @@ var convertData = function (data) {
                                     content = params.name;
                                 return content;
                         },
-                        position: 'bottom',
+                        position: 'left',
                         show: false,
                         textStyle: {
                             color: "#374b6c",
@@ -484,9 +491,9 @@ var convertData = function (data) {
                     },
                     emphasis: {
                         show: true,
-                        position: 'bottom',
+                        position: 'left',
                         textStyle: {
-                            color: "#CD661D",
+                            color: "#850002",
                             fontSize: setFontsize(16),
                             fontWeight:"bolder",
                             borderWidth: 0,
@@ -559,10 +566,10 @@ var mapOption = {
         itemHeight: setFontsize(80),
         orient: 'vertical',
         inverse: true,
-        dimension: 3,
+        dimension: 4,
         seriesIndex: [1],
         inRange: {
-            color: ['#ffffff', '#ffc902']
+            color: ['#e23500','#ffd127' ]
         },
         textStyle: {
             color: '#fff',
@@ -700,10 +707,10 @@ var mapOption = {
             hoverAnimation: true,
             symbol: 'pin',
             data: scatterData,
-            // symbolSize:20,
+            // symbolSize:26,
             symbolSize: function (val) {
                 // console.log(val);
-                return val[2] / 5;
+                return  val[5];
             },
             /*label: {
                 normal: {
@@ -727,7 +734,7 @@ var mapOption = {
                     opacity:1
                 },
                 emphasis: {
-                    color: "#CD661D"
+                    color: "#850002"
                 }
             },
             /*markPoint: {
@@ -786,7 +793,7 @@ var mapInt=setInterval(function () {
     // mapChart.setOption(mapOption);
     sdIndex++;
     var ssdIndex = sdIndex % scatterData.length;
-    mapOption.series[1].data[ssdIndex].label.normal.textStyle.color="#CD661D";
+    mapOption.series[1].data[ssdIndex].label.normal.textStyle.color="#850002";
     mapOption.series[1].data[ssdIndex].label.normal.textStyle.fontWeight="bolder";
     mapOption.series[1].data[ssdIndex].label.normal.textStyle.fontSize=setFontsize(16);
     mapOption.series[1].data[ssdIndex].label.normal.formatter=function (params) {
@@ -831,7 +838,7 @@ $("#mapEcharts").on("mouseout",function () {
         // mapChart.setOption(mapOption);
         sdIndex++;
         var ssdIndex = sdIndex % scatterData.length;
-        mapOption.series[1].data[ssdIndex].label.normal.textStyle.color="#CD661D";
+        mapOption.series[1].data[ssdIndex].label.normal.textStyle.color="#850002";
         mapOption.series[1].data[ssdIndex].label.normal.textStyle.fontWeight="bolder";
         mapOption.series[1].data[ssdIndex].label.normal.textStyle.fontSize=setFontsize(16);
         mapOption.series[1].data[ssdIndex].label.normal.formatter=function (params) {
@@ -871,7 +878,7 @@ function echartsRun(echartsobj, echartsoption, baseXdata, basedata, barIndex, fi
     var seriesCount = echartsoption.series.length;
     for (var p = 0; p < seriesCount; p++) {
         echartsoption.series[p].data = basedata[p].slice(0, 5);
-        console.log(echartsoption.series[p].data);
+        // console.log(echartsoption.series[p].data);
     }
     eval(num + "=" + setInterval(function () {
         // console.log(firstTimeBar);
