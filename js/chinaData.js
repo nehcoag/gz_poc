@@ -20,7 +20,7 @@
         return;
     }
     if (!echarts.registerMap) {
-        log('ECharts Map is not loaded')
+        log('ECharts Map is not loaded');
         return;
     }
     var guangdongJson = {"type": "FeatureCollection",

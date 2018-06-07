@@ -533,44 +533,44 @@ var mapOption = {
     },
     visualMap: [
         {
-        show: false,
-        min: min,
-        max: max,
-        itemWidth: setFontsize(12),
-        itemHeight: setFontsize(80),
-        orient: 'vertical',
-        inverse: true,
-        dimension: 0,
-        seriesIndex: [0],
-        inRange: {
-            color: ['#247bff', '#baeaff']
-        },
-        textStyle: {
-            color: '#fff',
-            fontSize: setFontsize(10)
-        },
-        calculable: true,
-        left: "4%"
-    }, {
-        show: true,
-        min: min,
-        max: max,
-        itemWidth: setFontsize(12),
-        itemHeight: setFontsize(80),
-        orient: 'vertical',
-        inverse: true,
-        dimension: 3,
-        seriesIndex: [1],
-        inRange: {
-            color: ['#ffffff', '#ffd259']
-        },
-        textStyle: {
-            color: '#fff',
-            fontSize: setFontsize(10)
-        },
-        calculable: true,
-        right: "4%"
-    }],
+            show: false,
+            min: min,
+            max: max,
+            itemWidth: setFontsize(12),
+            itemHeight: setFontsize(80),
+            orient: 'vertical',
+            inverse: true,
+            dimension: 0,
+            seriesIndex: [0],
+            inRange: {
+                color: ['#247bff', '#baeaff']
+            },
+            textStyle: {
+                color: '#fff',
+                fontSize: setFontsize(10)
+            },
+            calculable: true,
+            left: "4%"
+        }, {
+            show: true,
+            min: min,
+            max: max,
+            itemWidth: setFontsize(12),
+            itemHeight: setFontsize(80),
+            orient: 'vertical',
+            inverse: true,
+            dimension: 3,
+            seriesIndex: [1],
+            inRange: {
+                color: ['#ffffff', '#ffd259']
+            },
+            textStyle: {
+                color: '#fff',
+                fontSize: setFontsize(10)
+            },
+            calculable: true,
+            right: "4%"
+        }],
     geo3D: {
         show: false,
         map: '全国',
@@ -634,7 +634,7 @@ var mapOption = {
             zlevel: 1,
             selectedMode: 'single',
             //boxHeight:50,
-            boxDepth: 60,
+            boxDepth: 80,
             regionHeight: 1,
             top: '-5%',
             //left:'10%',
