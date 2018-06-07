@@ -128,7 +128,7 @@ var intval = setInterval(function () {
     count++;
     var s = count % chart01.series[0].data.length;
     chart01.series[0].data[s].slice(true);
-    chart01.series[0].tooltip.refresh();
+    chart01.tooltip.refresh(chart01.series[0].data[s]);
 }, 1000);
 
 function clickPie(e) {
