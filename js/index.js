@@ -121,12 +121,14 @@ var chart04 = Highcharts.chart('annularEct_1', annularOption);
 var chart05 = Highcharts.chart('annularEct_2', annularOption);
 var chart06 = Highcharts.chart('annularEct_3', annularOption);
 
+//饼图轮播方法
 var intval = setInterval(function () {
     var r = count % chart01.series[0].data.length;//0 1 2 3 4 5
     chart01.series[0].data[r].slice(false);
     count++;
     var s = count % chart01.series[0].data.length;
     chart01.series[0].data[s].slice(true);
+    chart01.series[0].tooltip.refresh();
 }, 1000);
 
 function clickPie(e) {
@@ -291,7 +293,8 @@ ledSpanVal.forEach(function (obj, inx) {
     });
 },4000);*/
 /*3D地图*/
-var normalCity = [{name: '广东', value: [1, 10]}, {name: '江西', value: [3, 20]}, {
+var normalCity = [
+    {name: '广东', value: [1, 10]}, {name: '江西', value: [3, 20]}, {
     name: '福建',
     value: [5, 30]
 }, {name: '浙江', value: [7, 40]}, {name: '湖南', value: [9, 50]}, {
