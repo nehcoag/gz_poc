@@ -463,9 +463,12 @@ var geoCoordMap = {
 var convertData = function (data) {
     var res = [];
     for (var i = 0; i < data.length; i++) {
+        data[i].value.unshift(0);
+        console.log(data[0].value[0]);
         var bianData=((data[i].value[0]-data[data.length-1].value[0])/((data[0].value[0])-data[data.length-1].value[0]))*(data.length-1)+1;
         var ssData=((data[i].value[1]-data[data.length-1].value[1])/((data[0].value[1])-data[data.length-1].value[1]))*(40-20)+20;
-        // console.log(ssData);
+        console.log(bianData);
+
         data[i].value.push((42-bianData)+1);
         data[i].value.push(ssData);
         var geoCoord = geoCoordMap[data[i].name];
@@ -532,7 +535,7 @@ var mapOption = {
                 return;
             } else if (params.seriesType == "scatter3D") {
                 var content = '',
-                    content = params.name + params.value[2];
+                    content = params.name + params.value[3];
                 return content;
             }
 
@@ -566,7 +569,7 @@ var mapOption = {
         itemHeight: setFontsize(80),
         orient: 'vertical',
         inverse: true,
-        dimension: 4,
+        dimension: 5,
         seriesIndex: [1],
         inRange: {
             color: ['#e23500','#ffd127' ]
@@ -583,6 +586,11 @@ var mapOption = {
         map: '全国',
         roam: true,
         boxWidth: 70,
+        zlevel: 2,
+        // selectedMode: 'single',
+        //boxHeight:50,
+        boxDepth: 55,
+        regionHeight: 1,
         top: '-5%',
         itemStyle: {
             color: '#1d5e98',
@@ -642,7 +650,7 @@ var mapOption = {
             zlevel: 1,
             selectedMode: 'single',
             //boxHeight:50,
-            boxDepth: 60,
+            boxDepth: 55,
             regionHeight: 1,
             top: '-5%',
             //left:'10%',
@@ -710,7 +718,7 @@ var mapOption = {
             // symbolSize:26,
             symbolSize: function (val) {
                 // console.log(val);
-                return  val[5];
+                return  val[6];
             },
             /*label: {
                 normal: {
@@ -798,7 +806,7 @@ var mapInt=setInterval(function () {
     mapOption.series[1].data[ssdIndex].label.normal.textStyle.fontSize=setFontsize(16);
     mapOption.series[1].data[ssdIndex].label.normal.formatter=function (params) {
         var content = '',
-            content = params.name + params.value[2];
+            content = params.name + params.value[3];
         return content;
     };
     mapOption.series[1].data[ssdIndex].label.normal.show=true;
@@ -843,7 +851,7 @@ $("#mapEcharts").on("mouseout",function () {
         mapOption.series[1].data[ssdIndex].label.normal.textStyle.fontSize=setFontsize(16);
         mapOption.series[1].data[ssdIndex].label.normal.formatter=function (params) {
             var content = '',
-                content = params.name + params.value[2];
+                content = params.name + params.value[3];
             return content;
         };
         mapOption.series[1].data[ssdIndex].label.normal.show=true;
