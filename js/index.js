@@ -373,47 +373,47 @@ var city = [
     }];
 var cityS = [
     {name: '北京关区', value: [2000, 42]},
-/*    {name: '成都关区', value: [1900, 41]},
-    {name: '大连海关', value: [1800, 40]},
-    {name: '福州关区', value: [1700, 39]},
-    {name: '拱北关区', value: [1600, 38]},
-    {name: '广州海关', value: [1500, 37]},
-    {name: '贵阳海关', value: [1400, 36]},
-    {name: '哈尔滨区', value: [1300, 35]},
-    {name: '海口关区', value: [1200, 34]},
-    {name: '杭州关区', value: [1100, 33]},
-    {name: '合肥海关', value: [950, 32]},
-    {name: '呼特关区', value: [900, 31]},
-    {name: '黄埔关区', value: [850, 30]},
-    {name: '济南海关', value: [720, 29]},
-    {name: '江门关区', value: [650, 28]},
-    {name: '昆明关区', value: [550, 27]},
-    {name: '拉萨海关', value: [540, 26]},
-    {name: '兰州关区', value: [510, 25]},
-    {name: '满洲里关', value: [480, 24]},
-    {name: '南昌关区', value: [430, 23]},
-    {name: '南京海关', value: [400, 22]},
-    {name: '南宁关区', value: [300, 21]},
-    {name: '宁波关区', value: [270, 20]},
-    {name: '青岛海关', value: [250, 19]},
-    {name: '厦门关区', value: [220, 18]},
-    {name: '汕头海关', value: [190, 17]},
-    {name: '上海海关', value: [175, 16]},
-    {name: '深圳海关', value: [175, 15]},
-    {name: '沈阳关区', value: [172, 14]},
-    {name: '石家庄区', value: [160, 13]},
-    {name: '太原海关', value: [140, 12]},
-    {name: '天津关区', value: [110, 11]},
-    {name: '乌关区', value: [95, 10]},
-    {name: '武汉海关', value: [80, 9]},
-    {name: '西安关区', value: [70, 8]},
-    {name: '西宁关区', value: [65, 7]},
-    {name: '银川海关', value: [60, 6]},
-    {name: '湛江关区', value: [30, 5]},
-    {name: '长春关区', value: [20, 4]},
-    {name: '长沙关区', value: [10, 3]},
-    {name: '郑州关区', value: [8, 2]},
-    {name: '重庆关区', value: [5, 1]}*/
+    /* {name: '成都关区', value: [1900, 41]},
+ *   {name: '大连海关', value: [1800, 40]},
+     {name: '福州关区', value: [1700, 39]},
+     {name: '拱北关区', value: [1600, 38]},
+     {name: '广州海关', value: [1500, 37]},
+     {name: '贵阳海关', value: [1400, 36]},
+     {name: '哈尔滨区', value: [1300, 35]},
+     {name: '海口关区', value: [1200, 34]},
+     {name: '杭州关区', value: [1100, 33]},
+     {name: '合肥海关', value: [950, 32]},
+     {name: '呼特关区', value: [900, 31]},
+     {name: '黄埔关区', value: [850, 30]},
+     {name: '济南海关', value: [720, 29]},
+     {name: '江门关区', value: [650, 28]},
+     {name: '昆明关区', value: [550, 27]},
+     {name: '拉萨海关', value: [540, 26]},
+     {name: '兰州关区', value: [510, 25]},
+     {name: '满洲里关', value: [480, 24]},
+     {name: '南昌关区', value: [430, 23]},
+     {name: '南京海关', value: [400, 22]},
+     {name: '南宁关区', value: [300, 21]},
+     {name: '宁波关区', value: [270, 20]},
+     {name: '青岛海关', value: [250, 19]},
+     {name: '厦门关区', value: [220, 18]},
+     {name: '汕头海关', value: [190, 17]},
+     {name: '上海海关', value: [175, 16]},
+     {name: '深圳海关', value: [175, 15]},
+     {name: '沈阳关区', value: [172, 14]},
+     {name: '石家庄区', value: [160, 13]},
+     {name: '太原海关', value: [140, 12]},
+     {name: '天津关区', value: [110, 11]},
+     {name: '乌关区', value: [95, 10]},
+     {name: '武汉海关', value: [80, 9]},
+     {name: '西安关区', value: [70, 8]},
+     {name: '西宁关区', value: [65, 7]},
+     {name: '银川海关', value: [60, 6]},
+     {name: '湛江关区', value: [30, 5]},
+     {name: '长春关区', value: [20, 4]},
+     {name: '长沙关区', value: [10, 3]},
+     {name: '郑州关区', value: [8, 2]},
+     {name: '重庆关区', value: [5, 1]}*/
 ];
 var geoCoordMap = {
     '北京关区': [116.46, 39.91],
@@ -463,12 +463,12 @@ var geoCoordMap = {
 var convertData = function (data) {
     var res = [];
     for (var i = data.length-1 ;i >= 0; i--) {
-        console.log(data[i].value);
-        var bianData=((data[i].value[0]-data[data.length-1].value[0])/((data[0].value[0])-data[data.length-1].value[0]))*(data.length-1)+1;
-        var ssData=((data[i].value[1]-data[data.length-1].value[1])/((data[0].value[1])-data[data.length-1].value[1]))*(40-20)+20;
-        console.log(bianData);
+        var datalength=parseInt(data.length);
+        var bianData=((data[i].value[0]-data[datalength-1].value[0])/((data[0].value[0])-data[datalength-1].value[0]))*(datalength-1)+1 || 1;
+        var ssData=((data[i].value[1]-data[datalength-1].value[1])/((data[0].value[1])-data[datalength-1].value[1]))*(40-20)+20 || 20;
+        console.log(ssData);
         data[i].value.unshift(0);
-        data[i].value.push((42-bianData)+1);
+        data[i].value.push((datalength-bianData)+1);
         data[i].value.push(ssData);
         var geoCoord = geoCoordMap[data[i].name];
         if (geoCoord) {
