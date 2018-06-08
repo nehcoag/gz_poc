@@ -373,7 +373,7 @@ var city = [
     }];
 var cityS = [
     {name: '北京关区', value: [2000, 42]},
-    {name: '成都关区', value: [1900, 41]},
+/*    {name: '成都关区', value: [1900, 41]},
     {name: '大连海关', value: [1800, 40]},
     {name: '福州关区', value: [1700, 39]},
     {name: '拱北关区', value: [1600, 38]},
@@ -413,7 +413,7 @@ var cityS = [
     {name: '长春关区', value: [20, 4]},
     {name: '长沙关区', value: [10, 3]},
     {name: '郑州关区', value: [8, 2]},
-    {name: '重庆关区', value: [5, 1]}
+    {name: '重庆关区', value: [5, 1]}*/
 ];
 var geoCoordMap = {
     '北京关区': [116.46, 39.91],
@@ -462,13 +462,12 @@ var geoCoordMap = {
 };
 var convertData = function (data) {
     var res = [];
-    for (var i = 0; i < data.length; i++) {
-        data[i].value.unshift(0);
-        console.log(data[0].value[0]);
+    for (var i = data.length-1 ;i >= 0; i--) {
+        console.log(data[i].value);
         var bianData=((data[i].value[0]-data[data.length-1].value[0])/((data[0].value[0])-data[data.length-1].value[0]))*(data.length-1)+1;
         var ssData=((data[i].value[1]-data[data.length-1].value[1])/((data[0].value[1])-data[data.length-1].value[1]))*(40-20)+20;
         console.log(bianData);
-
+        data[i].value.unshift(0);
         data[i].value.push((42-bianData)+1);
         data[i].value.push(ssData);
         var geoCoord = geoCoordMap[data[i].name];
@@ -522,7 +521,6 @@ var convertDataMark = function (data) {
     }
     return res;
 };
-console.log(convertDataMark(cityS));
 //气泡图数据
 var scatterData = convertData(cityS);
 console.log(scatterData);
