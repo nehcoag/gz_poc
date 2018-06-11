@@ -298,43 +298,43 @@ ledSpanVal.forEach(function (obj, inx) {
 /*3D地图*/
 var normalCity = [
     {name: '广东', value: [1, 10]}, {name: '江西', value: [3, 20]}, {
-    name: '福建',
-    value: [5, 30]
-}, {name: '浙江', value: [7, 40]}, {name: '湖南', value: [9, 50]}, {
-    name: '上海',
-    value: [11, 120]
-}, {name: '广西', value: [13, 60]}, {name: '云南', value: [15, 70]}, {
-    name: '贵州',
-    value: [17, 80]
-}, {name: '重庆', value: [19, 90]}, {name: '四川', value: [21, 100]}, {
-    name: '安徽',
-    value: [23, 110]
-}, {name: '江苏', value: [25, 130]}, {name: '河南', value: [27, 140]}, {
-    name: '山东',
-    value: [29, 150]
-}, {name: '陕西', value: [31, 160]}, {name: '青海', value: [33, 170]}, {
-    name: '西藏',
-    value: [43, 180]
-}];
+        name: '福建',
+        value: [5, 30]
+    }, {name: '浙江', value: [7, 40]}, {name: '湖南', value: [9, 50]}, {
+        name: '上海',
+        value: [11, 120]
+    }, {name: '广西', value: [13, 60]}, {name: '云南', value: [15, 70]}, {
+        name: '贵州',
+        value: [17, 80]
+    }, {name: '重庆', value: [19, 90]}, {name: '四川', value: [21, 100]}, {
+        name: '安徽',
+        value: [23, 110]
+    }, {name: '江苏', value: [25, 130]}, {name: '河南', value: [27, 140]}, {
+        name: '山东',
+        value: [29, 150]
+    }, {name: '陕西', value: [31, 160]}, {name: '青海', value: [33, 170]}, {
+        name: '西藏',
+        value: [43, 180]
+    }];
 var city = [
-    {name: '海南', value: [1, 10]},{name: '台湾', value: [2, 10]},
+    {name: '海南', value: [1, 10]}, {name: '台湾', value: [2, 10]},
     {name: '广东', value: [3, 10]}, {name: '江西', value: [4, 20]}, {
         name: '福建',
         value: [5, 30]
-    },{
+    }, {
         name: '河北',
         value: [6, 180]
-    },{
+    }, {
         name: '北京',
         value: [7, 180]
-    },{
+    }, {
         name: '天津',
         value: [8, 180]
-    },{
+    }, {
         name: '山西',
         value: [9, 180]
     }, {name: '浙江', value: [10, 40]}, {name: '湖南', value: [11, 50]},
-    {name: '湖北', value: [12, 10]},  {
+    {name: '湖北', value: [12, 10]}, {
         name: '上海',
         value: [13, 120]
     }, {name: '广西', value: [14, 60]}, {name: '云南', value: [15, 70]}, {
@@ -346,25 +346,25 @@ var city = [
     }, {name: '江苏', value: [20, 130]}, {name: '河南', value: [21, 140]}, {
         name: '山东',
         value: [22, 150]
-    }, {name: '陕西', value: [23, 160]},{
+    }, {name: '陕西', value: [23, 160]}, {
         name: '甘肃',
         value: [24, 180]
-    },{
+    }, {
         name: '辽宁',
         value: [25, 180]
-    },{
+    }, {
         name: '吉林',
         value: [26, 180]
-    },{
+    }, {
         name: '黑龙江',
         value: [27, 180]
-    }, {name: '青海', value: [25, 170]},{
+    }, {name: '青海', value: [25, 170]}, {
         name: '内蒙古',
         value: [28, 180]
-    },{
+    }, {
         name: '宁夏',
         value: [29, 180]
-    },{
+    }, {
         name: '新疆',
         value: [30, 180]
     }, {
@@ -373,47 +373,47 @@ var city = [
     }];
 var cityS = [
     {name: '北京关区', value: [2000, 42]},
-    /* {name: '成都关区', value: [1900, 41]},
- *   {name: '大连海关', value: [1800, 40]},
-     {name: '福州关区', value: [1700, 39]},
-     {name: '拱北关区', value: [1600, 38]},
-     {name: '广州海关', value: [1500, 37]},
-     {name: '贵阳海关', value: [1400, 36]},
-     {name: '哈尔滨区', value: [1300, 35]},
-     {name: '海口关区', value: [1200, 34]},
-     {name: '杭州关区', value: [1100, 33]},
-     {name: '合肥海关', value: [950, 32]},
-     {name: '呼特关区', value: [900, 31]},
-     {name: '黄埔关区', value: [850, 30]},
-     {name: '济南海关', value: [720, 29]},
-     {name: '江门关区', value: [650, 28]},
-     {name: '昆明关区', value: [550, 27]},
-     {name: '拉萨海关', value: [540, 26]},
-     {name: '兰州关区', value: [510, 25]},
-     {name: '满洲里关', value: [480, 24]},
-     {name: '南昌关区', value: [430, 23]},
-     {name: '南京海关', value: [400, 22]},
-     {name: '南宁关区', value: [300, 21]},
-     {name: '宁波关区', value: [270, 20]},
-     {name: '青岛海关', value: [250, 19]},
-     {name: '厦门关区', value: [220, 18]},
-     {name: '汕头海关', value: [190, 17]},
-     {name: '上海海关', value: [175, 16]},
-     {name: '深圳海关', value: [175, 15]},
-     {name: '沈阳关区', value: [172, 14]},
-     {name: '石家庄区', value: [160, 13]},
-     {name: '太原海关', value: [140, 12]},
-     {name: '天津关区', value: [110, 11]},
-     {name: '乌关区', value: [95, 10]},
-     {name: '武汉海关', value: [80, 9]},
-     {name: '西安关区', value: [70, 8]},
-     {name: '西宁关区', value: [65, 7]},
-     {name: '银川海关', value: [60, 6]},
-     {name: '湛江关区', value: [30, 5]},
-     {name: '长春关区', value: [20, 4]},
-     {name: '长沙关区', value: [10, 3]},
-     {name: '郑州关区', value: [8, 2]},
-     {name: '重庆关区', value: [5, 1]}*/
+    {name: '成都关区', value: [1900, 41]},
+    {name: '大连海关', value: [1800, 40]},
+    {name: '福州关区', value: [1700, 39]},
+    {name: '拱北关区', value: [1600, 38]},
+    {name: '广州海关', value: [1500, 37]},
+    {name: '贵阳海关', value: [1400, 36]},
+    {name: '哈尔滨区', value: [1300, 35]},
+    {name: '海口关区', value: [1200, 34]},
+    {name: '杭州关区', value: [1100, 33]},
+    {name: '合肥海关', value: [950, 32]},
+    {name: '呼特关区', value: [900, 31]},
+    {name: '黄埔关区', value: [850, 30]},
+    {name: '济南海关', value: [720, 29]},
+    {name: '江门关区', value: [650, 28]},
+    {name: '昆明关区', value: [550, 27]},
+    {name: '拉萨海关', value: [540, 26]},
+    {name: '兰州关区', value: [510, 25]},
+    {name: '满洲里关', value: [480, 24]},
+    {name: '南昌关区', value: [430, 23]},
+    {name: '南京海关', value: [400, 22]},
+    {name: '南宁关区', value: [300, 21]},
+    {name: '宁波关区', value: [270, 20]},
+    {name: '青岛海关', value: [250, 19]},
+    {name: '厦门关区', value: [220, 18]},
+    {name: '汕头海关', value: [190, 17]},
+    {name: '上海海关', value: [175, 16]},
+    {name: '深圳海关', value: [175, 15]},
+    {name: '沈阳关区', value: [172, 14]},
+    {name: '石家庄区', value: [160, 13]},
+    {name: '太原海关', value: [140, 12]},
+    {name: '天津关区', value: [110, 11]},
+    {name: '乌关区', value: [95, 10]},
+    {name: '武汉海关', value: [80, 9]},
+    {name: '西安关区', value: [70, 8]},
+    {name: '西宁关区', value: [65, 7]},
+    {name: '银川海关', value: [60, 6]},
+    {name: '湛江关区', value: [30, 5]},
+    {name: '长春关区', value: [20, 4]},
+    {name: '长沙关区', value: [10, 3]},
+    {name: '郑州关区', value: [8, 2]},
+    {name: '重庆关区', value: [5, 1]}
 ];
 var geoCoordMap = {
     '北京关区': [116.46, 39.91],
@@ -462,13 +462,13 @@ var geoCoordMap = {
 };
 var convertData = function (data) {
     var res = [];
-    for (var i = data.length-1 ;i >= 0; i--) {
-        var datalength=parseInt(data.length);
-        var bianData=((data[i].value[0]-data[datalength-1].value[0])/((data[0].value[0])-data[datalength-1].value[0]))*(datalength-1)+1 || 1;
-        var ssData=((data[i].value[1]-data[datalength-1].value[1])/((data[0].value[1])-data[datalength-1].value[1]))*(40-20)+20 || 20;
-        console.log(ssData);
+    for (var i = data.length - 1; i >= 0; i--) {
+        var datalength = parseInt(data.length);
+        var bianData = ((data[i].value[0] - data[datalength - 1].value[0]) / ((data[0].value[0]) - data[datalength - 1].value[0])) * (datalength - 1) + 1 || 1;
+        var ssData = ((data[i].value[1] - data[datalength - 1].value[1]) / ((data[0].value[1]) - data[datalength - 1].value[1])) * (40 - 20) + 20 || 20;
+        // console.log(ssData);
         data[i].value.unshift(0);
-        data[i].value.push((datalength-bianData)+1);
+        data[i].value.push((datalength - bianData) + 1);
         data[i].value.push(ssData);
         var geoCoord = geoCoordMap[data[i].name];
         if (geoCoord) {
@@ -478,28 +478,30 @@ var convertData = function (data) {
                 label: {
                     normal: {
                         formatter: function (params) {
-                                var content = '',
-                                    content = params.name;
-                                return content;
+                            var content = '',
+                                content = params.name+':\n '+'税款' + params.value[3];
+                            return content;
                         },
                         position: 'left',
                         show: false,
                         textStyle: {
-                            color: "#374b6c",
+                            color: "#ffffff",
                             fontSize: setFontsize(12),
-                            borderWidth: 0,
-                            backgroundColor: 'transparent'
+                            // borderWidth: 0,
+                            borderRadius:2,
+                            backgroundColor: 'rgba(0,0,0,0.5)'
                         }
                     },
                     emphasis: {
                         show: true,
                         position: 'left',
                         textStyle: {
-                            color: "#2300d4",
-                            fontSize: setFontsize(16),
-                            fontWeight:"bolder",
-                            borderWidth: 0,
-                            backgroundColor: 'transparent'
+                            color: "#ffffff",
+                            fontSize: setFontsize(12),
+                            // fontWeight: "bolder",
+                            // borderWidth: 0,
+                            borderRadius:2,
+                            backgroundColor: 'rgba(0,0,0,0.5)'
                         }
                     }
                 },
@@ -528,6 +530,7 @@ var mapChart = echarts.init(document.getElementById('mapEcharts'));
 var min = 1, max = 42;
 var mapOption = {
     tooltip: {
+        show:false,
         formatter: function (params) {
             if (params.seriesType == "map3D") {
                 return;
@@ -541,44 +544,45 @@ var mapOption = {
     },
     visualMap: [
         {
-        show: false,
-        min: min,
-        max: max,
-        itemWidth: setFontsize(12),
-        itemHeight: setFontsize(80),
-        orient: 'vertical',
-        inverse: true,
-        dimension: 0,
-        seriesIndex: [0],
-        inRange: {
-            color: ['#178dfc', '#82d6ff']
-        },
-        textStyle: {
-            color: '#fff',
-            fontSize: setFontsize(10)
-        },
-        calculable: true,
-        left: "4%"
-    }, {
-        show: true,
-        min: min,
-        max: max,
-        itemWidth: setFontsize(12),
-        itemHeight: setFontsize(80),
-        orient: 'vertical',
-        inverse: true,
-        dimension: 5,
-        seriesIndex: [1],
-        inRange: {
-            color: ['#e23500','#ffd127' ]
-        },
-        textStyle: {
-            color: '#fff',
-            fontSize: setFontsize(10)
-        },
-        calculable: true,
-        right: "4%"
-    }],
+            show: false,
+            min: min,
+            max: max,
+            itemWidth: setFontsize(12),
+            itemHeight: setFontsize(80),
+            orient: 'vertical',
+            inverse: true,
+            dimension: 0,
+            seriesIndex: [0],
+            inRange: {
+                color: ['#178dfc', '#82d6ff']
+            },
+            textStyle: {
+                color: '#fff',
+                fontSize: setFontsize(10)
+            },
+            calculable: true,
+            left: "4%"
+        }, {
+            show: true,
+            min: min,
+            max: max,
+            itemWidth: setFontsize(12),
+            itemHeight: setFontsize(80),
+            orient: 'vertical',
+            inverse: true,
+            dimension: 5,
+            seriesIndex: [1],
+            inRange: {
+                // color: ['#e23500', '#ffd127']
+                color: ['#ffba00','#ffff00','#1eff00','#d6d6d6']
+            },
+            textStyle: {
+                color: '#fff',
+                fontSize: setFontsize(10)
+            },
+            calculable: true,
+            right: "4%"
+        }],
     geo3D: {
         show: false,
         map: '全国',
@@ -601,7 +605,7 @@ var mapOption = {
             distance: 64,
             minDistance: 40,
             maxDistance: 70,
-            alpha:50
+            alpha: 50
         },
         label: {
             show: false,
@@ -689,7 +693,7 @@ var mapOption = {
                 normal: {
                     borderWidth: 0.8,
                     // borderColor: 'rgba(255,255,255,0,3)',
-                    borderColor:"#ffffff",
+                    borderColor: "#ffffff",
                     color: '#b9e9ff'
                     // color:"#ffffff"
                 }, //阴影效果
@@ -702,7 +706,7 @@ var mapOption = {
                 distance: 64,
                 minDistance: 40,
                 maxDistance: 70,
-                alpha:50
+                alpha: 50
             }
         },
         {
@@ -716,7 +720,7 @@ var mapOption = {
             // symbolSize:26,
             symbolSize: function (val) {
                 // console.log(val);
-                return  val[6];
+                return val[6];
             },
             /*label: {
                 normal: {
@@ -737,7 +741,7 @@ var mapOption = {
             itemStyle: {
                 normal: {
                     color: '#05C3F9',
-                    opacity:1
+                    opacity: 1
                 },
                 emphasis: {
                     color: "#2300d4"
@@ -778,7 +782,7 @@ var mapOption = {
 mapChart.setOption(mapOption);
 //循环高亮每个气泡
 var sdIndex = 0;
-var mapInt=setInterval(function () {
+var mapInt = setInterval(function () {
     var rsdIndex = sdIndex % scatterData.length;
     mapChart.dispatchAction({
         type: 'downplay',
@@ -787,7 +791,7 @@ var mapInt=setInterval(function () {
         // 可选，数据的 index
         dataIndex: rsdIndex,
     });
-    mapOption.series[1].data[rsdIndex].label.normal.show=false;
+    mapOption.series[1].data[rsdIndex].label.normal.show = false;
     // mapOption.series[1].data[rsdIndex].label.normal.textStyle.color="#374b6c";
     // mapOption.series[1].data[rsdIndex].label.normal.textStyle.fontWeight="normal";
     // mapOption.series[1].data[rsdIndex].label.normal.textStyle.fontSize=setFontsize(12);
@@ -799,15 +803,17 @@ var mapInt=setInterval(function () {
     // mapChart.setOption(mapOption);
     sdIndex++;
     var ssdIndex = sdIndex % scatterData.length;
-    mapOption.series[1].data[ssdIndex].label.normal.textStyle.color="#2300d4";
-    mapOption.series[1].data[ssdIndex].label.normal.textStyle.fontWeight="bolder";
-    mapOption.series[1].data[ssdIndex].label.normal.textStyle.fontSize=setFontsize(16);
-    mapOption.series[1].data[ssdIndex].label.normal.formatter=function (params) {
+    mapOption.series[1].data[ssdIndex].label.normal.textStyle.color = "#ffffff";
+    // mapOption.series[1].data[ssdIndex].label.normal.textStyle.color = "#2300d4";
+    // mapOption.series[1].data[ssdIndex].label.normal.textStyle.fontWeight = "bolder";
+    mapOption.series[1].data[ssdIndex].label.normal.textStyle.fontSize = setFontsize(12);
+    mapOption.series[1].data[ssdIndex].label.normal.formatter = function (params) {
+        console.log(params);
         var content = '',
-            content = params.name + params.value[3];
+            content = params.name+':\n '+'税款' + params.value[3];
         return content;
     };
-    mapOption.series[1].data[ssdIndex].label.normal.show=true;
+    mapOption.series[1].data[ssdIndex].label.normal.show = true;
     mapChart.setOption(mapOption);
     mapChart.dispatchAction({
         type: 'highlight',
@@ -817,13 +823,13 @@ var mapInt=setInterval(function () {
         dataIndex: ssdIndex,
     });
 }, 1000);
-$("#mapEcharts").on("mouseover",function () {
+$("#mapEcharts").on("mouseover", function () {
     // console.log(1111);
-        clearInterval(mapInt);
+    clearInterval(mapInt);
 });
-$("#mapEcharts").on("mouseout",function () {
+$("#mapEcharts").on("mouseout", function () {
     // console.log(2222);
-    mapInt=setInterval(function () {
+    mapInt = setInterval(function () {
         var rsdIndex = sdIndex % scatterData.length;
         mapChart.dispatchAction({
             type: 'downplay',
@@ -832,7 +838,7 @@ $("#mapEcharts").on("mouseout",function () {
             // 可选，数据的 index
             dataIndex: rsdIndex,
         });
-        mapOption.series[1].data[rsdIndex].label.normal.show=false;
+        mapOption.series[1].data[rsdIndex].label.normal.show = false;
         // mapOption.series[1].data[rsdIndex].label.normal.textStyle.color="#374b6c";
         // mapOption.series[1].data[rsdIndex].label.normal.textStyle.fontWeight="normal";
         // mapOption.series[1].data[rsdIndex].label.normal.textStyle.fontSize=setFontsize(12);
@@ -844,15 +850,17 @@ $("#mapEcharts").on("mouseout",function () {
         // mapChart.setOption(mapOption);
         sdIndex++;
         var ssdIndex = sdIndex % scatterData.length;
-        mapOption.series[1].data[ssdIndex].label.normal.textStyle.color="#2300d4";
-        mapOption.series[1].data[ssdIndex].label.normal.textStyle.fontWeight="bolder";
-        mapOption.series[1].data[ssdIndex].label.normal.textStyle.fontSize=setFontsize(16);
-        mapOption.series[1].data[ssdIndex].label.normal.formatter=function (params) {
+        mapOption.series[1].data[ssdIndex].label.normal.textStyle.color = "#ffffff";
+        // mapOption.series[1].data[ssdIndex].label.normal.textStyle.color = "#2300d4";
+        // mapOption.series[1].data[ssdIndex].label.normal.textStyle.fontWeight = "bolder";
+        mapOption.series[1].data[ssdIndex].label.normal.textStyle.fontSize = setFontsize(12);
+        mapOption.series[1].data[ssdIndex].label.normal.formatter = function (params) {
+            console.log(params);
             var content = '',
-                content = params.name + params.value[3];
+                content = params.name+':\n '+'税款' + params.value[3];
             return content;
         };
-        mapOption.series[1].data[ssdIndex].label.normal.show=true;
+        mapOption.series[1].data[ssdIndex].label.normal.show = true;
         mapChart.setOption(mapOption);
         mapChart.dispatchAction({
             type: 'highlight',
