@@ -461,14 +461,18 @@ var geoCoordMap = {
 
 };
 var convertData = function (data) {
+    console.log(data);
     var res = [];
     for (var i = data.length - 1; i >= 0; i--) {
+        // console.log(data[i].value[1]);
         var datalength = parseInt(data.length);
-        var bianData = ((data[i].value[0] - data[datalength - 1].value[0]) / ((data[0].value[0]) - data[datalength - 1].value[0])) * (datalength - 1) + 1 || 1;
+        // var bianData = ((data[i].value[0] - data[datalength - 1].value[0]) / ((data[0].value[0]) - data[datalength - 1].value[0])) * (datalength - 1) + 1 || 1;
+        // var bianData = data[i].value[2];
         var ssData = ((data[i].value[1] - data[datalength - 1].value[1]) / ((data[0].value[1]) - data[datalength - 1].value[1])) * (40 - 20) + 20 || 20;
         // console.log(ssData);
         data[i].value.unshift(0);
-        data[i].value.push((datalength - bianData) + 1);
+        // data[i].value.push((datalength - bianData) + 1);
+        data[i].value.push(datalength-data[i].value[2] + 1);
         data[i].value.push(ssData);
         var geoCoord = geoCoordMap[data[i].name];
         if (geoCoord) {
@@ -479,7 +483,7 @@ var convertData = function (data) {
                     normal: {
                         formatter: function (params) {
                             var content = '',
-                                content = params.name+':\n '+'税款' + params.value[3];
+                                content = params.name + ':\n ' + '税款' + params.value[3];
                             return content;
                         },
                         position: 'left',
@@ -488,7 +492,7 @@ var convertData = function (data) {
                             color: "#ffffff",
                             fontSize: setFontsize(12),
                             // borderWidth: 0,
-                            borderRadius:2,
+                            borderRadius: 2,
                             backgroundColor: 'rgba(0,0,0,0.5)'
                         }
                     },
@@ -500,7 +504,7 @@ var convertData = function (data) {
                             fontSize: setFontsize(12),
                             // fontWeight: "bolder",
                             // borderWidth: 0,
-                            borderRadius:2,
+                            borderRadius: 2,
                             backgroundColor: 'rgba(0,0,0,0.5)'
                         }
                     }
@@ -530,7 +534,7 @@ var mapChart = echarts.init(document.getElementById('mapEcharts'));
 var min = 1, max = 42;
 var mapOption = {
     tooltip: {
-        show:false,
+        show: false,
         formatter: function (params) {
             if (params.seriesType == "map3D") {
                 return;
@@ -572,9 +576,10 @@ var mapOption = {
             inverse: true,
             dimension: 5,
             seriesIndex: [1],
+            hoverLink:false,
             inRange: {
                 // color: ['#e23500', '#ffd127']
-                color: ['#ffba00','#ffff00','#1eff00','#d6d6d6']
+                color: ['#ff6c02','#ffba00', '#ffff00', '#1eff00'/*, '#d6d6d6'*/]
             },
             textStyle: {
                 color: '#fff',
@@ -808,9 +813,9 @@ var mapInt = setInterval(function () {
     // mapOption.series[1].data[ssdIndex].label.normal.textStyle.fontWeight = "bolder";
     mapOption.series[1].data[ssdIndex].label.normal.textStyle.fontSize = setFontsize(12);
     mapOption.series[1].data[ssdIndex].label.normal.formatter = function (params) {
-        console.log(params);
+        // console.log(params);
         var content = '',
-            content = params.name+':\n '+'税款' + params.value[3];
+            content = params.name + ':\n ' + '税款' + params.value[3];
         return content;
     };
     mapOption.series[1].data[ssdIndex].label.normal.show = true;
@@ -855,9 +860,9 @@ $("#mapEcharts").on("mouseout", function () {
         // mapOption.series[1].data[ssdIndex].label.normal.textStyle.fontWeight = "bolder";
         mapOption.series[1].data[ssdIndex].label.normal.textStyle.fontSize = setFontsize(12);
         mapOption.series[1].data[ssdIndex].label.normal.formatter = function (params) {
-            console.log(params);
+            // console.log(params);
             var content = '',
-                content = params.name+':\n '+'税款' + params.value[3];
+                content = params.name + ':\n ' + '税款' + params.value[3];
             return content;
         };
         mapOption.series[1].data[ssdIndex].label.normal.show = true;
