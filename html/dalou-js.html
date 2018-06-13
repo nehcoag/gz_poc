@@ -26,7 +26,7 @@
         // var areaNum = 4;//面数
         var VIEW_ANGLE = 20,//25
             ASPECT = WIDTH / HEIGHT,
-            NEAR = 50000,
+            NEAR = 1000,
             FAR = 60000;
         /* 初始化3D面板 */
         var scene = new THREE.Scene();
@@ -92,58 +92,19 @@
         camera.position.set(0, 100, 50000);
         // camera.rotation.x = -0.2;//-0.2
         scene.add(camera);
-        var onProgress = function (xhr) {
-            if (xhr.lengthComputable) {
-                var percentComplete = xhr.loaded / xhr.total * 100;
-                console.log(Math.round(percentComplete, 2) + '% downloaded');
-            }
-        };
 
-        var onError = function (xhr) {
-        };
-        // var mtlLoader = new THREE.MTLLoader();
-        // mtlLoader.setPath('../models/');
-        // mtlLoader.load('ChinaCustoms.mtl', function (materials) {
-        //     materials.preload();
-            var objLoader = new THREE.OBJLoader();
-            // objLoader.setMaterials(materials);
-            objLoader.setPath('../models/');
-            objLoader.load('ChinaCustoms.obj', function (object) {
-                var objArr=object.children;
-                console.log(objArr);
-                // var edges=[];
-                for(var i=0;i<objArr.length;i++){
-                    objArr[i].material.side = THREE.FrontSide;
-                    objArr[i].material.transparent=true;
-                    // objArr[i].material.opacity=0.5;
-                    objArr[i].material.color.set("#faeede");
-                    /*白色网格*/
-                    // var edge = new THREE.EdgesHelper(objArr[i], 0x8cc4f0);
-                    // console.log(edge);
-                    // edge.material.linewidth = 1;
-                    // edge.position.y = -6000;
-                    // scene.add(edge);
-                    // edges.push(edge);//将单个网格PUSH到白色网格数组
-                    var edges = new THREE.EdgesGeometry(objArr[i].geometry);
-                    var line = new THREE.LineSegments( edges, new THREE.LineBasicMaterial( { color: 0x856F61,linewidth:1,opacity:1 } ) );
-                    objArr[i].add( line );
-                }
-                // edges.position.y = -6000;
-                object.position.y = -6000;
-                scene.add(object);
-                // myCameraTweenByAnyAxis(camera, 300, 1, 1000);
-
-                /*动画转圈效果*/
-                function render() {
-                    object.rotation.y += 0.005;
-                    requestAnimationFrame( render );
-                    renderer.render( scene, camera );
-                }
-                render();
-            }, onProgress, onError);
-
-        // });
-
+        var loader = new THREE.JSONLoader();
+        var pyobjdalou=loader.parse(jsondalou,"../models/");
+        var geometrydalou=pyobjdalou.geometry;
+        var materialdalou= pyobjdalou.materials[0];
+        var meshdalou = new THREE.Mesh( geometrydalou, materialdalou );
+        console.log(meshdalou);
+        meshdalou.material.color.set("#f2dcc5");
+        meshdalou.position.y = -6000;
+        var edges = new THREE.EdgesGeometry(geometrydalou);
+                    var line = new THREE.LineSegments( edges, new THREE.LineBasicMaterial( { color: 0x715f4f,linewidth:1,opacity:1 } ) );
+                    meshdalou.add( line );
+        scene.add(meshdalou);
         /*鼠标控制*/
         var controls = new THREE.OrbitControls(camera);
         controls.minPolarAngle = 0;
@@ -153,6 +114,12 @@
         // camera.position.set( 0, 500, 1000 );
         controls.addEventListener('change', render);
 
+/*动画转圈效果*/
+    (function anime() {
+        // group.rotation.y += 0.005;//所有网格定位
+        renderer.render(scene, camera);
+        return requestAnimationFrame(anime);
+    })();
         /*渲染*/
         function render() {
             renderer.render(scene, camera);
