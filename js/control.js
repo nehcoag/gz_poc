@@ -42,7 +42,7 @@ function initTwModel(dom) {
         FAR = 10000;
     /* 初始化3D面板 */
     var scene = new THREE.Scene();
-    var renderer = new THREE.WebGLRenderer({/*alpha: true,*/ antialias: true,logarithmicDepthBuffer:true});
+    var renderer = new THREE.WebGLRenderer({alpha: true, antialias: true,logarithmicDepthBuffer:true});
     renderer.shadowMapType = THREE.PCFSoftShadowMap;
     renderer.setSize(WIDTH, HEIGHT);
     document.getElementById(dom).appendChild(renderer.domElement);
@@ -60,9 +60,9 @@ function initTwModel(dom) {
     scene.add(camera);
     /*鼠标控制*/
     var controls = new THREE.OrbitControls(camera);
-    controls.minPolarAngle = 0;
-    controls.maxPolarAngle = 1.47;
-    controls.minDistance = 1;
+    controls.minPolarAngle = 1;
+    controls.maxPolarAngle = 1.4;
+    controls.minDistance = 4000;
     controls.maxDistance = 4000;
     // camera.position.set( 0, 500, 1000 );
     controls.addEventListener('change', render);
@@ -504,6 +504,7 @@ function initTwModel(dom) {
     // renderer.domElement.addEventListener("mouseout", mouseout);
     renderer.domElement.addEventListener("mousedown", mousedown,false);
     //光线投射器
+    debugger
     var raycaster = new THREE.RayCaster();
     var mouse = new THREE.Vector2();
 
@@ -548,12 +549,13 @@ function initTwModel(dom) {
     }
 
     function mousedown(event) {
-        // console.log(renderer.domElement.getBoundingClientRect().x);
-        mouse.x = ( (event.clientX-renderer.domElement.getBoundingClientRect().x) / renderer.domElement.clientWidth ) * 2 - 1;
-        mouse.y = - ( (event.clientY-renderer.domElement.getBoundingClientRect().y) / renderer.domElement.clientHeight ) * 2 + 1;
-        // console.log(mouse);
+        console.log(renderer.domElement.getBoundingClientRect());
+        //mouse.x = ( (event.clientX-renderer.domElement.getBoundingClientRect().x) / renderer.domElement.clientWidth ) * 2 - 1;
+        //mouse.y = - ( (event.clientY-renderer.domElement.getBoundingClientRect().y) / renderer.domElement.clientHeight ) * 2 + 1;
         raycaster.setFromCamera(mouse, camera);
+
         var intersects = raycaster.intersectObjects(scene.children[3].children);
+        log(scene.children[3].children)
         if (intersects.length) {
             var ndom_intersected = intersects[0].object.name;
             console.log(ndom_intersected);
@@ -611,7 +613,6 @@ function initTwModel(dom) {
         window.isHover = false;
     }
 };
-
 
 /**
  * 金字塔设置初始颜色;

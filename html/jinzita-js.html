@@ -14,7 +14,6 @@
 <script src="../js/OrbitControls.js"></script>
 <script>
     initTwModel("mainCvshd");
-
     function initTwModel(dom) {
         var dom_intersected, dom_oriColor;
         var WIDTH = document.getElementById(dom).offsetWidth;
@@ -131,10 +130,10 @@
             })();
         } );*/
 
-        // renderer.domElement.addEventListener("mousemove", mousemove);
+        renderer.domElement.addEventListener("mousemove", mousemove);
         // renderer.domElement.addEventListener("mouseover", mouseover);
         // renderer.domElement.addEventListener("mouseout", mouseout);
-        // renderer.domElement.addEventListener("mousedown", mousedown,false);
+        renderer.domElement.addEventListener("mousedown", mousedown,false);
         //光线投射器
         var raycaster = new THREE.RayCaster();
         var mouse = new THREE.Vector2();
@@ -180,6 +179,7 @@
         }
 
         function mousedown(event) {
+            console.log("k")
             // console.log(renderer.domElement.getBoundingClientRect().x);
             mouse.x = ( (event.clientX-renderer.domElement.getBoundingClientRect().x) / renderer.domElement.clientWidth ) * 2 - 1;
             mouse.y = - ( (event.clientY-renderer.domElement.getBoundingClientRect().y) / renderer.domElement.clientHeight ) * 2 + 1;
