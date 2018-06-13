@@ -786,7 +786,7 @@ var mapOption = {
 };
 mapChart.setOption(mapOption);
 //循环高亮每个气泡
-var sdIndex = 0;
+var sdIndex = scatterData.length;
 var mapInt = setInterval(function () {
     var rsdIndex = sdIndex % scatterData.length;
     mapChart.dispatchAction({
@@ -806,7 +806,7 @@ var mapInt = setInterval(function () {
     //     return content;
     // };
     // mapChart.setOption(mapOption);
-    sdIndex++;
+    sdIndex--;
     var ssdIndex = sdIndex % scatterData.length;
     mapOption.series[1].data[ssdIndex].label.normal.textStyle.color = "#ffffff";
     // mapOption.series[1].data[ssdIndex].label.normal.textStyle.color = "#2300d4";
